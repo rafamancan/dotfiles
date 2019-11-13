@@ -1,6 +1,6 @@
 export ZSH="/home/rmancan/.oh-my-zsh"
 
-ZSH_THEME="elessar"
+ZSH_THEME="rmancan"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
