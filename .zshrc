@@ -55,6 +55,7 @@ alias yc='yarn commit'
 alias ys='yarn start'
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'
+alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 fpath=($fpath "/Users/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
