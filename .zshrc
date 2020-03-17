@@ -39,23 +39,25 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 fpath=($fpath "/Users/rmancan/.zfunctions")
+
+# personal use
 alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'
-alias dps='docker ps'
-alias api='cd ~/workspace/liuv/api'
-alias app='cd ~/workspace/liuv/app'
-alias area='cd ~/workspace/liuv/area-estabelecimento'
-alias itau='cd ~/workspace/liuv/itau-portal'
-alias port='lsof -i'
-alias vim='nvim'
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'
-alias yc='yarn commit'
-alias ys='yarn start'
+alias liuv='cd ~/workspace/liuv/'
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'
+
+# common use
+alias port='lsof -i'
+alias dps='docker ps'
+alias vim='nvim'
+alias yc='yarn commit'
+alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+
 fpath=($fpath "/Users/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
