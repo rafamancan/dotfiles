@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 "theme
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mhartington/oceanic-next', { 'as' : 'oceanic' }
 
 "fancy startup screen
 Plug 'mhinz/vim-startify'
@@ -12,7 +13,7 @@ let g:startify_bookmarks = ['~/workspace/liuv/area-estabelecimento', '~/workspac
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'oceanic',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
