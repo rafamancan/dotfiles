@@ -26,6 +26,8 @@ let g:lightline = {
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 "find files/text (both brew install fzf and ripgrep are required)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
