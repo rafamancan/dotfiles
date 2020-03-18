@@ -3,17 +3,16 @@ call plug#begin('~/.vim/plugged')
 
 "theme
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'mhartington/oceanic-next', { 'as' : 'oceanic' }
 
 "fancy startup screen
 Plug 'mhinz/vim-startify'
-let g:startify_bookmarks = ['~/workspace/liuv/area-estabelecimento', '~/workspace/liuv/api']
+let g:startify_bookmarks = ['~/workspace/liuv/area-estabelecimento', '~/workspace/liuv/api', '~/workspace/liuv/app']
 
 "status bar
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 let g:lightline = {
-      \ 'colorscheme': 'oceanic',
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -29,6 +28,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+
+"php
+Plug 'arnaud-lb/vim-php-namespace'
 
 "find files/text (both brew install fzf and ripgrep are required)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -62,6 +64,10 @@ let NERDTreeShowHidden=1 "show dotfiles
 " misc
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 

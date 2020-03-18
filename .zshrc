@@ -46,7 +46,7 @@ alias au='adb uninstall it.liuv.android.dev'
 # common use
 alias port='lsof -i'
 alias dps='docker ps'
-alias vim='~/nvim.appimage'
+alias vim='/usr/bin/nvim.appimage'
 alias yc='yarn commit'
 alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
