@@ -1,6 +1,7 @@
 #!/bin/bash
 cp ~/.config/nvim/*.vim ~/dotfiles/.config/nvim/
 cp ~/.config/nvim/*.json ~/dotfiles/.config/nvim/
+cp -r ~/.config/kitty/* ~/dotfiles/.config/kitty/
 cp ~/.zshrc ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
 cd ~/dotfiles
