@@ -46,10 +46,11 @@ alias au='adb uninstall it.liuv.android.dev'
 # common use
 alias port='lsof -i'
 alias dps='docker ps'
-alias vim='nvim'
+alias vim='~/nvim.appimage'
 alias yc='yarn commit'
 alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+alias fix='sudo apt update && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
