@@ -6,7 +6,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 "fancy startup screen
 Plug 'mhinz/vim-startify'
-let g:startify_bookmarks = ['~/Applications/ink', '~/carta-web']
+let g:startify_bookmarks = ['~/workspace/liuv/area-estabelecimento', '~/workspace/liuv/api']
 
 "status bar
 Plug 'itchyny/lightline.vim'
