@@ -35,6 +35,8 @@ Plug 'stephpy/vim-php-cs-fixer'
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'w0rp/ale'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'dense-analysis/ale'
 
 "find files/text (both brew install fzf and ripgrep are required)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
