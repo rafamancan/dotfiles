@@ -1,7 +1,7 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "markdown", "javascript", "javascriptreact"],
-  "prettier.eslintIntegration": false,
+  "prettier.eslintIntegration": true,
   "tslint.autoFixOnSave": true,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.autoFixOnSave": true

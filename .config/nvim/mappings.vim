@@ -40,3 +40,18 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
+" PHP
+" Extract method from selection
+" context-aware menu with all functions (ALT-m)
+nnoremap <m-m> :call phpactor#ContextMenu()<cr>
+
+nnoremap gd :call phpactor#GotoDefinition()<CR>
+nnoremap gr :call phpactor#FindReferences()<CR>
+
+" Extract method from selection
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+" extract variable
+vnoremap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+nnoremap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+" extract interface
+nnoremap <silent><Leader>rei :call phpactor#ClassInflect()<CR>

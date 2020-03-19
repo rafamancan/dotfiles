@@ -1,5 +1,5 @@
 "plugins with vim-plug
-call plug#begin('~/.vim/plugged') 
+call plug#begin('~/.vim/plugged')
 
 "theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -31,6 +31,10 @@ Plug 'mxw/vim-jsx'
 
 "php
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
+Plug 'w0rp/ale'
 
 "find files/text (both brew install fzf and ripgrep are required)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
