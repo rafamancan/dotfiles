@@ -4,8 +4,8 @@ nvim settings based on: https://github.com/matheusml/dotfiles
 
 # Plugins for
 
-..*PHP
-..*Javascript
-..*React
-..*Css
-..\*Git
+* PHP
+* Javascript
+* React
+* Css
+* Git
