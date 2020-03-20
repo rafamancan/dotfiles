@@ -5,6 +5,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
 export PATH="$(yarn global bin):$PATH"
+export PATH="/home/rmancan/.local/bin:$PATH"
 
 ZSH_THEME="agnoster"
 plugins=(git)
@@ -34,7 +35,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/home/rmancan/.zfunctions")
 
 # personal use
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
+alias dup='sudo service apache2 stop && cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'
