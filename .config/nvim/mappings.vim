@@ -24,6 +24,12 @@ nnoremap <leader>p :GFiles<CR>
 "text search inside files
 nnoremap <leader>f :Rg<CR>
 
+" replace word in line
+nmap  <leader>rl  :s//g<LEFT><LEFT>
+"
+" replace work in file
+nmap  <leader>rf  :%s//g<LEFT><LEFT>
+
 "open source tree
 nnoremap <leader>] :NERDTreeToggle<CR>
 
