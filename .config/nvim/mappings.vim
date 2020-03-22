@@ -61,3 +61,6 @@ vnoremap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
 nnoremap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
 " extract interface
 nnoremap <silent><Leader>rei :call phpactor#ClassInflect()<CR>
+
+nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
+

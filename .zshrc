@@ -45,11 +45,15 @@ alias area='cd ~/workspace/liuv/area-estabelecimento'
 alias app='cd ~/workspace/liuv/app'
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'
+# Dar push na branch atual
+function push () {
+  git push origin $(git branch | grep \* | sed 's/\*\s//')
+}
 
 # common use
 alias port='lsof -i'
 alias dps='docker ps'
-alias vim='/usr/bin/nvim.appimage'
+alias vim='~/.local/bin/nvim'
 alias yc='yarn commit'
 alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'

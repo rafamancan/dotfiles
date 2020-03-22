@@ -67,4 +67,11 @@ let g:ale_fixers = {
   \   ],
   \}
 
+set listchars=tab:▸\           " ┐
+set listchars+=trail:·         " │ Use custom symbols to
+set listchars+=eol:↴           " │ represent invisible characters
+set listchars+=nbsp:_          " ┘
+set lazyredraw                 " Do not redraw the screen while
 
+set nostartofline              " Kept the cursor on the same column
+set ruler                      " Show cursor position

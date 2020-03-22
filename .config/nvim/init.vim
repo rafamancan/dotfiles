@@ -28,7 +28,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'terryma/vim-multiple-cursors'
 "php
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'stephpy/vim-php-cs-fixer'
@@ -48,6 +49,7 @@ Plug 'editorconfig/editorconfig-vim'
 "code autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-json', 'coc-eslint', 'coc-prettier']
+Plug 'mattn/emmet-vim'
 
 "auto close tags
 Plug 'alvan/vim-closetag'
@@ -74,6 +76,13 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ap/vim-css-color'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'wakatime/vim-wakatime'
+Plug 'yardnsm/vim-import-cost'
+let g:import_cost_always_open_split = 0
 
 call plug#end()
 
