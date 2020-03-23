@@ -19,7 +19,7 @@ nnoremap <leader>x :split<CR>
 nnoremap <leader>. <c-^>
 
 "files search
-nnoremap <leader>p :GFiles<CR>
+nnoremap <silent> <leader>p :FZF -m<CR>
 
 "text search inside files
 nnoremap <leader>f :Rg<CR>
@@ -33,7 +33,7 @@ nmap  <leader>rf  :%s//g<LEFT><LEFT>
 "open source tree
 nnoremap <leader>] :NERDTreeToggle<CR>
 
-"open source tree on current file 
+"open source tree on current file
 nnoremap <leader>[ :NERDTreeFind<CR>
 
 " Git
@@ -63,4 +63,10 @@ nnoremap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
 nnoremap <silent><Leader>rei :call phpactor#ClassInflect()<CR>
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
+
+" Smooth Scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
 
