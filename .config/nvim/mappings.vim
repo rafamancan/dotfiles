@@ -159,8 +159,8 @@ let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:tagbar_autofocus = 1
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '!'
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>

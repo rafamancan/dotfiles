@@ -58,13 +58,24 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:syntastic_html_checkers = [ 'jshint' ]
 let g:syntastic_javascript_checkers = [ 'jshint' ]
-
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 " Disable syntax checking by default
 let g:syntastic_mode_map = {
     \ 'active_filetypes': [],
     \ 'mode': 'passive',
     \ 'passive_filetypes': []
 \}
+
+"" ----------------------------------------------------------------------
+" | Plugins - Smooth scroll                                                |
+" ----------------------------------------------------------------------
+
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
+
 
 
 " ----------------------------------------------------------------------

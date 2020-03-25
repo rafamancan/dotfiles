@@ -4,6 +4,7 @@ cp ~/.config/nvim/*.json ~/dotfiles/.config/nvim/
 cp -r ~/.config/kitty/* ~/dotfiles/.config/kitty/
 cp -r ~/.config/terminator/* ~/dotfiles/.config/terminator/
 cp ~/.zshrc ~/dotfiles/
+cp ~/.tmux.conf ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
 cd ~/dotfiles
 git add .
