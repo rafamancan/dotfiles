@@ -42,8 +42,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'w0rp/ale'
-Plug 'vim-syntastic/syntastic'
+" Plug 'w0rp/ale'
+" Plug 'vim-syntastic/syntastic'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
