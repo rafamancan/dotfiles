@@ -97,7 +97,6 @@ Plug 'ap/vim-css-color'
 Plug 'chrisbra/unicode.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
-Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim'
@@ -121,7 +120,6 @@ Plug 'digitaltoad/vim-jade'
 Plug 'pangloss/vim-javascript'
 Plug 'guns/vim-clojure-static'
 Plug 'mxw/vim-jsx'
-Plug 'itchyny/lightline.vim'
 Plug 'neovimhaskell/haskell-vim'
 
 Plug 'jparise/vim-graphql'
@@ -195,8 +193,6 @@ augroup END
 
 set autoread
 
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=

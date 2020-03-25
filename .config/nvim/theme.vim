@@ -20,26 +20,22 @@ if has("gui_running")
   endif
 else
   let g:CSApprox_loaded = 1
-
-  " IndentLine
   let g:indentLine_enabled = 1
   let g:indentLine_concealcursor = 0
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
-
-
 endif
 
 
 
-"" Disable the blinking cursor.
+" "" Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
-
-"" Status bar
+"
+" "" Status bar
 set laststatus=2
-
-"" Use modeline overrides
+"
+" "" Use modeline overrides
 set modeline
 set modelines=10
 
@@ -65,5 +61,4 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-
-
+let g:airline#extensions#tabline#formatter = 'unique_tail'
