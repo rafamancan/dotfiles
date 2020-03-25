@@ -153,12 +153,14 @@ let g:UltiSnipsEditSplit="vertical"
 " ale
 let g:ale_linters = {}
 let g:ale_linters = {
-\   'javascript': ['standard'],
+\   'javascript': ['eslint'],
 \}
-let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:tagbar_autofocus = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
@@ -180,6 +182,11 @@ noremap <leader>c :bd<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
+
+
+" [,h ] JSHint the code
+" https://github.com/Shutnik/jshint2.vim
+nmap <leader>h :JSHint<CR>
 
 "" Switching windows
 noremap <C-j> <C-w>j
