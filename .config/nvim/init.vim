@@ -47,6 +47,7 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'wakatime/vim-wakatime'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -488,7 +489,14 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
+" ----------------------------------------------------------------------
+" | Plugins - Prettier                                            |
+" ----------------------------------------------------------------------
 
+let g:prettier#autoformat = 1
+let g:prettier#quickfix_enabled = 0
+noremap <C-l> :Prettier<CR>
+autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " ----------------------------------------------------------------------
 " | Plugins - NeoComplCache                                            |
 " ----------------------------------------------------------------------
