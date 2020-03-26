@@ -366,8 +366,8 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
 
 "open source tree on current file
-nnoremap <silent><leader>[ :NERDTreeFind<CR>
-nnoremap <silent><leader>] :NERDTreeToggle<CR>
+nnoremap <silent><A-1> :NERDTreeFind<CR>
+nnoremap <silent><A-1> :NERDTreeToggle<CR>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
