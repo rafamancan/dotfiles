@@ -6,6 +6,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
 export PATH="$(yarn global bin):$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
+export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 
 ZSH_THEME="agnoster"
 plugins=(git)
@@ -40,6 +41,7 @@ alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'
+alias bits='cd ~/workspace/17bits'
 alias api='cd ~/workspace/liuv/api'
 alias area='cd ~/workspace/liuv/area-estabelecimento'
 alias app='cd ~/workspace/liuv/app'
