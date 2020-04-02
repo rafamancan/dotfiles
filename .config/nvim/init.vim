@@ -180,7 +180,7 @@ set gfn=Monospace\ 11
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Victor Mono:h11
+    set guifont=Victor Mono:h12
     set transparency=7
   endif
 else
@@ -224,7 +224,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'behelit'
+let g:airline_theme = 'lucius'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
