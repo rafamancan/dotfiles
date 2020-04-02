@@ -51,6 +51,10 @@ alias au='adb uninstall it.liuv.android.dev'
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
 }
+# Dar pull na branch atual
+function pull () {
+  git pull origin $(git branch | grep \* | sed 's/\*\s//')
+}
 
 # common use
 alias port='lsof -i'

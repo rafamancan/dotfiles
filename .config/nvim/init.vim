@@ -637,16 +637,6 @@ set statusline+=\ (%P)\        " Percent through file
 "  [1] [master] [vim/vimrc][vim][unix:utf-8]            17,238/381 (59%)
 
 
-
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's local vim config
-if filereadable(expand("~/.config/nvim/local_init.vim"))
-  source ~/.config/nvim/local_init.vim
-endif
-
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
@@ -686,3 +676,13 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+
+"*****************************************************************************
+"*****************************************************************************
+
+"" Include user's local vim config
+if filereadable(expand("~/.config/nvim/local_init.vim"))
+  source ~/.config/nvim/local_init.vim
+endif
+
