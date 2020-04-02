@@ -64,3 +64,4 @@ alias cl='xclip -sel clip'
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+ eval "$(starship init zsh)"

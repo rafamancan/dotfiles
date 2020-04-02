@@ -72,7 +72,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'haishanh/night-owl.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -113,6 +113,9 @@ call plug#end()
 " Required:
 filetype plugin indent on
 
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 "*****************************************************************************
 "" Basic Setup
@@ -166,7 +169,9 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme dracula
+syntax enable
+silent! colorscheme night-owl
+let g:lightline = { 'colorscheme': 'nightowl' }
 
 set mousemodel=popup
 set t_Co=256
@@ -175,7 +180,7 @@ set gfn=Monospace\ 11
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Hack:h11
+    set guifont=Victor Mono:h11
     set transparency=7
   endif
 else
@@ -219,7 +224,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'behelit'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -419,7 +424,6 @@ endif
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 
