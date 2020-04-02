@@ -1,5 +1,6 @@
 #!/bin/bash
 cp ~/.config/nvim/*.vim ~/dotfiles/.config/nvim/
+cp ~/.config/nvim/*.json ~/dotfiles/.config/nvim/
 cp -r ~/.config/kitty/* ~/dotfiles/.config/kitty/
 cp -r ~/.config/terminator/* ~/dotfiles/.config/terminator/
 cp ~/.zshrc ~/dotfiles/

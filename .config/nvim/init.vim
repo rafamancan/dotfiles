@@ -29,6 +29,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -89,7 +91,6 @@ Plug 'ap/vim-css-color'
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -170,11 +171,11 @@ silent! colorscheme dracula
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
+set gfn=Monospace\ 11
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Hack:h12
+    set guifont=Hack:h11
     set transparency=7
   endif
 else
@@ -363,7 +364,6 @@ nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
 
 "open source tree on current file
 nnoremap <silent><A-1> :NERDTreeFind<CR>
@@ -492,10 +492,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " ----------------------------------------------------------------------
 " | Plugins - Prettier                                            |
 " ----------------------------------------------------------------------
-
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
 let g:prettier#quickfix_enabled = 0
-noremap <C-l> :Prettier<CR>
+noremap <C-l> :Format<CR>
+" noremap <C-l> :Prettier<CR>
 autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " ----------------------------------------------------------------------
 " | Plugins - NeoComplCache                                            |
@@ -514,28 +515,83 @@ let g:neocomplete#force_omni_input_patterns.python =
     \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+" ----------------------------------------------------------------------
+" | Plugins - Coc                                            |
+" ----------------------------------------------------------------------
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
+" ctrlp
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Make `<TAB>` autocomplete
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" ----------------------------------------------------------------------
-" | Plugins - Syntastic                                                |
-" ----------------------------------------------------------------------
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" Inform Syntastic which checkers to use based on file types
-" https://github.com/scrooloose/syntastic#3-faq
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
 
-let g:syntastic_html_checkers = [ 'eslint' ]
-let g:syntastic_javascript_checkers = [ 'eslint' ]
+" Use `:Fold` to fold current buffer
+command! -nargs=0  Fold :call     CocAction('fold', <f-args>)
 
-" Disable syntax checking by default
-let g:syntastic_mode_map = {
-    \ 'active_filetypes': [],
-    \ 'mode': 'passive',
-    \ 'passive_filetypes': []
-\}
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>A  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>E  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>C  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>O  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>S  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>J  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>K  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>P  :<C-u>CocListResume<CR>
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
@@ -546,12 +602,6 @@ augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
 augroup END
-
-
-
-" [ts] Toggle Syntastic
-nmap <leader>ts :SyntasticToggleMode<CR>
-
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
