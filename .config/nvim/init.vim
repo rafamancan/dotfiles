@@ -73,8 +73,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'haishanh/night-owl.vim'
-
+Plug 'morhetz/gruvbox'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -97,6 +96,12 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'shutnik/jshint2.vim'
 Plug 'styled-components/vim-styled-components'
+" ES2015 code snippets (Optional)
+Plug 'epilande/vim-es2015-snippets'
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+" Ultisnips
+Plug 'SirVer/ultisnips'
 " php
 "" PHP Bundle
 Plug 'arnaud-lb/vim-php-namespace'
@@ -171,8 +176,9 @@ set number
 
 let no_buffers_menu=1
 syntax enable
-silent! colorscheme night-owl
-let g:lightline = { 'colorscheme': 'nightowl' }
+let g:gruvbox_italic=1
+silent! colorscheme gruvbox
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 set mousemodel=popup
 set t_Co=256
@@ -429,7 +435,7 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nmap <leader>y :History:<CR>
 
 " snippets
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
@@ -557,6 +563,9 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+let g:coc_snippet_next = '<tab>'
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
