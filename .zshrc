@@ -36,6 +36,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/home/rmancan/.zfunctions")
 
 # personal use
+alias vim='/home/rmancan/.local/bin/nvim'
 alias dup='sudo service apache2 stop && cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
@@ -59,7 +60,6 @@ function pull () {
 # common use
 alias port='lsof -i'
 alias dps='docker ps'
-alias vim='~/.local/bin/nvim'
 alias yc='yarn commit'
 alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
