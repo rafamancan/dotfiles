@@ -460,8 +460,11 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Save
-noremap <silent> <C-s> :w<CR>
+"" Save 
+noremap <silent> <C-s> <ESC>:w<CR>
+
+"" Quit 
+noremap <silent> <C-w> :q<CR>
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
@@ -501,8 +504,8 @@ nnoremap <Leader>o :.Gbrowse<CR>
 command! -nargs=0 Fix :CocCommand eslint.executeAutofix
 let g:prettier#autoformat = 1
 let g:prettier#quickfix_enabled = 0
-noremap <C-l> <CR>:Format && <CR>:Fix
-" noremap <C-l> :Prettier<CR>
+noremap <silent><C-l> <CR>:Format<CR>
+noremap <silent><C-f> <CR>:Fix<CR>
 autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " ----------------------------------------------------------------------
 " | Plugins - NeoComplCache                                            |
