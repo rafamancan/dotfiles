@@ -1,6 +1,7 @@
-# Dotfiles for zsh, nvim, kitty and terminator
+# Dotfiles for zsh, vim and kitty
 
-nvim settings based on (with some customization by me):
+vim settings based on (with some customization by me):
+https://github.com/Jimeno0/dotfiles
 https://github.com/matheusml/dotfiles
 https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc
 
