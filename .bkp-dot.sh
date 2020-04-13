@@ -1,8 +1,7 @@
 #!/bin/bash
-cp ~/.config/nvim/*.vim ~/dotfiles/.config/nvim/
-cp ~/.config/nvim/*.json ~/dotfiles/.config/nvim/
+cp ~/.vimrc ~/dotfiles/
+cp -r ~/.vim/UltiSnips ~/dotfiles/
 cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
-cp -r ~/.config/terminator/* ~/dotfiles/.config/terminator/
 cp ~/.zshrc ~/dotfiles/
 cp ~/.tmux.conf ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
