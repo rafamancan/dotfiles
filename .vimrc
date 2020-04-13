@@ -336,28 +336,6 @@ let g:phpactor_executable = '~/.vim/plugged/phpactor/bin/phpactor'
 let g:phpactorbinpath = '~/.vim/plugged/phpactor/bin'
 let g:phpactorPhpBin = '/usr/bin/php'
 "
-" If you use php-cs-fixer version 1.x
-let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
-let g:php_cs_fixer_config = "default"                  " options: --config
-" If you use php-cs-fixer version 2.x
-let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
-let g:php_cs_fixer_php_path = "php"               " Path to PHP
-let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-let g:ale_fixers = {
-  \   'php': [
-  \       'php_cs_fixer',
-  \       'phpcbf',
-  \       'php_cs_fixer',
-  \       'remove_trailing_lines',
-  \       'trim_whitespace'
-  \   ],
-  \   'javascript': [
-  \        'standard'
-  \   ]
-  \}
-
 " comment lines with ctrl + /
 nmap <C-_> :Commentary<CR>
 vmap <C-_> :Commentary<CR>
@@ -547,11 +525,22 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-let g:ale_fixers = ['eslint']
+let g:ale_php_phpcs_executable='/usr/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='/usr/local/bin/php-cs-fixer'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+  \   'php': [
+  \       'php_cs_fixer',
+  \       'remove_trailing_lines',
+  \       'trim_whitespace'
+  \   ],
+  \   'javascript': [
+  \        'standard'
+  \   ]
+  \}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -640,11 +629,6 @@ augroup vimrc-javascript
   autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
 augroup END
 
-
-" php
-
-
-
 "*****************************************************************************
 "*****************************************************************************
 
@@ -699,3 +683,8 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+source ~/.vim/php-doc.vim
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
