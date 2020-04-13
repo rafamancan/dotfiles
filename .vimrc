@@ -46,6 +46,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'mhinz/vim-startify'
 
 " Theme
 Plug 'KeitaNakamura/neodark.vim'
