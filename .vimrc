@@ -45,6 +45,7 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'editorconfig/editorconfig-vim'
+Plug 'terryma/vim-smooth-scroll'
 
 " Theme
 Plug 'KeitaNakamura/neodark.vim'
@@ -112,6 +113,9 @@ Plug 'jelera/vim-javascript-syntax'
 " php
 "" PHP Bundle
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 
 
 "*****************************************************************************
@@ -326,6 +330,31 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
+" php actor
+let g:phpactor_executable = '~/.config/vim/plugged/phpactor/bin/phpactor'
+"
+" If you use php-cs-fixer version 1.x
+let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
+let g:php_cs_fixer_config = "default"                  " options: --config
+" If you use php-cs-fixer version 2.x
+let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+let g:ale_fixers = {
+  \   'php': [
+  \       'php_cs_fixer',
+  \       'phpcbf',
+  \       'php_cs_fixer',
+  \       'remove_trailing_lines',
+  \       'trim_whitespace'
+  \   ],
+  \   'javascript': [
+  \        'standard'
+  \   ]
+  \}
+
 " comment lines with ctrl + /
 nmap <C-_> :Commentary<CR>
 vmap <C-_> :Commentary<CR>
@@ -430,8 +459,8 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
 
 "open source tree on current file
-nnoremap <silent><C-[> :NERDTreeFind<CR>
-nnoremap <silent><C-]> :NERDTreeToggle<CR>
+" nnoremap <silent><c-t> :NERDTreeFind<CR>
+nnoremap <silent><c-n> :NERDTreeToggle<CR>
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
 
@@ -450,6 +479,17 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+
+" PHP
+" Extract method from selection
+" context-aware menu with all functions (ALT-m)
+nnoremap <m-m> :call phpactor#ContextMenu()<cr>
+
+nnoremap gd :call phpactor#GotoDefinition()<CR>
+nnoremap gr :call phpactor#FindReferences()<CR>
+
+" Extract method from selection
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
 
 " session management
 nnoremap <leader>so :OpenSession<Space>
