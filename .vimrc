@@ -332,7 +332,9 @@ let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
 " php actor
-let g:phpactor_executable = '~/.config/vim/plugged/phpactor/bin/phpactor'
+let g:phpactor_executable = '~/.vim/plugged/phpactor/bin/phpactor'
+let g:phpactorbinpath = '~/.vim/plugged/phpactor/bin'
+let g:phpactorPhpBin = '/usr/bin/php'
 "
 " If you use php-cs-fixer version 1.x
 let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
@@ -460,8 +462,10 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
 
 "open source tree on current file
-" nnoremap <silent><c-t> :NERDTreeFind<CR>
-nnoremap <silent><c-n> :NERDTreeToggle<CR>
+execute "set <M-1>=\e1"
+execute "set <M-2>=\e2"
+nnoremap <M-1> :NERDTreeFind<CR>
+nnoremap <M-2> :NERDTreeToggle<CR>
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
 
