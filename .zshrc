@@ -9,8 +9,8 @@ export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-ZSH_THEME="agnoster"
-plugins=(git)
+ZSH_THEME="spaceship"
+plugins=(git yarn)
 
 source $ZSH/oh-my-zsh.sh
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -58,6 +58,7 @@ function pull () {
 }
 
 # common use
+alias vim='nvim'
 alias port='lsof -i'
 alias dps='docker ps'
 alias yc='yarn commit'
