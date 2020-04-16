@@ -46,12 +46,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set nowrap
-set number
+set relativenumber
 set listchars=tab:▸\           " ┐
 set listchars+=trail:·         " │ Use custom symbols to
 set listchars+=eol:↴           " │ represent invisible characters
 set listchars+=nbsp:_          " ┘
-set guifont=Victor\ Mono\ 12
 
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
@@ -67,6 +66,11 @@ cnoreabbrev Qall qall
 
 " airline
 let g:airline_theme = "base16_spacemacs"
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " fzf.vim
@@ -78,7 +82,7 @@ let g:tf_fmt_autosave = 1
 let g:nomad_fmt_autosave = 1
 
 " horizon
-let g:lightline = {'colorscheme' : 'horizon'}
+let g:lightline = {'colorscheme' : 'snazzy'}
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -94,6 +98,11 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+" ctrlp
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
 " Sidebar nerdtree options
 let NERDTreeShowHidden=1
 nnoremap <silent> <A-1> :NERDTreeFind<CR>
@@ -252,6 +261,13 @@ nmap  <leader>rf  :%s//g<LEFT><LEFT>
 "open easily vim config
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+"" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+"" Close buffer
+noremap <leader>c :bd<CR>
 
 " functions
 function! ToggleRelativeLineNumbers()
