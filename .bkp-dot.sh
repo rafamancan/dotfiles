@@ -1,6 +1,6 @@
 #!/bin/bash
-cp ~/.vimrc ~/dotfiles/
-cp -r ~/.vim/UltiSnips ~/dotfiles/
+cp ~/.config/nvim/*.vim ~/dotfiles/
+cp ~/.config/nvim/*.json ~/dotfiles/
 cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
 cp ~/.zshrc ~/dotfiles/
 cp ~/.tmux.conf ~/dotfiles/
