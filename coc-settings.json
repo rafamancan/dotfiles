@@ -9,5 +9,15 @@
         "typescript.tsx",
         "graphql"
     ],
-    "eslint.autoFix": true
+    "eslint.autoFix": true,
+    "languageserver": {
+        "intelephense": {
+            "command": "intelephense",
+            "args": ["--stdio"],
+            "filetypes": ["php"],
+            "initializationOptions": {
+                "storagePath": "/tmp/intelephense"
+            }
+        }
+    },
 }

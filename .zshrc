@@ -46,6 +46,7 @@ alias bits='cd ~/workspace/17bits'
 alias api='cd ~/workspace/liuv/api'
 alias area='cd ~/workspace/liuv/area-estabelecimento'
 alias app='cd ~/workspace/liuv/app'
+alias appe='cd ~/workspace/liuv/app-estabelecimento'
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'
 # Dar push na branch atual

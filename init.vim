@@ -1,9 +1,7 @@
 filetype plugin on
 
 call plug#begin('~/.config/nvim/plugged')
-
 Plug 'ntk148v/vim-horizon'
-Plug 'connorholyday/vim-snazzy'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -27,9 +25,12 @@ Plug 'mhinz/vim-startify'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
-colorscheme snazzy
+set termguicolors
+let ayucolor = "mirage"
+colorscheme ayu
 highlight Pmenu ctermbg=111217 guibg=#111217
 set splitright
 set updatetime=100
@@ -47,6 +48,7 @@ set shiftwidth=2
 set expandtab
 set nowrap
 set relativenumber
+set list
 set listchars=tab:▸\           " ┐
 set listchars+=trail:·         " │ Use custom symbols to
 set listchars+=eol:↴           " │ represent invisible characters
@@ -65,7 +67,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 " airline
-let g:airline_theme = "base16_spacemacs"
+let g:airline_theme = "ayu"
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -80,9 +82,6 @@ let g:fzf_preview_window = ''
 let g:hcl_fmt_autosave = 1
 let g:tf_fmt_autosave = 1
 let g:nomad_fmt_autosave = 1
-
-" horizon
-let g:lightline = {'colorscheme' : 'snazzy'}
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -256,7 +255,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
-" replace work in file
+" replace word in file
 nmap  <leader>rf  :%s//g<LEFT><LEFT>
 "open easily vim config
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
