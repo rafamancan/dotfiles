@@ -1,13 +1,20 @@
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/home/rmancan/.oh-my-zsh"
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
 export PATH="$(yarn global bin):$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+ # Android SDK / JAVA
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:~/android-studio/bin
+
 
 ZSH_THEME="spaceship"
 plugins=(git yarn)
