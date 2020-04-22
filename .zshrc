@@ -5,6 +5,7 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export REACT_EDITOR=code
 
  # Android SDK / JAVA
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
