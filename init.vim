@@ -25,13 +25,24 @@ Plug 'mhinz/vim-startify'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
-Plug 'ayu-theme/ayu-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'othree/yajs.vim'
 call plug#end()
 
-set termguicolors
-let ayucolor = "mirage"
-colorscheme ayu
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme OceanicNext
 highlight Pmenu ctermbg=111217 guibg=#111217
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 set splitright
 set updatetime=100
 set hidden
@@ -67,7 +78,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 " airline
-let g:airline_theme = "ayu"
+let g:airline_theme = "oceanicnext"
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
