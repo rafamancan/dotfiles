@@ -4,6 +4,7 @@ cp ~/.config/nvim/*.json ~/dotfiles/
 cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
 cp ~/.zshrc ~/dotfiles/
 cp ~/.tmux.conf ~/dotfiles/
+cp ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/custom_dir_filename.vim ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
 cd ~/dotfiles
 git add .

@@ -26,6 +26,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'mhartington/oceanic-next'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'othree/yajs.vim'
 call plug#end()
 
@@ -39,7 +40,8 @@ endif
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+set background=dark
+colorscheme palenight
 highlight Pmenu ctermbg=111217 guibg=#111217
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -78,13 +80,15 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 " airline
-let g:airline_theme = "oceanicnext"
+
+let g:airline_theme = "palenight"
+let g:palenight_terminal_italics=1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'custom_dir_filename'
 
 " fzf.vim
 let g:fzf_preview_window = ''
