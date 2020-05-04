@@ -3,7 +3,7 @@ cp ~/.config/nvim/*.vim ~/dotfiles/
 cp ~/.config/nvim/*.json ~/dotfiles/
 cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
 cp ~/.zshrc ~/dotfiles/
-cp -r /usr/share/plank/Mancan ~/dotfiles/Plank/
+cp -r /usr/share/plank/themes/Mancan ~/dotfiles/Plank/
 cp ~/.tmux.conf ~/dotfiles/
 cp ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/custom_dir_filename.vim ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
