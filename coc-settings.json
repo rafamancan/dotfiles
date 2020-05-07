@@ -1,23 +1,9 @@
 {
-    "suggest.noselect": false,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "json",
-        "javascriptreact",
-        "typescript.tsx",
-        "graphql"
-    ],
-    "eslint.autoFix": true,
-    "languageserver": {
-        "intelephense": {
-            "command": "intelephense",
-            "args": ["--stdio"],
-            "filetypes": ["php"],
-            "initializationOptions": {
-                "storagePath": "/tmp/intelephense"
-            }
-        }
-    },
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "markdown", "javascript", "javascriptreact"],
+  "prettier.eslintIntegration": false,
+  "tsserver.enableJavascript": false,
+  "tslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.autoFixOnSave": true
 }
