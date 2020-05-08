@@ -18,7 +18,7 @@ nnoremap <leader>x :split<CR>
 nnoremap <leader>. <c-^>
 
 "files search
-nnoremap <leader>p :GFiles<CR>
+nnoremap <C-p> :GFiles<CR>
 
 "text search inside files
 nnoremap <leader>f :Rg<CR>
