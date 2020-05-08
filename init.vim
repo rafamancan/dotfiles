@@ -45,6 +45,9 @@ let g:closetag_regions = {
 "git plugin
 Plug 'tpope/vim-fugitive'
 
+"commentary
+Plug 'tpope/vim-commentary'
+
 "source tree
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeMinimalUI=1 "disable display of ? text and bookmarks
