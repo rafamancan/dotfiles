@@ -59,6 +59,10 @@ let NERDTreeShowHidden=1 "show dotfiles
 "misc
 Plug 'wakatime/vim-wakatime'
 Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap s <Plug>(easymotion-overwin-f2)
+
 call plug#end()
 
 source ~/.config/nvim/general.vim
