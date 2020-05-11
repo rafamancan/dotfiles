@@ -53,3 +53,6 @@ noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 "" Close buffer
 noremap <leader>c :bd<CR>
+
+"" Easymotion
+nmap <leader>s <Plug>(easymotion-overwin-f2)
