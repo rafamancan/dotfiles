@@ -1,5 +1,3 @@
-"to map CAPS to be both CTRL and ESC read this: https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b
-
 "open easily vim config
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
@@ -47,3 +45,11 @@ function! ToggleRelativeLineNumbers()
 endfunction
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
+
+"" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+"" Close buffer
+noremap <leader>c :bd<CR>
