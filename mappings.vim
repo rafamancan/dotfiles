@@ -56,3 +56,6 @@ noremap <leader>c :bd<CR>
 
 "" Easymotion
 nmap <leader>s <Plug>(easymotion-overwin-f2)
+
+"" select all
+nnoremap <C-A> ggVG
