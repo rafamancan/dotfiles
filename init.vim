@@ -4,6 +4,12 @@ call plug#begin('~/.vim/plugged')
 "theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+Plug 'junegunn/rainbow_parentheses.vim'
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+autocmd FileType * RainbowParentheses
+
 "status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

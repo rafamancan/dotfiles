@@ -18,7 +18,12 @@ export PATH=$PATH:~/android-studio/bin
 
 
 ZSH_THEME="spaceship"
-plugins=(git yarn)
+plugins=(
+  git 
+  yarn
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -68,6 +73,7 @@ function pull () {
 
 # common use
 alias vim='nvim'
+alias v="nvim ."
 alias port='lsof -i'
 alias dps='docker ps'
 alias yc='yarn commit'
