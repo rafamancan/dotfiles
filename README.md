@@ -1,14 +1,17 @@
-# Dotfiles for zsh, vim and kitty
+# My personal dotfiles for zsh, plank, vim, tmux, alacritty and kitty
 
 vim settings based on (with some customization by me):
 * https://github.com/Jimeno0/dotfiles
 * https://github.com/matheusml/dotfiles
 * https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc
 
-# Plugins for
 
-* PHP (with refactor tools like PHPStorm and code sniffer)
-* Javascript (linter and code autocomplete)
-* React (lint for standard)
-* Css (with styled component)
+# Neovim Plugins
+
+* Javascript
+* React
+* Css
 * Git
+
+# Themes
+* Mostly themes by [@zenorocha](https://github.com/zenorocha) ([Dracula](https://github.com/dracula))
