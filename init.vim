@@ -1,72 +1,47 @@
 "plugins with vim-plug
 call plug#begin('~/.vim/plugged') 
 
-"theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+  "theme
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'junegunn/rainbow_parentheses.vim'
 
-Plug 'junegunn/rainbow_parentheses.vim'
+    "status bar
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'itchyny/vim-gitbranch'
 
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-autocmd FileType * RainbowParentheses
+    "javascript, typescript and jsx syntax
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'maxmellon/vim-jsx-pretty'
 
-"status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/vim-gitbranch'
+  "find files/text (both brew install fzf and ripgrep are required)
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
-let g:airline_theme = "dracula"
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#formatter = 'short_path'
+  "editor config
+  Plug 'editorconfig/editorconfig-vim'
 
-"javascript, typescript and jsx syntax
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+  "code autocomplete
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"find files/text (both brew install fzf and ripgrep are required)
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+  "auto close tags
+  Plug 'alvan/vim-closetag'
 
-"editor config
-Plug 'editorconfig/editorconfig-vim'
+  "git plugin
+  Plug 'tpope/vim-fugitive'
 
-"code autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-json', 'coc-eslint', 'coc-prettier']
+  "commentary
+  Plug 'tpope/vim-commentary'
 
-"auto close tags
-Plug 'alvan/vim-closetag'
-let g:closetag_filenames = '*.html,*.jsx,*.tsx'
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-
-"git plugin
-Plug 'tpope/vim-fugitive'
-
-"commentary
-Plug 'tpope/vim-commentary'
-
-"source tree
-Plug 'scrooloose/nerdtree'
-let g:NERDTreeMinimalUI=1 "disable display of ? text and bookmarks
-let g:NERDTreeQuitOnOpen = 1 "always close nerdtree when a file is opened
-let g:NERDTreeWinSize=50 "increasing window size
-let NERDTreeShowLineNumbers=1 "show line numbers on NERDTree
-autocmd FileType nerdtree setlocal relativenumber "the line numbers are relative
-let NERDTreeShowHidden=1 "show dotfiles
-
-"misc
-Plug 'wakatime/vim-wakatime'
-Plug 'mhinz/vim-startify'
-Plug 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+  "source tree
+  Plug 'scrooloose/nerdtree'
+    "misc
+  Plug 'wakatime/vim-wakatime'
+  Plug 'mhinz/vim-startify'
+  Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
