@@ -2,6 +2,7 @@
 cp ~/.config/nvim/*.vim ~/dotfiles/
 cp ~/.config/nvim/*.json ~/dotfiles/
 cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
+cp -r ~/.config/alacritty ~/dotfiles/.config/alacritty
 cp ~/.zshrc ~/dotfiles/
 cp -r /usr/share/plank/themes/Mancan ~/dotfiles/Plank/
 cp ~/.tmux.conf ~/dotfiles/
