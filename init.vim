@@ -3,19 +3,22 @@ call plug#begin('~/.vim/plugged')
 
   "theme
   Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'morhetz/gruvbox'
   Plug 'junegunn/rainbow_parentheses.vim'
 
-    "status bar
+  "status bar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'itchyny/vim-gitbranch'
 
-    "javascript, typescript and jsx syntax
+  "javascript, typescript, css and jsx syntax
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'ap/vim-css-color'
 
   "find files/text (both brew install fzf and ripgrep are required)
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

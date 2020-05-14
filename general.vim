@@ -8,6 +8,7 @@ set number                          "show line numbers
 set relativenumber                  "show relative numbers instead of absolute
 set cursorline                      "highlight current line
 set showcmd                         "show command in bottom bar
+set linespace=0
 set inccommand=split                "show a previous of the result of a command
 set showmatch                       "highlight matching [{()}]
 set incsearch                       "search as characters are entered
@@ -44,7 +45,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
 " airline
-let g:airline_theme = "dracula"
+let g:airline_theme = "gruvbox"
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1

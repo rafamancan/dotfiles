@@ -21,6 +21,20 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
+" NOTE: we need the coc-settings.json for the eslint autosave
+" NOTE: uses ultisnipets: snippets defined in the vim/UltiSnips folder, also
+" accesible via  :CocCommand snippets.editSnippets 
+
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ ]
+
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
