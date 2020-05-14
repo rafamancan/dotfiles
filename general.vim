@@ -8,6 +8,7 @@ set number                          "show line numbers
 set relativenumber                  "show relative numbers instead of absolute
 set cursorline                      "highlight current line
 set showcmd                         "show command in bottom bar
+set cmdheight=1                     "size of command bar
 set linespace=0
 set inccommand=split                "show a previous of the result of a command
 set showmatch                       "highlight matching [{()}]

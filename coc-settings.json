@@ -5,5 +5,6 @@
   "tsserver.enableJavascript": true,
   "tslint.autoFixOnSave": true,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "javascript.validate.enable": false
 }
