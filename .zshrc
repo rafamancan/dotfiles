@@ -69,6 +69,7 @@ alias app='cd ~/workspace/liuv/app'
 alias appe='cd ~/workspace/liuv/app-estabelecimento'
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'
+alias rag='cd && cd workspace/personal/ragmaniacos'
 # Dar push na branch atual
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
