@@ -17,7 +17,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 
 
-ZSH_THEME="dracula"
+# ZSH_THEME="dracula"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git 
   yarn
@@ -86,3 +87,6 @@ alias android='rm -Rf .android/avd/android.avd/*.lock && adb start-server && emu
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
