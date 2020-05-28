@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 
   "theme
   Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'morhetz/gruvbox'
   Plug 'junegunn/rainbow_parentheses.vim'
 
   "status bar

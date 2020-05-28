@@ -1,5 +1,5 @@
 "theme related
-colorscheme gruvbox
+colorscheme dracula
 set guifont=MesloLGS\ NF\:h14       "Meslo NerdFont font
 set background=dark                 "set dark mode
 set termguicolors                   "proper colors for the theme
