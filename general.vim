@@ -40,11 +40,6 @@ set listchars+=eol:↴           " │ represent invisible characters
 set listchars+=nbsp:_          " ┘
 
 
-" rainbow_parentheses
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-autocmd FileType * RainbowParentheses
-
 " airline
 let g:airline_theme = "dracula"
 let g:airline#extensions#ale#enabled = 1

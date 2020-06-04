@@ -5,6 +5,7 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$HOME/.symfony/bin:$PATH"
 export REACT_EDITOR=code
 
  # Android SDK / JAVA
@@ -22,8 +23,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git 
   yarn
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -51,19 +50,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/home/rmancan/.zfunctions")
 
 # personal use
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
-alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'
-alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
-alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'
-alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'
-alias bits='cd ~/workspace/17bits'
-alias api='cd ~/workspace/liuv/api'
-alias area='cd ~/workspace/liuv/area-estabelecimento'
-alias app='cd ~/workspace/liuv/app'
-alias appe='cd ~/workspace/liuv/app-estabelecimento'
-alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
-alias au='adb uninstall it.liuv.android.dev'
-alias rag='cd && cd workspace/personal/ragmaniacos'
+alias api='cd ~/workspace/gotchosen/influencers-API'
 # Dar push na branch atual
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
@@ -78,12 +65,10 @@ alias vim='nvim'
 alias v="nvim ."
 alias port='lsof -i'
 alias dps='docker ps'
-alias yc='yarn commit'
 alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias fix='sudo apt --fix-broken install && sudo apt update && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias cl='xclip -sel clip'
-alias android='rm -Rf .android/avd/android.avd/*.lock && adb start-server && emulator -avd android'
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
