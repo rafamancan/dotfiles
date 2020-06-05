@@ -50,7 +50,8 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/home/rmancan/.zfunctions")
 
 # personal use
-alias api='cd ~/workspace/gotchosen/influencers-API'
+alias got='cd ~/workspace/gotchosen/'
+alias liuv='cd ~/workspace/liuv/'
 # Dar push na branch atual
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
