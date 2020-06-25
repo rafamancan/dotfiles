@@ -1,12 +1,6 @@
 #!/bin/bash
-cp ~/.config/nvim/*.vim ~/dotfiles/
-cp ~/.config/nvim/*.json ~/dotfiles/
-cp -r ~/.config/kitty/*.conf ~/dotfiles/.config/kitty/
-cp -r ~/.config/alacritty ~/dotfiles/.config/alacritty
+cp -r ~/.config/terminator ~/dotfiles/.config/terminator
 cp ~/.zshrc ~/dotfiles/
-cp -r /usr/share/plank/themes/Mancan ~/dotfiles/Plank/
-cp ~/.tmux.conf ~/dotfiles/
-cp ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/custom_dir_filename.vim ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
 cd ~/dotfiles
 git add .
