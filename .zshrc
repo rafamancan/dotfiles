@@ -1,7 +1,7 @@
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/home/rmancan/.oh-my-zsh"
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
-export PATH="$(yarn global bin):$PATH"
+export PATH="/home/rmancan/.yarn/bin:$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.16.1-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
