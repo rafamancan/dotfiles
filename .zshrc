@@ -82,6 +82,7 @@ alias ys='yarn start'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias fix='sudo apt update && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias cl='xclip -sel clip'
+alias cc='dphp artisan config:clear'
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
