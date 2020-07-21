@@ -64,6 +64,7 @@ alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 alias au='adb uninstall it.liuv.android.dev'	
 alias rag='cd && cd workspace/personal/ragmaniacos'
 alias liuv='cd ~/workspace/liuv/'
+
 # Dar push na branch atual
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
@@ -72,10 +73,15 @@ function push () {
 function pull () {
   git pull origin $(git branch | grep \* | sed 's/\*\s//')
 }
+# Atualizar branchs
+function fet () {
+  git fetch -u -p
+}
 
 # common use
 alias vim='nvim'
 alias v="nvim ."
+alias c="code ."
 alias port='lsof -i'
 alias dps='docker ps'
 alias ys='yarn start'
