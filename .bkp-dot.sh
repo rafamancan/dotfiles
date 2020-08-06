@@ -1,7 +1,7 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
 cp ~/.bkp-dot.sh ~/dotfiles/
-cp -r ~/.config/kitty ~/.config/
+cp -r ~/.config/kitty/* ~/.config/kitty/
 cd ~/dotfiles
 git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
