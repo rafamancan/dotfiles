@@ -1,10 +1,11 @@
-# My personal dotfiles for zsh, plank, vim, tmux, alacritty and kitty
+# My personal dotfiles for zsh, plank, neovim and hyper
 
-vim settings based on (with some customization by me):
+neovim settings based on (with some customization by me):
 
 - https://github.com/Jimeno0/dotfiles
 - https://github.com/matheusml/dotfiles
 - https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc
+- https://github.com/ChristianChiarulli
 
 # Neovim Plugins
 
@@ -15,4 +16,4 @@ vim settings based on (with some customization by me):
 
 # Themes
 
-- Mostly themes by Gruvbox
+- Mostly themes by night-owl
