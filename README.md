@@ -1,4 +1,4 @@
-# My personal dotfiles for zsh, plank, neovim and hyper
+# My personal dotfiles for zsh, neovim and hyper
 
 neovim settings based on (with some customization by me):
 
@@ -16,4 +16,4 @@ neovim settings based on (with some customization by me):
 
 # Themes
 
-- Mostly themes by night-owl
+- Mostly themes by ayu
