@@ -80,7 +80,7 @@ function fet () {
 
 # common use
 alias vim='nvim'
-alias v="nvim ."
+alias v="vim"
 alias c="code ."
 alias port='lsof -i'
 alias dps='docker ps'
