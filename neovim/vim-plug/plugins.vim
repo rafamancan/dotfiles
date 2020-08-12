@@ -58,8 +58,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'liuchengxu/vim-which-key'
     " quickscope
     Plug 'unblevable/quick-scope'
-    " ctrlp
-    Plug 'kien/ctrlp.vim'
     " wakatime
     Plug 'wakatime/vim-wakatime'
 call plug#end()

@@ -80,6 +80,8 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+" files search
+nnoremap <C-p> :GFiles<CR>
 
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
