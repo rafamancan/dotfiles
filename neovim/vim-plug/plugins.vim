@@ -37,6 +37,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " php
     Plug 'phpactor/phpactor'
     Plug 'stephpy/vim-php-cs-fixer'
+    Plug 'StanAngeloff/php.vim'
     " commentary
     Plug 'tpope/vim-commentary'
     "source tree
