@@ -34,6 +34,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'hail2u/vim-css3-syntax'
     Plug 'ap/vim-css-color'
+    " php
+    Plug 'phpactor/phpactor'
+    Plug 'stephpy/vim-php-cs-fixer'
     " commentary
     Plug 'tpope/vim-commentary'
     "source tree

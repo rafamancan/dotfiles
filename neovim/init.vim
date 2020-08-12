@@ -1,6 +1,8 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
+source $HOME/.config/nvim/plug-config/phpactor.vim
+source $HOME/.config/nvim/plug-config/php-cs-fixer.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/floating.vim
 source $HOME/.config/nvim/keys/mappings.vim

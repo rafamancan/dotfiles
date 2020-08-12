@@ -32,5 +32,16 @@
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
+  },
+
+  "phpactor.enable": true,
+  "phpactor.path": "/usr/local/bin/phpactor",
+  "languageserver": {
+    "phpactor": {
+      "command": "phpactor",
+      "args": ["language-server"],
+      "trace.server": "verbose",
+      "filetypes": ["php"]
+    }
   }
 }
