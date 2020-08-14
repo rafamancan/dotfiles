@@ -17,8 +17,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 
-
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git 
   yarn
@@ -93,26 +92,5 @@ alias cc='dphp artisan config:clear'
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#
-# SPACESHIP CONFIGS
-#
-
-SPACESHIP_PROMPT_ORDER=(
-  time
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SUFFIX= 
-
-eval "$(starship init zsh)"
-### End of Zinit's installer chunk
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

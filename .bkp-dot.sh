@@ -1,6 +1,6 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
-cp ~/.hyper.js ~/dotfiles/
+cp -r ~/.config/terminator ~/dotfiles/terminator
 
 cp -r ~/.config/nvim/general ~/dotfiles/neovim/
 cp -r ~/.config/nvim/keys ~/dotfiles/neovim/
