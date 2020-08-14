@@ -1,4 +1,4 @@
-# My personal dotfiles for zsh, neovim and hyper
+# My personal dotfiles for zsh, neovim and terminator
 
 neovim settings based on (with some customization by me):
 
@@ -13,7 +13,8 @@ neovim settings based on (with some customization by me):
 - React
 - Css
 - Git
+- PHP
 
 # Themes
 
-- Mostly themes by ayu
+- Mostly themes by dracula
