@@ -1,6 +1,6 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
-cp -r ~/.config/terminator ~/dotfiles/terminator
+cp ~/.config/terminator/config ~/dotfiles/terminator/config
 
 cp -r ~/.config/nvim/general ~/dotfiles/neovim/
 cp -r ~/.config/nvim/keys ~/dotfiles/neovim/
