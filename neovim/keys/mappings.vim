@@ -83,6 +83,10 @@ vnoremap > >gv
 " files search
 nnoremap <C-p> :GFiles<CR>
 
+" format with prettier
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!

@@ -1,7 +1,8 @@
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-eslint', 'coc-styled-components', 'coc-explorer', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-eslint', 'coc-styled-components', 'coc-explorer', 'coc-tabnine', 'coc-prettier']
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " TextEdit might fail if hidden is not set.
 set hidden

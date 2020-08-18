@@ -60,5 +60,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
     " wakatime
     Plug 'wakatime/vim-wakatime'
+    " multiplecursors
+    Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
