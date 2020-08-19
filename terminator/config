@@ -9,6 +9,8 @@
   title_receive_bg_color = "#282a36"
   title_inactive_fg_color = "#f8f8f2"
   title_inactive_bg_color = "#282a36"
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
 [keybindings]
 [profiles]
   [[default]]
@@ -16,7 +18,7 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#bbbbbb"
-    font = Hack 11
+    font = Victor Mono Semi-Bold 11
     foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -31,12 +33,26 @@
     foreground_color = "#f8f8f2"
     palette = "#44475a:#ff5555:#50fa7b:#ffb86c:#3465a4:#ff79c6:#f1fa8c:#44475a:#44475a:#ff5555:#50fa7b:#ffb86c:#729fcf:#ad7fa8:#f1fa8c:#44475a"
     copy_on_selection = True
+  [[Horizon]]
+    background_color = "#1c1e26"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#e95379"
+    font = Victor Mono Semi-Bold 11
+    foreground_color = "#bbbbbb"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#e9436f:#f9cbbe:#ffaf87:#27d796:#6c6f93:#fdf0ed:#fadad1:#b877db:#e95379:#fadad1:#fac29a:#09f7a0:#6c6f8a:#ffffff:#eddad1:#b88adb"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = default
+      profile = Horizon
       command = ""
     [[[window0]]]
       type = Window
