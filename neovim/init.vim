@@ -7,7 +7,7 @@ source $HOME/.config/nvim/plug-config/multiple-cursors.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/floating.vim
 source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/themes/horizon.vim
+source $HOME/.config/nvim/themes/material.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/signify.vim

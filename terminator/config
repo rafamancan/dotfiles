@@ -49,12 +49,139 @@
     login_shell = True
     use_system_font = False
     copy_on_selection = True
+  [[Bloody]]
+    background_color = "#1e1f29"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#f9dc5c"
+    font = JetBrains Mono NL 11
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#2e3436:#ff512f:#b2ffa9:#fffd82:#3185fc:#dd2476:#66d7d1:#f2efea:#555753:#ff512f:#b2ffa9:#fffd82:#3185fc:#dd2476:#66d7d1:#f2efea"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Bright Lights]]
+    background_color = "#191919"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#f34b00"
+    font = JetBrains Mono NL 11
+    foreground_color = "#b3c9d7"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#191919:#ff355b:#b7e876:#ffc251:#76d4ff:#ba76e7:#6cbfb5:#c2c8d7:#191919:#ff355b:#b7e876:#ffc251:#76d5ff:#ba76e7:#6cbfb5:#c2c8d7"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Dracula]]
+    background_color = "#1e1f29"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#aaaaaa"
+    font = JetBrains Mono NL 11
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Duotone Dark]]
+    background_color = "#1f1d27"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#ff9839"
+    font = JetBrains Mono NL 11
+    foreground_color = "#b7a1ff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#1f1d27:#d9393e:#2dcd73:#d9b76e:#ffc284:#de8d40:#2488ff:#b7a1ff:#353147:#d9393e:#2dcd73:#d9b76e:#ffc284:#de8d40:#2488ff:#eae5ff"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Firewatch]]
+    background_color = "#1e2027"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#f6f7ec"
+    font = JetBrains Mono NL 11
+    foreground_color = "#9ba2b2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#585f6d:#d95360:#5ab977:#dfb563:#4d89c4:#d55119:#44a8b6:#e6e5ff:#585f6d:#d95360:#5ab977:#dfb563:#4c89c5:#d55119:#44a8b6:#e6e5ff"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Hybrid]]
+    background_color = "#161719"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#b7bcba"
+    font = JetBrains Mono NL 11
+    foreground_color = "#b7bcba"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#2a2e33:#b84d51:#b3bf5a:#e4b55e:#6e90b0:#a17eac:#7fbfb4:#b5b9b6:#1d1f22:#8d2e32:#798431:#e58a50:#4b6b88:#6e5079:#4d7b74:#5a626a"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Material-Ocean]]
+    background_color = "#0f111a"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    font = JetBrains Mono NL 11
+    foreground_color = "#8f93a2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[Material-Palenight]]
+    background_color = "#292d3e"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    font = JetBrains Mono NL 11
+    foreground_color = "#a6accd"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[MaterialDark]]
+    background_color = "#232322"
+    cursor_blink = False
+    cursor_shape = underline
+    cursor_color = "#16afca"
+    font = JetBrains Mono NL 11
+    foreground_color = "#e5e5e5"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#212121:#b7141f:#457b24:#f6981e:#134eb2:#560088:#0e717c:#efefef:#424242:#e83b3f:#7aba3a:#ffea2e:#54a4f3:#aa4dbc:#26bbd1:#d9d9d9"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = Horizon
+      profile = Material-Ocean
       command = ""
     [[[window0]]]
       type = Window

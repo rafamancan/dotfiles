@@ -10,11 +10,12 @@ neovim settings based on (with some customization by me):
 # Neovim Plugins
 
 - Javascript
+- Typescript
+- PHP
 - React
 - Css
 - Git
-- PHP
 
 # Themes
 
-- Mostly themes by dracula
+- Mostly themes by material
