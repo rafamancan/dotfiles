@@ -138,7 +138,7 @@
     cursor_shape = underline
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = JetBrains Mono NL 11
+    font = JetBrains Mono NL 13
     foreground_color = "#8f93a2"
     show_titlebar = False
     scrollbar_position = hidden
