@@ -18,7 +18,7 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#bbbbbb"
-    font = Victor Mono Semi-Bold 11
+    font = JetBrains Mono NL 11
     foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -30,15 +30,17 @@
   [[terminator_default]]
     background_color = "#282a36"
     cursor_color = "#f8f8f2"
+    font = JetBrains Mono NL 10
     foreground_color = "#f8f8f2"
     palette = "#44475a:#ff5555:#50fa7b:#ffb86c:#3465a4:#ff79c6:#f1fa8c:#44475a:#44475a:#ff5555:#50fa7b:#ffb86c:#729fcf:#ad7fa8:#f1fa8c:#44475a"
+    use_system_font = False
     copy_on_selection = True
   [[Horizon]]
     background_color = "#1c1e26"
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#e95379"
-    font = Victor Mono Semi-Bold 11
+    font = JetBrains Mono NL 11
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
