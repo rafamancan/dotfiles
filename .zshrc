@@ -48,7 +48,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/home/rmancan/.zfunctions")
 
 # personal use
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'	alias api='cd ~/workspace/gotchosen/influencers-API'
+alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'	
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'	
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
