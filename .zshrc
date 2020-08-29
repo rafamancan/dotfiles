@@ -18,6 +18,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 
 ZSH_THEME="spaceship"
+
 plugins=(
   git 
   yarn
@@ -91,5 +92,3 @@ alias cc='dphp artisan config:clear'
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(starship init zsh)"
