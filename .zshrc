@@ -60,9 +60,9 @@ alias area='cd ~/workspace/liuv/area-estabelecimento'
 alias car='cd ~/workspace/liuv/cardapio-digital'	
 alias app='cd ~/workspace/liuv/app'	
 alias appe='cd ~/workspace/liuv/app-estabelecimento'	
+alias por='cd ~/workspace/liuv/app-estabelecimento'	
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'	
 alias au='adb uninstall it.liuv.android.dev'	
-alias rag='cd && cd workspace/personal/ragmaniacos'
 alias liuv='cd ~/workspace/liuv/'
 
 # Dar push na branch atual
