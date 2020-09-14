@@ -24,7 +24,6 @@
   "eslint.autoFixOnSave": true,
 
   "javascript.validate.enable": false,
-  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
 
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
@@ -34,8 +33,6 @@
     "v": "open:vsplit"
   },
 
-  "phpactor.enable": true,
-  "phpactor.path": "/usr/local/bin/phpactor",
   "languageserver": {
     "phpactor": {
       "command": "phpactor",

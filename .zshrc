@@ -1,14 +1,13 @@
-ZSH_DISABLE_COMPFIX=true
+# PATHS
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/home/rmancan/.oh-my-zsh"
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
 export PATH="/home/rmancan/.yarn/bin:$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="$HOME/.symfony/bin:$PATH"
-export REACT_EDITOR=code
 
- # Android SDK / JAVA
+# Android SDK / JAVA
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -17,14 +16,19 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 
-ZSH_THEME="spaceship"
+# THEME
+ZSH_THEME="robbyrussell"
 
+# PLUGINS
 plugins=(
-  git 
-  yarn
+    git
+    yarn
 )
 
+# OH-MY-ZSH PATH
 source $ZSH/oh-my-zsh.sh
+
+# ZPLUGINS
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
@@ -48,47 +52,57 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 fpath=($fpath "/home/rmancan/.zfunctions")
 
-# personal use
+
+# PERSONAL ALIASES
+# DOCKER
+alias cc='dphp artisan config:clear'
 alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'	
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'	
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'	
-alias bits='cd ~/workspace/17bits'	
-alias api='cd ~/workspace/liuv/api'	
-alias area='cd ~/workspace/liuv/area-estabelecimento'	
-alias car='cd ~/workspace/liuv/cardapio-digital'	
-alias app='cd ~/workspace/liuv/app'	
-alias appe='cd ~/workspace/liuv/app-estabelecimento'	
-alias por='cd ~/workspace/liuv/portal-restaurante'	
-alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'	
-alias au='adb uninstall it.liuv.android.dev'	
+alias dps='docker ps'
+
+# FOLDERS
+alias api='cd ~/workspace/liuv/api'
+alias area='cd ~/workspace/liuv/area-estabelecimento'
+alias car='cd ~/workspace/liuv/cardapio-digital'
+alias app='cd ~/workspace/liuv/app'
+alias appe='cd ~/workspace/liuv/app-estabelecimento'
+alias por='cd ~/workspace/liuv/portal-restaurante'
 alias liuv='cd ~/workspace/liuv/'
 
-# Dar push na branch atual
+# ANDROID DEVELOPMENT UTILS
+alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
+alias au='adb uninstall it.liuv.android.dev'
+
+# JS and TS DEVELOPMENT UTILS
+alias ys='yarn start'
+alias vim='nvim'
+alias v="vim"
+alias c="code ."
+
+# SYSTEM UTILS
+alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+alias cl='xclip -sel clip'
+alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
+alias port='lsof -i'
+
+# PERSONAL FUNCTIONS
+# push actual branch
 function push () {
   git push origin $(git branch | grep \* | sed 's/\*\s//')
 }
-# Dar pull na branch atual
+# pull actual branch
 function pull () {
   git pull origin $(git branch | grep \* | sed 's/\*\s//')
 }
-# Atualizar branchs
+# updating branch
 function fet () {
   git fetch -u -p
 }
 
-# common use
-alias vim='nvim'
-alias v="vim"
-alias c="code ."
-alias port='lsof -i'
-alias dps='docker ps'
-alias ys='yarn start'
-alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
-alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
-alias cl='xclip -sel clip'
-alias cc='dphp artisan config:clear'
+# STARSHIP AS DEFAULT
+eval "$(starship init zsh)"
 
-fpath=($fpath "/home/rmancan/.zfunctions")
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
