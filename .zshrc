@@ -87,6 +87,10 @@ alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
 alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias port='lsof -i'
+alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
+echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
+'
 
 # PERSONAL FUNCTIONS
 # push actual branch
