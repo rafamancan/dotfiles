@@ -41,9 +41,9 @@ nnoremap <Leader>O O<Esc>^Da
 
 
 "open source tree
-nnoremap <silent> <A-2> :NERDTreeToggle<CR>
-"open source tree on current file 
-nnoremap <silent> <A-1> :NERDTreeFind<CR>
+nnoremap <silent> <leader>e :NERDTreeToggle<CR>
+"open source tree on current file
+nnoremap <silent> <leader>1 :NERDTreeFind<CR>
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
 

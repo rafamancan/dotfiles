@@ -157,7 +157,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR> 
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:coc_explorer_global_presets = {
 \   'floating': {
 \     'position': 'floating',
@@ -165,6 +165,5 @@ let g:coc_explorer_global_presets = {
 \   },
 \ }
 " Explorer
-nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

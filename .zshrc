@@ -1,15 +1,15 @@
 # PATHS
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="/home/rmancan/.oh-my-zsh"
+export PATH="/usr/local/bin:/usr/bin:$PATH"
+export ZSH="/Users/rmancan/.oh-my-zsh"
 export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
-export PATH="/home/rmancan/.yarn/bin:$PATH"
-export PATH="/home/rmancan/.local/bin:$PATH"
+export PATH="/Users/rmancan/.yarn/bin:$PATH"
+export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/usr/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Android SDK / JAVA
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export ANDROID_HOME=~/Android/Sdk
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
+export ANDROID_HOME=/Users/rmancan/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -50,7 +50,7 @@ zplugin light buonomo/yarn-completion
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-fpath=($fpath "/home/rmancan/.zfunctions")
+fpath=($fpath "/Users/rmancan/.zfunctions")
 
 
 # PERSONAL ALIASES
@@ -70,7 +70,9 @@ alias car='cd ~/workspace/liuv/cardapio-digital'
 alias app='cd ~/workspace/liuv/app'
 alias appe='cd ~/workspace/liuv/app-estabelecimento'
 alias por='cd ~/workspace/liuv/portal-restaurante'
+alias con='cd ~/workspace/liuv/connector'
 alias liuv='cd ~/workspace/liuv/'
+alias per='cd ~/workspace/personal/'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
@@ -78,28 +80,31 @@ alias au='adb uninstall it.liuv.android.dev'
 
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
+alias yd='yarn dev'
 alias vim='nvim'
 alias v="vim"
-alias c="code ."
 
 # SYSTEM UTILS
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+alias c="code ."
 alias cl='xclip -sel clip'
+alias ls="exa --icons"
 alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias port='lsof -i'
 alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
+alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
 
 # PERSONAL FUNCTIONS
 # push actual branch
 function push () {
-  git push origin $(git branch | grep \* | sed 's/\*\s//')
+  git push origin $(git branch --show-current)
 }
 # pull actual branch
 function pull () {
-  git pull origin $(git branch | grep \* | sed 's/\*\s//')
+  git pull origin $(git branch --show-current)
 }
 # updating branch
 function fet () {
