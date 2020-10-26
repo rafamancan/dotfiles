@@ -1,20 +1,24 @@
 # PATHS
-export PATH="/usr/local/bin:/usr/bin:$PATH"
-export ZSH="/Users/rmancan/.oh-my-zsh"
-export WORKSPACE_INSTALL_POWERLINE="/usr/local/bin/powerline/powerline/bindings/bash/powerline.sh"
-export PATH="/Users/rmancan/.yarn/bin:$PATH"
-export PATH="/Users/rmancan/.local/bin:$PATH"
-export PATH="/usr/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="/home/local/bin:/home/bin:$PATH"
+export ZSH="/home/rmancan/.oh-my-zsh"
+export WORKSPACE_INSTALL_POWERLINE="/home/local/bin/powerline/powerline/bindings/bash/powerline.sh"
+export PATH="/home/rmancan/.yarn/bin:$PATH"
+export PATH="/home/rmancan/.local/bin:$PATH"
+export PATH="/home/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 # Android SDK / JAVA
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
-export ANDROID_HOME=/Users/rmancan/Android/Sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export ANDROID_HOME=/home/rmancan/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
+
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # THEME
 ZSH_THEME="robbyrussell"
@@ -50,7 +54,7 @@ zplugin light buonomo/yarn-completion
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-fpath=($fpath "/Users/rmancan/.zfunctions")
+fpath=($fpath "/home/rmancan/.zfunctions")
 
 
 # PERSONAL ALIASES
@@ -62,6 +66,7 @@ alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'	
 alias dps='docker ps'
+alias vf='cd ~/.config/nvim && v'
 
 # FOLDERS
 alias api='cd ~/workspace/liuv/api'

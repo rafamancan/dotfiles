@@ -62,6 +62,7 @@ function! ToggleRelativeLineNumbers()
 endfunction
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
+nmap <leader>do :call pdv#DocumentWithSnip()<CR>
 
 "" Buffer nav
 noremap <leader>z :bp<CR>

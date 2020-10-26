@@ -75,3 +75,6 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-t> :call OpenTerminal()<CR>
+
+command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
+map <c-s> <esc>:w<cr>:Silent php-cs-fixer fix %:p --level=psr2<cr>
