@@ -1,6 +1,7 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
 
+cp -r ~/.config/kitty ~/dotfiles/
 cp -r ~/.config/nvim/general ~/dotfiles/neovim/
 cp -r ~/.config/nvim/keys ~/dotfiles/neovim/
 cp -r ~/.config/nvim/lua ~/dotfiles/neovim/
@@ -9,7 +10,6 @@ cp -r ~/.config/nvim/themes ~/dotfiles/neovim/
 cp -r ~/.config/nvim/vim-plug ~/dotfiles/neovim/
 cp ~/.config/nvim/init.vim ~/dotfiles/neovim/init.vim
 cp ~/.config/nvim/coc-settings.json ~/dotfiles/neovim/coc-settings.json
-cp ~/.config/kitty ~/dotfiles/
 
 cp ~/.bkp-dot.sh ~/dotfiles/
 
