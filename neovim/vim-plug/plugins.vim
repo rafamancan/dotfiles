@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'honza/vim-snippets'
     " themes
     Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
@@ -70,4 +71,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'wakatime/vim-wakatime'
     " multiplecursors
     Plug 'terryma/vim-multiple-cursors'
+    " easymotion
+    Plug 'easymotion/vim-easymotion'
 call plug#end()

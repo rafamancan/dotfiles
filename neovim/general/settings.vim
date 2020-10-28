@@ -44,7 +44,7 @@ cmap w!! w !sudo tee %
 set list
 set listchars=tab:▸\           " ┐
 set listchars+=trail:·         " │ Use custom symbols to
-set listchars+=eol:↴           " │ represent invisible characters
+" set listchars+=eol:↴           " │ represent invisible characters
 set listchars+=nbsp:_          " ┘
 
 if (empty($TMUX))
