@@ -1,4 +1,4 @@
-# My personal dotfiles for zsh, neovim and terminator
+# My personal dotfiles for zsh, neovim and kitty
 
 neovim settings based on (with some customization by me):
 
