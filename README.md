@@ -18,4 +18,4 @@ neovim settings based on (with some customization by me):
 
 # Themes
 
-- Mostly themes by Dracula Theme
+- Mostly themes by [Nightfly](https://github.com/bluz71/vim-nightfly-guicolors)
