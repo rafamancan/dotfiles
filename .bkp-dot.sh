@@ -9,6 +9,7 @@ cp -r ~/.config/nvim/themes ~/dotfiles/neovim/
 cp -r ~/.config/nvim/vim-plug ~/dotfiles/neovim/
 cp ~/.config/nvim/init.vim ~/dotfiles/neovim/init.vim
 cp ~/.config/nvim/coc-settings.json ~/dotfiles/neovim/coc-settings.json
+cp ~/.config/kitty ~/dotfiles/
 
 cp ~/.bkp-dot.sh ~/dotfiles/
 
