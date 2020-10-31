@@ -17,11 +17,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
 
 # nvm
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # THEME
 ZSH_THEME="robbyrussell"
@@ -31,6 +28,8 @@ plugins=(
     git
     yarn
 )
+#SETUP
+ZSH_DISABLE_COMPFIX=true
 
 # OH-MY-ZSH PATH
 source $ZSH/oh-my-zsh.sh
@@ -63,7 +62,7 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 # PERSONAL ALIASES
 # DOCKER
 alias cc='dphp artisan config:clear'
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql mongo && cd -'
+alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'	
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'	
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
