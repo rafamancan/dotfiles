@@ -5,11 +5,9 @@
     "javascript",
     "typescript",
     "typescriptreact",
-    "graphql",
     "html",
     "yaml",
-    "json",
-    "python"
+    "json"
   ],
   "coc.preferences.colorSupport": true,
   "prettier.eslintIntegration": false,

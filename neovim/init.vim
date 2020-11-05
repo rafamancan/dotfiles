@@ -13,7 +13,5 @@ source $HOME/.config/nvim/themes/nightfly.vim
 " source $HOME/.config/nvim/themes/dracula.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
-source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/keys/which-key.vim
-source $HOME/.config/nvim/plug-config/quickscope.vim
 lua require 'plug-colorizer'

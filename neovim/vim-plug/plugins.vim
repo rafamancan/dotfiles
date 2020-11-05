@@ -12,8 +12,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
     " File Explorer
     Plug 'preservim/nerdtree'
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -58,19 +56,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'editorconfig/editorconfig-vim'
     " startify
     Plug 'mhinz/vim-startify'
-    " git
-    Plug 'mhinz/vim-signify'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
-    Plug 'junegunn/gv.vim'
     " which key
     Plug 'liuchengxu/vim-which-key'
-    " quickscope
-    Plug 'unblevable/quick-scope'
     " wakatime
     Plug 'wakatime/vim-wakatime'
-    " multiplecursors
-    Plug 'terryma/vim-multiple-cursors'
     " easymotion
     Plug 'easymotion/vim-easymotion'
 call plug#end()
