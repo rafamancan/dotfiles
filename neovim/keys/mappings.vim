@@ -1,6 +1,6 @@
 " Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+inoremap <expr> \<TAB> ("\<TAB>")
+inoremap <expr> <S-TAB> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -12,19 +12,10 @@ nnoremap <M-l>    :vertical resize +2<CR>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" TAB in general mode will move to text buffer
-nnoremap <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <S-TAB> :bprevious<CR>
-
 " Alternate way to save
 nnoremap <C-s> :w<CR>
-" Alternate way to quit
-nnoremap <C-Q> :wq!<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Better tabbing
 vnoremap < <gv
@@ -41,9 +32,7 @@ nnoremap <Leader>O O<Esc>^Da
 
 
 "open source tree
-nnoremap <silent> <leader>e :NERDTreeToggle<CR>
-"open source tree on current file
-nnoremap <silent> <leader>1 :NERDTreeFind<CR>
+nnoremap <silent> <leader>e :CocCommand explorer<CR>
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
 

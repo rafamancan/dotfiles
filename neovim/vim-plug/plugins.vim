@@ -10,20 +10,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " File Explorer
-    Plug 'preservim/nerdtree'
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    " snippets
-    Plug 'SirVer/ultisnips'
-    " Snippets are separated from the engine. Add this if you want them:
-    Plug 'honza/vim-snippets'
     " themes
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'bluz71/vim-nightfly-guicolors'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'junegunn/rainbow_parentheses.vim'
     Plug 'ryanoasis/vim-devicons'
@@ -35,8 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'pangloss/vim-javascript'
     Plug 'mxw/vim-jsx'
     Plug 'peitalin/vim-jsx-typescript'
-    Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'hail2u/vim-css3-syntax'
     Plug 'ap/vim-css-color'
     " php
     Plug 'stephpy/vim-php-cs-fixer'
@@ -49,9 +39,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     "source tree
     Plug 'scrooloose/nerdtree'
-    "find files/text (both brew install fzf and ripgrep are required)
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
     "editor config
     Plug 'editorconfig/editorconfig-vim'
     " startify
