@@ -2,20 +2,20 @@
 
 neovim settings based on (with some customization by me):
 
-- https://github.com/Jimeno0/dotfiles
-- https://github.com/matheusml/dotfiles
-- https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc
-- https://github.com/ChristianChiarulli
+- [Jimeno0](https://github.com/Jimeno0/dotfiles)
+- [matheusml](https://github.com/matheusml/dotfiles)
+- [Fernando Daciuk](https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc)
+- [ChristianChiarulli](https://github.com/ChristianChiarulli)
+- [ThePrimeagen](https://github.com/ThePrimeagen)
 
-# Neovim Plugins
+# Neovim Plugins for:
 
 - Javascript
 - Typescript
 - PHP
 - React
-- Css
 - Git
 
 # Themes
 
-- Mostly themes by [Nightfly](https://github.com/bluz71/vim-nightfly-guicolors)
+- Mostly themes by [Gruvbox](https://github.com/gruvbox-community/gruvbox)
