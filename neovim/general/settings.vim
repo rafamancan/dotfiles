@@ -44,7 +44,7 @@ cmap w!! w !sudo tee %
 set list
 set listchars=tab:▸\           " ┐
 set listchars+=trail:·         " │ Use custom symbols to
-" set listchars+=eol:↴           " │ represent invisible characters
+set listchars+=eol:↴           " │ represent invisible characters
 set listchars+=nbsp:_          " ┘
 
 if (empty($TMUX))
@@ -77,4 +77,6 @@ endfunction
 nnoremap <c-t> :call OpenTerminal()<CR>
 
 command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
-map <c-s> <esc>:w<cr>:Silent php-cs-fixer fix %:p --level=psr2<cr>
+
+" source neovim config
+nnoremap <silent> <leader><leader> :source $MYVIMRC<CR>
