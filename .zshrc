@@ -106,6 +106,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
 alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # PERSONAL FUNCTIONS
 # push actual branch
@@ -121,7 +122,12 @@ function fet () {
   git fetch -u -p
 }
 
+function tags () {
+  ctags -R --exclude=.git --exclude=node_modules
+}
+
 # STARSHIP AS DEFAULT
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -9,7 +9,7 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/floating.vim
 source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/dracula.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/keys/which-key.vim
