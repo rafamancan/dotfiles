@@ -15,6 +15,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Variables
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
@@ -107,6 +109,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
 alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
 alias ctags="`brew --prefix`/bin/ctags"
+alias python='/usr/local/bin/python3.7'
 
 # PERSONAL FUNCTIONS
 # push actual branch

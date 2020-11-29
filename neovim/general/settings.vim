@@ -80,3 +80,4 @@ command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
 
 " source neovim config
 nnoremap <silent> <leader><leader> :source $MYVIMRC<CR>
+" let g:python3_host_prog = expand("/Users/rmancan/Library/Python/2.7/lib/python/site-packages")
