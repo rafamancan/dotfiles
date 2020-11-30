@@ -1,4 +1,4 @@
-# My personal dotfiles for zsh, neovim and kitty
+# My personal dotfiles for zsh, neovim and iterm2
 
 neovim settings based on (with some customization by me):
 
@@ -15,7 +15,3 @@ neovim settings based on (with some customization by me):
 - PHP
 - React
 - Git
-
-# Themes
-
-- Mostly themes by [Gruvbox](https://github.com/gruvbox-community/gruvbox)
