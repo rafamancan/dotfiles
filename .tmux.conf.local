@@ -373,5 +373,5 @@ tmux_conf_copy_to_os_clipboard=false
 # # /!\ do not remove the previous line
 
 set -g mouse on
-bind h split-window -v
-bind v split-window -h
+bind o split-window -v
+bind e split-window -h

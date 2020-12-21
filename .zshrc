@@ -80,7 +80,6 @@ alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'
 alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'	
 alias dps='docker ps'
-alias vf='cd ~/.config/nvim && v'
 
 # FOLDERS
 alias api='cd ~/workspace/liuv/api'
@@ -92,6 +91,7 @@ alias por='cd ~/workspace/liuv/portal-restaurante'
 alias con='cd ~/workspace/liuv/connector'
 alias liuv='cd ~/workspace/liuv/'
 alias per='cd ~/workspace/personal/'
+alias vf='cd ~/.config/nvim && v'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
@@ -100,12 +100,13 @@ alias au='adb uninstall it.liuv.android.dev'
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
 alias yd='yarn dev'
-alias vim='nvim'
-alias v="vim"
+alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
 
 # SYSTEM UTILS
-alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+alias v="vim"
+alias vim='nvim'
 alias c="code ."
+alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
 alias ls="exa --icons"
 alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
@@ -114,7 +115,6 @@ alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
-alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
 alias ctags="`brew --prefix`/bin/ctags"
 alias python='/usr/local/bin/python3.7'
 
