@@ -1,6 +1,6 @@
-# My personal dotfiles for zsh, neovim and iterm2
+# My personal dotfiles for zsh, neovim, iterm2 and kitty
 
-neovim settings based on (with some customization by me):
+# Neovim settings based on (with some customization by me):
 
 - [Jimeno0](https://github.com/Jimeno0/dotfiles)
 - [matheusml](https://github.com/matheusml/dotfiles)
@@ -8,7 +8,7 @@ neovim settings based on (with some customization by me):
 - [ChristianChiarulli](https://github.com/ChristianChiarulli)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 
-# Neovim Plugins for:
+# Neovim plugins for:
 
 - Javascript
 - Typescript
