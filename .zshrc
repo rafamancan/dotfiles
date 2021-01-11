@@ -88,6 +88,7 @@ alias car='cd ~/workspace/liuv/cardapio-digital'
 alias app='cd ~/workspace/liuv/app'
 alias appe='cd ~/workspace/liuv/app-estabelecimento'
 alias por='cd ~/workspace/liuv/portal-restaurante'
+alias npor='cd ~/workspace/liuv/portal-restaurante-new'
 alias con='cd ~/workspace/liuv/connector'
 alias liuv='cd ~/workspace/liuv/'
 alias per='cd ~/workspace/personal/'
@@ -101,6 +102,7 @@ alias au='adb uninstall it.liuv.android.dev'
 alias ys='yarn start'
 alias yd='yarn dev'
 alias yrm='rm -Rf node_modules/ yarn.lock && yarn install'
+alias yst='yarn storybook'
 
 # SYSTEM UTILS
 alias v="vim"
