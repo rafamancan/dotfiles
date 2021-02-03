@@ -3,4 +3,5 @@ if (has("termguicolors"))
 endif
 
 syntax enable
+set background=dark
 colorscheme night-owl
