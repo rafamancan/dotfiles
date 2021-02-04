@@ -84,6 +84,7 @@ alias dps='docker ps'
 # FOLDERS
 alias api='cd ~/workspace/liuv/api'
 alias area='cd ~/workspace/liuv/area-estabelecimento'
+alias site='cd ~/workspace/liuv/site'
 alias car='cd ~/workspace/liuv/cardapio-digital'
 alias app='cd ~/workspace/liuv/app'
 alias appe='cd ~/workspace/liuv/app-estabelecimento'
