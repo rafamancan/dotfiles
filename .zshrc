@@ -4,6 +4,8 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+export NODE_OPTIONS=--max_old_space_size=4096
+
 
 # PATHS
 export PATH="/Users/local/bin:/Users/bin:$PATH"
@@ -13,7 +15,6 @@ export PATH="/Users/rmancan/.yarn/bin:$PATH"
 export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
 # Android SDK / JAVA
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export ANDROID_HOME=/Users/rmancan/Android/Sdk
@@ -22,18 +23,14 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/android-studio/bin
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Variables
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
 
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # THEME
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 
 # PLUGINS
 plugins=(
@@ -90,6 +87,7 @@ alias app='cd ~/workspace/liuv/app'
 alias appe='cd ~/workspace/liuv/app-estabelecimento'
 alias por='cd ~/workspace/liuv/portal-restaurante'
 alias npor='cd ~/workspace/liuv/portal-restaurante-new'
+alias lpb='cd ~/workspace/liuv/lpb'
 alias con='cd ~/workspace/liuv/connector'
 alias liuv='cd ~/workspace/liuv/'
 alias per='cd ~/workspace/personal/'
@@ -140,14 +138,6 @@ function tags () {
 }
 
 # STARSHIP AS DEFAULT
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-. /usr/local/opt/asdf/asdf.sh
