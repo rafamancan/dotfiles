@@ -101,7 +101,7 @@ alias au='adb uninstall it.liuv.android.dev'
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
 alias yd='yarn dev'
-alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json && yarn install'
+alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json yarn-error.log && yarn install'
 alias yst='yarn storybook'
 
 # SYSTEM UTILS
