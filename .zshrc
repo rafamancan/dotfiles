@@ -30,7 +30,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
 
 # THEME
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # PLUGINS
 plugins=(
@@ -89,6 +89,7 @@ alias por='cd ~/workspace/liuv/portal-restaurante'
 alias npor='cd ~/workspace/liuv/portal-restaurante-new'
 alias lpb='cd ~/workspace/liuv/lpb'
 alias con='cd ~/workspace/liuv/connector'
+alias ui='cd ~/workspace/liuv/package-ui-toolkit'
 alias liuv='cd ~/workspace/liuv/'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
@@ -106,7 +107,7 @@ alias yst='yarn storybook'
 # SYSTEM UTILS
 alias v="vim"
 alias vim='nvim'
-alias c="code ."
+alias c="code-insiders ."
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
 alias ls="exa --icons"
@@ -136,8 +137,5 @@ function fet () {
 function tags () {
   ctags -R --exclude=.git --exclude=node_modules
 }
-
-# STARSHIP AS DEFAULT
-eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

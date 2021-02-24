@@ -4,4 +4,4 @@ endif
 
 syntax enable
 set background=dark
-colorscheme night-owl
+colorscheme dracula
