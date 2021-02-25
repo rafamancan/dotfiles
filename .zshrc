@@ -110,6 +110,7 @@ alias vim='nvim'
 alias c="code-insiders ."
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ls="exa --icons"
 alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias port='lsof -i'
