@@ -15,6 +15,8 @@ export PATH="/Users/rmancan/.yarn/bin:$PATH"
 export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="/Library/Ruby/Gems/2.6.0:$PATH"
+
 # Android SDK / JAVA
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export ANDROID_HOME=/Users/rmancan/Android/Sdk
