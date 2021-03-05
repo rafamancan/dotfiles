@@ -109,7 +109,7 @@ alias yst='yarn storybook'
 # SYSTEM UTILS
 alias v="vim"
 alias vim='nvim'
-alias c="code-insiders ."
+alias c="code ."
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
