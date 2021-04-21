@@ -13,12 +13,6 @@
   "prettier.eslintIntegration": false,
   "tsserver.enableJavascript": true,
   "tslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
   "eslint.autoFixOnSave": true,
   "javascript.validate.enable": false,
   "explorer.width": 30,
@@ -27,5 +21,11 @@
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
+  },
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+  "snippets.ultisnips.directories": ["UltiSnips"],
+  "snippets.extends": {
+    "javascriptreact": ["typescript"],
+    "css": ["typescript"]
   }
 }

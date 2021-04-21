@@ -36,8 +36,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'tobyS/pdv'
     Plug 'tobyS/vmustache'
-    " snips
+    " snippets
     Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     " commentary
     Plug 'tpope/vim-commentary'
     "source tree
