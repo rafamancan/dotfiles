@@ -73,10 +73,10 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 # PERSONAL ALIASES
 # DOCKER
 alias cc='dphp artisan config:clear'
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mysql && cd -'
+alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mariadb && cd -'
 alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'	
 alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'	
-alias dbash='docker exec -it --user=`id -u rmancan` laradock_workspace_1 bash'	
+alias dbash='docker exec -it --user=`id -u laradock` laradock_workspace_1 bash'	
 alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'	
 alias dps='docker ps'
 
@@ -105,6 +105,9 @@ alias ys='yarn start'
 alias yd='yarn dev'
 alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json yarn-error.log && yarn install'
 alias yst='yarn storybook'
+
+# PHP DEVELOPMENT UTILS
+alias pas='php artisan serve'
 
 # SYSTEM UTILS
 alias v="vim"
