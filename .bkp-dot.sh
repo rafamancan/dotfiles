@@ -4,6 +4,7 @@ cp ~/.zshrc ~/dotfiles/
 cp -r ~/.config/kitty ~/dotfiles/
 cp -r ~/.config/nvim/general ~/dotfiles/neovim/
 cp -r ~/.config/nvim/keys ~/dotfiles/neovim/
+cp -r ~/.config/nvim/snips ~/dotfiles/neovim/
 cp -r ~/.config/nvim/lua ~/dotfiles/neovim/
 cp -r ~/.config/nvim/plug-config ~/dotfiles/neovim/
 cp -r ~/.config/nvim/themes ~/dotfiles/neovim/

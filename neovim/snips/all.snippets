@@ -1,0 +1,57 @@
+# css
+snippet b1
+border: 1px solid red
+endsnippet
+
+snippet b2
+border: 1px solid green
+endsnippet
+
+snippet b3
+border: 1px solid magenta
+endsnippet
+
+snippet b4
+border: 1px solid blue
+endsnippet
+
+snippet b5
+border: 1px solid #fe7200
+endsnippet
+
+snippet cent
+display: flex;
+align-items: center;
+justify-content: center;
+endsnippet
+
+# react
+
+snippet rc
+	import React from 'react';
+
+	import { Container } from './styles';
+
+	function ${1:ComponentName}(){
+		return (
+			<Container>
+				${1}
+			</Container>
+		);
+	};
+endsnippet
+
+snippet eff
+	useEffect(() => {
+		console.log($1);
+	}, [$1]);
+endsnippet
+
+snippet styled-react
+import styled from 'styled-components';
+
+export const Container = styled.div\`
+  border: 1px solid red
+\`;
+
+endsnippet
