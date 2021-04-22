@@ -4,4 +4,4 @@ endif
 
 syntax enable
 set background=dark
-colorscheme onedark
+colorscheme dracula

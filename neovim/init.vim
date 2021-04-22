@@ -7,6 +7,7 @@ source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/phpactor.vim
 source $HOME/.config/nvim/plug-config/php-cs-fixer.vim
 source $HOME/.config/nvim/plug-config/easymotion.vim
+source $HOME/.config/nvim/plug-config/ctrlf.vim
 source $HOME/.config/nvim/general/floating.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/colors.vim
