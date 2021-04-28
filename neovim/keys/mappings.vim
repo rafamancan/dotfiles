@@ -17,10 +17,6 @@ nnoremap <C-s> :w<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
-
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
