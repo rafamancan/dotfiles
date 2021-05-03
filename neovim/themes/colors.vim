@@ -12,6 +12,7 @@ endif
 
 syntax enable
 set background=dark
-colorscheme palenight
+colorscheme gruvbox
 
-let g:palenight_terminal_italics=1
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_comments=1
