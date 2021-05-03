@@ -10,6 +10,7 @@
     "json"
   ],
   "coc.preferences.colorSupport": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
   "prettier.eslintIntegration": false,
   "tsserver.enableJavascript": true,
   "tslint.autoFixOnSave": true,
