@@ -18,7 +18,7 @@ export PATH="$PATH:/Users/rmancan/.composer/vendor/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
 
 # Android SDK / JAVA
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home
 export ANDROID_HOME=/Users/rmancan/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
