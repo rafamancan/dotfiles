@@ -73,32 +73,17 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 # PERSONAL ALIASES
 # DOCKER
 alias cc='dphp artisan config:clear'
-alias dup='cd && cd workspace/liuv/laradock/ && docker-compose up -d nginx mariadb && cd -'
-alias dres='cd && cd workspace/liuv/laradock/ && docker-compose restart && cd -'	
-alias ddown='cd && cd workspace/liuv/laradock/ && docker-compose down && cd -'	
-alias dbash='docker exec -it --user=`id -u laradock` laradock_workspace_1 bash'	
-alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'	
+alias dbash='docker exec -it --user=`id -u laradock` laradock_workspace_1 bash'
+alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'
 alias dps='docker ps'
 
 # FOLDERS
-alias api='cd ~/workspace/liuv/api'
-alias area='cd ~/workspace/liuv/area-estabelecimento'
-alias site='cd ~/workspace/liuv/site'
-alias car='cd ~/workspace/liuv/cardapio-digital'
-alias app='cd ~/workspace/liuv/app'
-alias appe='cd ~/workspace/liuv/app-estabelecimento'
-alias por='cd ~/workspace/liuv/portal-restaurante'
-alias npor='cd ~/workspace/liuv/portal-restaurante-new'
-alias lpb='cd ~/workspace/liuv/lpb'
-alias con='cd ~/workspace/liuv/connector'
-alias ui='cd ~/workspace/liuv/package-ui-toolkit'
-alias liuv='cd ~/workspace/liuv/'
+alias ser='cd ~/workspace/services/'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
-alias au='adb uninstall it.liuv.android.dev'
 
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
