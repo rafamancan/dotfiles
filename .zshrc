@@ -103,7 +103,7 @@ alias cl='xclip -sel clip'
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ls="exa --icons"
 alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
-alias port='lsof -i :'
+alias port='lsof -i'
 alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
