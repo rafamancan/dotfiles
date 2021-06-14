@@ -72,15 +72,14 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 
 # PERSONAL ALIASES
 # DOCKER
-alias cc='dphp artisan config:clear'
-alias dbash='docker exec -it --user=`id -u laradock` laradock_workspace_1 bash'
-alias dphp='docker exec -it -u=`id -u rmancan` -w="/var/www/api" laradock_workspace_1 php'
+alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker-compose exec app sh'
 alias dps='docker ps'
 
 # FOLDERS
 alias ser='cd ~/workspace/services/'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
+alias api='cd ~/workspace/services/app-fenix'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
