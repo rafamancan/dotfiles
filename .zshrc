@@ -72,14 +72,19 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 
 # PERSONAL ALIASES
 # DOCKER
-alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker-compose exec app sh'
+alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker compose exec app sh'
+alias dup='cd ~/workspace/services/fenix-dockerize/dev && docker compose up -d'
+alias ddown='cd ~/workspace/services/fenix-dockerize/dev && docker compose down'
+alias dlog='cd ~/workspace/services/fenix-dockerize/dev && docker compose logs -t -f'
 alias dps='docker ps'
 
 # FOLDERS
 alias ser='cd ~/workspace/services/'
+alias api='cd ~/workspace/services/app-fenix'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
 alias api='cd ~/workspace/services/app-fenix'
+alias chat='cd ~/workspace/services/chat-fenix'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
