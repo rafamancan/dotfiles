@@ -10,12 +10,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
+    Plug 'codota/tabnine-vim'
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'dyng/ctrlsf.vim'
     " themes
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'arcticicestudio/nord-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
@@ -31,8 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'ap/vim-css-color'
     " php
-    Plug 'stephpy/vim-php-cs-fixer'
     Plug 'StanAngeloff/php.vim'
+    Plug 'beanworks/vim-phpfmt'
     Plug 'w0rp/ale'
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'tobyS/pdv'
@@ -54,4 +55,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'wakatime/vim-wakatime'
     " easymotion
     Plug 'easymotion/vim-easymotion'
+    " git
+    Plug 'tpope/vim-fugitive'
+    " multiple cursors
+    Plug 'terryma/vim-multiple-cursors'
 call plug#end()

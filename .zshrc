@@ -16,6 +16,9 @@ export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:/Users/rmancan/.composer/vendor/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
+export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
+export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home
@@ -132,5 +135,7 @@ function fet () {
 function tags () {
   ctags -R --exclude=.git --exclude=node_modules
 }
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

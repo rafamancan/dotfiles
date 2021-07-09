@@ -9,12 +9,13 @@ let g:ale_php_phpcbf_standard='PSR2'
 let g:ale_php_phpcs_standard='phpcs.xml.dist'
 let g:ale_php_phpmd_ruleset='phpmd.xml'
 let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'php': ['phpcbf', 'php_cs_fixer', 'remove_trailing_lines', 'trim_whitespace'],
+  \ '*': ['trim_whitespace'],
+  \ 'php': ['phpcbf', 'remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['eslint'],
   \}
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
+  \ 'php': ['phpcbf'],
   \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✘'
