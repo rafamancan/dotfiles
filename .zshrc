@@ -84,7 +84,7 @@ alias dps='docker ps'
 # FOLDERS
 alias ser='cd ~/workspace/services/'
 alias api='cd ~/workspace/services/app-fenix'
-alias man='cd ~/workspace/services/manager-fenix'
+alias ges='cd ~/workspace/services/manager-fenix'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
 alias api='cd ~/workspace/services/app-fenix'
