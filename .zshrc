@@ -35,7 +35,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
 
 # THEME
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # PLUGINS
 plugins=(
@@ -140,3 +140,6 @@ function tags () {
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
