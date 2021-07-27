@@ -1,22 +1,22 @@
 # css
 snippet b1
-border: 1px solid red
+border: 1px solid red;
 endsnippet
 
 snippet b2
-border: 1px solid green
+border: 1px solid green;
 endsnippet
 
 snippet b3
-border: 1px solid magenta
+border: 1px solid magenta;
 endsnippet
 
 snippet b4
-border: 1px solid blue
+border: 1px solid blue;
 endsnippet
 
 snippet b5
-border: 1px solid #fe7200
+border: 1px solid #fe7200;
 endsnippet
 
 snippet cent
@@ -48,12 +48,15 @@ snippet eff
 endsnippet
 
 snippet styled-react
-import styled from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div\`
-  border: 1px solid red
-\`;
-
+  ${({ theme }) => css\`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  \`}
+\`
 endsnippet
 
 snippet !
