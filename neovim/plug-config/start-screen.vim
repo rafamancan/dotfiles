@@ -7,10 +7,10 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
-            \ { 'a': '~/workspace/liuv/area-estabelecimento' },
-            \ { 'i': '~/workspace/liuv/api' },
-            \ { 'p': '~/workspace/liuv/app' },
-            \ { 's': '~/workspace/liuv/app-estabelecimento' },
-            \ { 'c': '~/workspace/liuv/cardapio-digital' },
+            \ { 'g': '~/workspace/services/manager-fenix' },
+            \ { 'n': '~/workspace/services/node-fenix' },
+            \ { 'c': '~/workspace/services/chat-fenix' },
+            \ { 'a': '~/workspace/services/app-fenix' },
+            \ { 'u': '~/workspace/services/ui-toolkit' },
             \ { 'z': '~/.zshrc' },
             \ ]
