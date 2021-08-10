@@ -61,7 +61,7 @@ nnoremap <C-A> ggVG
 " Alternate way to save
 nnoremap <C-s> :w<CR>
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<TAB>" : "\<TAB>"
 
 " Better tabbing
 vnoremap < <gv
@@ -97,13 +97,13 @@ imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_next = '<tab>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+imap <tab> <Plug>(coc-snippets-expand-jump)
 
 
 nmap     <C-F> <Plug>CtrlSFPrompt

@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'dyng/ctrlsf.vim'
     " themes
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
@@ -56,6 +56,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'easymotion/vim-easymotion'
     " git
     Plug 'tpope/vim-fugitive'
+    Plug 'kdheepak/lazygit.nvim'
     " multiple cursors
     Plug 'terryma/vim-multiple-cursors'
 call plug#end()
