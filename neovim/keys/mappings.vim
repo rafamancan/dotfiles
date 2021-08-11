@@ -1,7 +1,3 @@
-" Better nav for omnicomplete
-inoremap <expr> \<TAB> ("\<TAB>")
-inoremap <expr> <S-TAB> ("\<C-p>")
-
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
@@ -60,8 +56,6 @@ noremap <leader>c :bd<CR>
 nnoremap <C-A> ggVG
 " Alternate way to save
 nnoremap <C-s> :w<CR>
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<TAB>" : "\<TAB>"
 
 " Better tabbing
 vnoremap < <gv
