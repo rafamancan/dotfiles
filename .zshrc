@@ -129,6 +129,5 @@ function tags () {
 }
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
