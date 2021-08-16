@@ -82,5 +82,9 @@ command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
 " source neovim config
 nnoremap <silent> <leader><leader> :source $MYVIMRC<CR>
 
+" Salva automaticamente um histórico de ações para `desfazer`, ainda que o vim
+" seja fechado
+set undofile
+
 autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascriptreact.javascript.javascript-react.javascript_react
 autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescriptreact.javascript.typescript.javascriptreact.javascript-react.javascript_react

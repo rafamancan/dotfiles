@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'dyng/ctrlsf.vim'
     " themes
-    Plug 'morhetz/gruvbox'
+    Plug 'ghifarit53/tokyonight-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mxw/vim-jsx'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'ap/vim-css-color'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'develop' }
     " php
     Plug 'StanAngeloff/php.vim'
     Plug 'beanworks/vim-phpfmt'
@@ -59,4 +60,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kdheepak/lazygit.nvim'
     " multiple cursors
     Plug 'terryma/vim-multiple-cursors'
+    " auto pairs
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()

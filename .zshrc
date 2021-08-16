@@ -12,13 +12,6 @@ export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home
-export ANDROID_HOME=/Users/rmancan/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:~/android-studio/bin
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -32,6 +25,8 @@ ZSH_THEME="eastwood"
 plugins=(
     git
     yarn
+    zsh-autosuggestions
+    zsh-wakatime
 )
 #SETUP
 ZSH_DISABLE_COMPFIX=true
@@ -87,6 +82,7 @@ alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
 alias yd='yarn dev'
+alias yb='yarn build'
 alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json yarn-error.log && yarn install'
 alias yst='yarn storybook'
 

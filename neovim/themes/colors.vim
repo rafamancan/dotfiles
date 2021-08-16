@@ -11,8 +11,7 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-set background=dark
-colorscheme gruvbox
+colorscheme tokyonight
 
-let g:gruvbox_italic=1
-let g:gruvbox_italicize_comments=1
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_style = 'night' " available: night, storm

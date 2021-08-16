@@ -99,7 +99,8 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <tab> <Plug>(coc-snippets-expand-jump)
 
-
+" Ctrl + F to find file
 nmap     <C-F> <Plug>CtrlSFPrompt
-" nmap     <C-F>n <Plug>CtrlSFCwordPath
-" nmap     <C-F>p <Plug>CtrlSFPwordPath
+
+" Comments
+nnoremap <leader>/ :Commentary<cr>
