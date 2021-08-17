@@ -11,7 +11,4 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme tokyonight
-
-let g:tokyonight_enable_italic = 1
-let g:tokyonight_style = 'night' " available: night, storm
+colorscheme dracula

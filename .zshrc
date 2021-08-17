@@ -19,7 +19,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
 
 # THEME
-ZSH_THEME="eastwood"
+ZSH_THEME="dracula"
 
 # PLUGINS
 plugins=(

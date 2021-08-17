@@ -375,3 +375,7 @@ tmux_conf_copy_to_os_clipboard=false
 set -g mouse on
 bind o split-window -v
 bind e split-window -h
+bind h left
+bind j down
+bind k up
+bind l right
