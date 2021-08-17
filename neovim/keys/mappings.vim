@@ -22,7 +22,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
-
 "open source tree
 nnoremap <silent> <leader>e :CocCommand explorer<CR>
 " replace word in line
@@ -60,9 +59,12 @@ nnoremap <C-s> :w<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-" files search
-nnoremap <C-p> :GFiles<CR>
 
+" files search
+" git files
+nnoremap <C-p> :GFiles<CR>
+" recents
+nnoremap <C-e> :History<CR>
 " format with prettier
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
@@ -80,7 +82,6 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 nnoremap <leader>. :CtrlPTag<cr>
-
 
 " snippets
 
@@ -100,7 +101,7 @@ let g:coc_snippet_prev = '<c-k>'
 imap <tab> <Plug>(coc-snippets-expand-jump)
 
 " Ctrl + F to find file
-nmap     <C-F> <Plug>CtrlSFPrompt
+nmap <C-F> <Plug>CtrlSFPrompt
 
 " Comments
 nnoremap <leader>/ :Commentary<cr>
