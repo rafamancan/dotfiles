@@ -7,13 +7,18 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    " LSP
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
+
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'dyng/ctrlsf.vim'
+
     " themes
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'vim-airline/vim-airline'
@@ -21,8 +26,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'junegunn/rainbow_parentheses.vim'
     Plug 'ryanoasis/vim-devicons'
+
     " lint
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
     "javascript, typescript, css and jsx syntax
     Plug 'ianks/vim-tsx'
     Plug 'leafgarland/typescript-vim'
@@ -31,6 +38,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'ap/vim-css-color'
     Plug 'styled-components/vim-styled-components', { 'branch': 'develop' }
+
     " php
     Plug 'StanAngeloff/php.vim'
     Plug 'beanworks/vim-phpfmt'
@@ -38,28 +46,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'tobyS/pdv'
     Plug 'tobyS/vmustache'
+
     " snippets
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+
     " commentary
     Plug 'tpope/vim-commentary'
-    "source tree
-    Plug 'scrooloose/nerdtree'
-    "editor config
+
+    " neovim as editor
     Plug 'editorconfig/editorconfig-vim'
-    " startify
     Plug 'mhinz/vim-startify'
-    " which key
     Plug 'liuchengxu/vim-which-key'
-    " wakatime
     Plug 'wakatime/vim-wakatime'
-    " easymotion
     Plug 'easymotion/vim-easymotion'
-    " git
     Plug 'tpope/vim-fugitive'
     Plug 'kdheepak/lazygit.nvim'
-    " multiple cursors
     Plug 'terryma/vim-multiple-cursors'
-    " auto pairs
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
