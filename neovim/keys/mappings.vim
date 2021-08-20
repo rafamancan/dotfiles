@@ -1,8 +1,8 @@
 " Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+nnoremap <up>    :resize -2<CR>
+nnoremap <down>  :resize +2<CR>
+nnoremap <right> :vertical resize -2<CR>
+nnoremap <left>  :vertical resize +2<CR>
 
 " I hate escape more than anything else
 inoremap jk <Esc>
@@ -24,9 +24,9 @@ nnoremap <Leader>O O<Esc>^Da
 
 "open source tree
 nnoremap <silent> <leader>e :CocCommand explorer<CR>
+
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
-
 " replace word in file
 nmap  <leader>rf  :%s//g<LEFT><LEFT>
 
@@ -45,14 +45,13 @@ nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 nmap <leader>do :call pdv#DocumentWithSnip()<CR>
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 "" Close buffer
 noremap <leader>c :bd<CR>
 "" select all
 nnoremap <C-A> ggVG
+
 " Alternate way to save
 nnoremap <C-s> :w<CR>
 
