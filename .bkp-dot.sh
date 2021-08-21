@@ -9,9 +9,9 @@ cp ~/.gitconfig ~/dotfiles/.gitconfig
 cp ~/.bkp-dot.sh ~/dotfiles/
 
 cd ~/dotfiles || exit
-git add . 2>/dev/null
+git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
-git commit -m "updating $dt" 2>/dev/null
-git push -u origin master 2>/dev/null
+git commit -m "updating $dt"
+git push -u origin master
 
 echo "Atualização realizada: $dt"
