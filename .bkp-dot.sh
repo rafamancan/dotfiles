@@ -1,5 +1,5 @@
 #!/bin/bash
-output=/dev/null
+exec > /dev/null
 
 cp ~/.zshrc ~/dotfiles/
 
