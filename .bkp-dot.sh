@@ -1,4 +1,6 @@
 #!/bin/bash
+output=/dev/null
+
 cp ~/.zshrc ~/dotfiles/
 
 cp -r ~/.config/kitty ~/dotfiles/
