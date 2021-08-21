@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " themes
     Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'sonph/onehalf', { 'rtp': 'vim/' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
