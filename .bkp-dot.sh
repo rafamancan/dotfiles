@@ -1,9 +1,9 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
 
-cp -r ~/.config/kitty ~/dotfiles/
+cp -r ~/.config/kitty ~/dotfiles/ 2>/dev/null
 cp -r ~/.config/nvim/ ~/dotfiles/neovim/ 2>/dev/null
-cp ~/.tmux.conf.local ~/dotfiles/.tmux.conf.local
+cp ~/.tmux.conf.local ~/dotfiles/.tmux.conf.local 2>/dev/null
 cp ~/.gitconfig ~/dotfiles/.gitconfig
 
 cp ~/.bkp-dot.sh ~/dotfiles/
