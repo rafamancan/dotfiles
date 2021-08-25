@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'dyng/ctrlsf.vim'
 
     " themes
+    Plug 'ayu-theme/ayu-vim'
     Plug 'gruvbox-community/gruvbox'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'sonph/onehalf', { 'rtp': 'vim/' }
