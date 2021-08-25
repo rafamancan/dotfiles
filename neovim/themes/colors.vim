@@ -12,4 +12,4 @@ endif
 
 syntax enable
 set background=dark
-colorscheme onehalfdark
+colorscheme gruvbox
