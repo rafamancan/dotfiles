@@ -22,9 +22,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
-"open source tree
-nnoremap <silent> <leader>e :CocCommand explorer<CR>
-
 " replace word in line
 nmap  <leader>rl  :s//g<LEFT><LEFT>
 " replace word in file
@@ -42,7 +39,6 @@ function! ToggleRelativeLineNumbers()
 endfunction
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
-nmap <leader>do :call pdv#DocumentWithSnip()<CR>
 
 "" Buffer nav
 noremap <leader>q :bp<CR>
@@ -59,15 +55,6 @@ nnoremap <C-s> :w<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" files search
-" git files
-nnoremap <C-p> :GFiles<CR>
-" recents
-nnoremap <C-e> :History<CR>
-" format with prettier
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -81,25 +68,6 @@ cnoreabbrev X! x!
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-
-" snippets
-" Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<tab>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <tab> <Plug>(coc-snippets-expand-jump)
-
-" Ctrl + F to find file
-nmap <C-F> <Plug>CtrlSFPrompt
 
 " Comments
 nnoremap <leader>/ :Commentary<cr>

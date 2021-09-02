@@ -19,7 +19,12 @@ export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -85,6 +90,7 @@ alias dps='docker ps'
 alias ser='cd ~/workspace/services/'
 alias api='cd ~/workspace/services/app-fenix'
 alias ges='cd ~/workspace/services/manager-fenix'
+alias poc='cd ~/workspace/services/POCS/'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
 alias api='cd ~/workspace/services/app-fenix'

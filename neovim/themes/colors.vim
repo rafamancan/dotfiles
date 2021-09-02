@@ -10,5 +10,4 @@ endif
 set termguicolors
 syntax enable
 set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme gruvbox
