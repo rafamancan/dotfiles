@@ -10,8 +10,8 @@
 
 # Neovim plugins for:
 
+- LSP
 - Javascript
 - Typescript
-- PHP
 - React
 - Git
