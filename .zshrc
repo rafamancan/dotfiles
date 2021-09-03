@@ -125,6 +125,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
 alias ctags="`brew --prefix`/bin/ctags"
 alias python='/usr/local/bin/python3.7'
+alias ls='exa --icons'
 
 # PERSONAL FUNCTIONS
 # push actual branch
