@@ -7,11 +7,13 @@
 - [Fernando Daciuk](https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc)
 - [ChristianChiarulli](https://github.com/ChristianChiarulli)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
+- [CraftzDog](https://github.com/craftzdog)
 
 # Neovim plugins for:
 
 - LSP
 - Javascript
 - Typescript
+- PHP
 - React
 - Git

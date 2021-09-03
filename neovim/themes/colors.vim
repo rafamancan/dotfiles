@@ -9,5 +9,6 @@ endif
 
 set termguicolors
 syntax enable
-set background=dark
-colorscheme gruvbox
+colorscheme onedark
+au ColorScheme * hi Normal ctermbg=none guibg=none
+hi NonText ctermbg=NONE
