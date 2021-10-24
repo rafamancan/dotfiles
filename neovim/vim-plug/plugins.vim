@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+    Plug 'hrsh7th/nvim-compe'
     Plug 'glepnir/lspsaga.nvim'
 
     " Telescope
@@ -13,6 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " themes
     Plug 'joshdick/onedark.vim'
+    Plug 'bluz71/vim-moonfly-colors'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
@@ -29,6 +31,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'windwp/nvim-autopairs'
     Plug 'tpope/vim-surround'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
 call plug#end()

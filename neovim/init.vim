@@ -10,4 +10,4 @@ source $HOME/.config/nvim/themes/colors.vim
 source $HOME/.config/nvim/themes/line.vim
 lua require 'plug-colorizer'
 
-" lua require"lspconfig".tsserver.setup{on_attach=require'completion'.on_attach}
+lua require"lspconfig".tsserver.setup{on_attach=require'completion'.on_attach}
