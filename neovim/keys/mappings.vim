@@ -71,3 +71,6 @@ cnoreabbrev Qall qall
 
 " Comments
 nnoremap <leader>/ :Commentary<cr>
+
+" php
+nmap <leader>do :call pdv#DocumentWithSnip()<CR>

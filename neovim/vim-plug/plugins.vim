@@ -8,7 +8,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-telescope/telescope.nvim' 
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'kyazdani42/nvim-web-devicons'
 
@@ -31,4 +31,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'windwp/nvim-autopairs'
     Plug 'tpope/vim-surround'
+
+    " snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+    " php
+    Plug 'StanAngeloff/php.vim'
+    Plug 'beanworks/vim-phpfmt'
+    Plug 'w0rp/ale'
+    Plug 'adoy/vim-php-refactoring-toolbox'
+    Plug 'tobyS/pdv'
+    Plug 'tobyS/vmustache'
 call plug#end()

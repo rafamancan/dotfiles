@@ -80,5 +80,6 @@ let g:nvim_tree_icons = {
 lua require'nvim-web-devicons'.setup()
 lua require'nvim-tree'.setup()
 
-nnoremap <C-e> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <C-e> :NvimTreeFindFile<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <C-w> :NvimTreeClose<CR>
