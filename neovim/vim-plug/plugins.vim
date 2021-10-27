@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'windwp/nvim-autopairs'
     Plug 'tpope/vim-surround'
+    Plug 'github/copilot.vim'
 
     " snippets
     Plug 'SirVer/ultisnips'
