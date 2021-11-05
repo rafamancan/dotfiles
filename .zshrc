@@ -83,6 +83,7 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker compose exec app sh'
 alias dup='cd ~/workspace/services/fenix-dockerize/dev && docker compose up -d'
 alias ddown='cd ~/workspace/services/fenix-dockerize/dev && docker compose down'
+alias dres='cd ~/workspace/services/fenix-dockerize/dev && docker-compose restart'
 alias dlog='cd ~/workspace/services/fenix-dockerize/dev && docker compose logs -t -f'
 alias dps='docker ps'
 
@@ -152,7 +153,3 @@ function tags () {
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

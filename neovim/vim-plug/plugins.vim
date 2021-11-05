@@ -5,8 +5,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/nvim-compe'
     Plug 'glepnir/lspsaga.nvim'
 
-    " Telescope
+    " NOOOOICE
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'ThePrimeagen/harpoon'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -15,8 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " themes
     Plug 'joshdick/onedark.vim'
     Plug 'bluz71/vim-moonfly-colors'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'kyazdani42/nvim-tree.lua'
 
