@@ -118,7 +118,7 @@ alias pas='php artisan serve'
 # SYSTEM UTILS
 alias v="vim"
 alias vim='nvim'
-alias c="code ."
+alias c="code-insiders ."
 alias t="tmux"
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
