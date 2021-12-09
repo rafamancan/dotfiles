@@ -8,8 +8,6 @@ nnoremap <left>  :vertical resize +2<CR>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" Alternate way to save
-nnoremap <C-s> :w<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 
@@ -49,7 +47,10 @@ noremap <leader>c :bd<CR>
 nnoremap <C-A> ggVG
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+" no formatting
+nnoremap <C-s> :noa w<CR> 
+" with formatting
+nnoremap <C-l> :w<CR>
 
 " Better tabbing
 vnoremap < <gv

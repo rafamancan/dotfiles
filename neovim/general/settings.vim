@@ -35,7 +35,7 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set noswapfile                          " Disable swap file
 "set autochdir                           " Your working directory will always be the same as your working directory
 
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+" au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me
 cmap w!! w !sudo tee %
@@ -86,3 +86,4 @@ set undofile
 
 autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascriptreact.javascript.javascript-react.javascript_react
 autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescriptreact.javascript.typescript.javascriptreact.javascript-react.javascript_react
+

@@ -1,4 +1,4 @@
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+" autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 " If php-cs-fixer is in $PATH, you don't need to define line below
 " let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer" " define the path to the php-cs-fixer.phar
 

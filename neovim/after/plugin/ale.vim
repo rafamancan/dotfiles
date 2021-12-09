@@ -9,12 +9,12 @@ let g:ale_php_phpcs_standard='phpcs.xml.dist'
 let g:ale_php_phpmd_ruleset='phpmd.xml'
 let g:ale_fixers = {
   \ '*': ['trim_whitespace'],
-  \ 'php': ['phpcbf', 'remove_trailing_lines', 'trim_whitespace'],
+  \ 'php': ['remove_trailing_lines', 'trim_whitespace'],
   \}
 let g:ale_linters = {
   \ 'php': ['phpcbf'],
   \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_statusline_format = ['E:%s', 'W:%s', 'OK']
