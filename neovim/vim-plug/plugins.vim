@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
 
     " themes
-    Plug 'joshdick/onedark.vim'
+    Plug 'arcticicestudio/nord-vim'
     Plug 'bluz71/vim-moonfly-colors'
     Plug 'itchyny/lightline.vim'
     Plug 'norcalli/nvim-colorizer.lua'

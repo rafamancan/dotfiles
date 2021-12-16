@@ -3,5 +3,5 @@
 
 hi Normal guibg=NONE ctermbg=NONE
 let g:lightline = {
-      \ 'colorscheme': 'materia',
+      \ 'colorscheme': 'nord',
       \ }

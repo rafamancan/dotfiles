@@ -14,8 +14,12 @@ export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:/Users/rmancan/.composer/vendor/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
+
+# PHP
 export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
@@ -46,6 +50,9 @@ plugins=(
     yarn
     zsh-autosuggestions
     zsh-wakatime
+    brew
+    macos
+    colorize
 )
 #SETUP
 ZSH_DISABLE_COMPFIX=true
@@ -153,3 +160,7 @@ function tags () {
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
