@@ -1,4 +1,4 @@
-# My personal dotfiles for zsh, LunarVim, iterm2 and kitty
+# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [LunarVim](https://www.lunarvim.org/), [iTerm2](https://iterm2.com/) and [Kitty](https://sw.kovidgoyal.net/kitty/)
 
 # LunarVim settings based on (with some customization by me):
 
