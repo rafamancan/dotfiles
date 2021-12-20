@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # PATHS
 export PATH="/Users/local/bin:/Users/bin:$PATH"
 export ZSH="/Users/rmancan/.oh-my-zsh"
@@ -84,7 +77,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 fpath=($fpath "/Users/rmancan/.zfunctions")
 
-
 # PERSONAL ALIASES
 # DOCKER
 alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker compose exec app sh'
@@ -123,8 +115,7 @@ alias et='iex -S mix'
 alias pas='php artisan serve'
 
 # SYSTEM UTILS
-alias v="vim"
-alias vim='nvim'
+alias v="lvim"
 alias c="code-insiders ."
 alias t="tmux"
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
@@ -161,6 +152,10 @@ function tags () {
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+function reset_trap {
+  # Hacky hack because of <function/script-that-sets-trap-INT>
+  trap - INT
+}
 
-
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec reset_trap
