@@ -1,15 +1,12 @@
-# My personal dotfiles for zsh, neovim, iterm2 and kitty
+# My personal dotfiles for zsh, LunarVim, iterm2 and kitty
 
-# Neovim settings based on (with some customization by me):
+# LunarVim settings based on (with some customization by me):
 
-- [Jimeno0](https://github.com/Jimeno0/dotfiles)
-- [matheusml](https://github.com/matheusml/dotfiles)
-- [Fernando Daciuk](https://github.com/da2k/curso-reactjs-ninja/blob/master/config/.vimrc)
-- [ChristianChiarulli](https://github.com/ChristianChiarulli)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 - [CraftzDog](https://github.com/craftzdog)
+- [Christian Chiarulli](https://github.com/ChristianChiarulli)
 
-# Neovim plugins for:
+# LunarVim plugins for:
 
 - LSP
 - Javascript
