@@ -13,8 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
 
     " themes
-    Plug 'joshdick/onedark.vim'
-    Plug 'bluz71/vim-moonfly-colors'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'

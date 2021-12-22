@@ -28,8 +28,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Variables
 export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
@@ -46,6 +46,7 @@ plugins=(
     brew
     macos
     colorize
+    zsh-syntax-highlighting
 )
 #SETUP
 ZSH_DISABLE_COMPFIX=true
@@ -66,8 +67,6 @@ autoload -Uz _zinit
 
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplugin light zdharma/fast-syntax-highlighting
-zplugin light zsh-users/zsh-autosuggestions
 zplugin light zsh-users/zsh-history-substring-search
 zplugin light zsh-users/zsh-completions
 zplugin light buonomo/yarn-completion
@@ -95,6 +94,7 @@ alias poc='cd ~/workspace/services/POCS/'
 alias per='cd ~/workspace/personal/'
 alias vf='cd ~/.config/nvim && v'
 alias api='cd ~/workspace/services/app-fenix'
+alias doc='cd ~/workspace/services/fenix-dockerize'
 alias chat='cd ~/workspace/services/chat-fenix'
 alias tes='cd ~/workspace/personal/test'
 
@@ -115,7 +115,8 @@ alias et='iex -S mix'
 alias pas='php artisan serve'
 
 # SYSTEM UTILS
-alias v="lvim"
+alias vim="nvim"
+alias v="nvim"
 alias c="code-insiders ."
 alias t="tmux"
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'

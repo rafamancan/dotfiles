@@ -9,6 +9,6 @@ endif
 
 set termguicolors
 syntax enable
-colorscheme moonfly
+colorscheme tokyonight
 au ColorScheme * hi Normal ctermbg=none guibg=none
 hi NonText ctermbg=NONE
