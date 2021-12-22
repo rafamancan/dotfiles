@@ -83,7 +83,7 @@ vim.cmd('cnoreabbrev Q q')
 vim.cmd('cnoreabbrev Qall qall')
 
 -- Select all
-keymap("i", "<C-a>", "ggVG", opts)
+keymap("n", "<C-a>", "ggVG", opts)
 -- Alternate way to save
 keymap("n", "<C-s>", ":w<CR>", opts)
 -- Replace word in line
@@ -97,3 +97,6 @@ keymap("n", "<C-f>", ":Telescope live_grep<CR>", opts)
 
 -- Trouble
 keymap("n", "<leader>d", ":TroubleToggle<CR>", opts)
+
+-- Comment
+keymap("n", "<leader>/", ":Commentary<CR>", opts)

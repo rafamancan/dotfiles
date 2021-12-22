@@ -10,10 +10,10 @@ export PATH="$PATH:/Users/rmancan/.cargo/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
 
 # PHP
-export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
-# export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-# export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
@@ -33,7 +33,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Variables
-export MYVIMRC="/Users/rmancan/.config/nvim/init.vim"
+export MYVIMRC="/Users/rmancan/.config/nvim/init.lua"
 
 # THEME
 ZSH_THEME="simple"
@@ -151,7 +151,6 @@ function tags () {
   ctags -R --exclude=.git --exclude=node_modules
 }
 
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function reset_trap {
