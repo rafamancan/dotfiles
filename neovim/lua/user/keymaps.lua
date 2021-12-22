@@ -32,8 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<TAB>", ":bnext<CR>", opts)
-keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+keymap("n", "<leader>w", ":bnext<CR>", opts)
+keymap("n", "<leader>q", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -82,6 +82,9 @@ vim.cmd('cnoreabbrev W w')
 vim.cmd('cnoreabbrev Q q')
 vim.cmd('cnoreabbrev Qall qall')
 
+
+-- Reopen Alpha
+keymap("n", "<leader>a", ":Alpha<CR>", opts)
 -- Select all
 keymap("n", "<C-a>", "ggVG", opts)
 -- Alternate way to save
