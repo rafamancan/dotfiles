@@ -15,7 +15,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -86,6 +86,9 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
+  if client.name == "intelephense" then
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)

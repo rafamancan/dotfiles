@@ -5,9 +5,26 @@ end
 
 local actions = require "telescope.actions"
 
+base_ignore_patterns = {
+      "nuts/*",
+      "node%_modules/*",
+      "external_data/*",
+      ".idea/*",
+      ".git/*",
+      "app/Domain/Smartloader/assets/libs/*",
+      "storage/*",
+      "_ide_helper.php",
+      ".phpstorm.meta.php",
+      "public/js/*",
+      "public/css/*",
+      "public/libs/*",
+      "public/vendor/*",
+      "public/assets/*",
+}
+
 telescope.setup {
   defaults = {
-
+    file_ignore_patterns = base_ignore_patterns,
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },

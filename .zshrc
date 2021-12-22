@@ -6,6 +6,7 @@ export PATH="/Users/rmancan/.yarn/bin:$PATH"
 export PATH="/Users/rmancan/.local/bin:$PATH"
 export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:/Users/rmancan/.composer/vendor/bin"
+export PATH="$PATH:/Users/rmancan/.cargo/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
 
 # PHP

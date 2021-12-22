@@ -68,6 +68,20 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Custom Commands --
+-- Remaps
+vim.cmd('cnoreabbrev W! w!')
+vim.cmd('cnoreabbrev Q! q!')
+vim.cmd('cnoreabbrev Qall! qall!')
+vim.cmd('cnoreabbrev Wq wq')
+vim.cmd('cnoreabbrev Wa wa')
+vim.cmd('cnoreabbrev wQ wq')
+vim.cmd('cnoreabbrev WQ wq')
+vim.cmd('cnoreabbrev X x')
+vim.cmd('cnoreabbrev X! x!')
+vim.cmd('cnoreabbrev W w')
+vim.cmd('cnoreabbrev Q q')
+vim.cmd('cnoreabbrev Qall qall')
+
 -- Alternate way to save
 keymap("n", "<C-s>", ":w<CR>", opts)
 -- Replace word in line
@@ -75,4 +89,9 @@ keymap("n", "<leader>rl", ":s//g<LEFT><LEFT>", opts)
 -- Replace word in file
 keymap("n", "<leader>rf", ":%s//g<LEFT><LEFT>", opts)
 
+-- Telescope
 keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+keymap("n", "<C-f>", ":Telescope live_grep<CR>", opts)
+
+-- Trouble
+keymap("n", "<leader>d", ":TroubleToggle<CR>", opts)
