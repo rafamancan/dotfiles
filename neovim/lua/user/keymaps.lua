@@ -82,6 +82,8 @@ vim.cmd('cnoreabbrev W w')
 vim.cmd('cnoreabbrev Q q')
 vim.cmd('cnoreabbrev Qall qall')
 
+-- Select all
+keymap("i", "<C-a>", "ggVG", opts)
 -- Alternate way to save
 keymap("n", "<C-s>", ":w<CR>", opts)
 -- Replace word in line
