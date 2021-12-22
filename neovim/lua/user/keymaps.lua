@@ -32,8 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<leader>w", ":bnext<CR>", opts)
-keymap("n", "<leader>q", ":bprevious<CR>", opts)
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -106,4 +106,4 @@ keymap("n", "<leader>/", ":Commentary<CR>", opts)
 
 -- Copilot
 vim.cmd("imap <silent><script><expr> <C-L> copilot#Accept()")
-vim.g.copilot_no_tab_map = true
+-- keymap("i", "<silent><script><expr><C-L>", ":copilot#Accept()", opts) -- Doesn't work
