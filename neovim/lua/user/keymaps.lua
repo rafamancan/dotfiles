@@ -103,3 +103,7 @@ keymap("n", "<leader>d", ":TroubleToggle<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
+
+-- Copilot
+vim.cmd("imap <silent><script><expr> <C-L> copilot#Accept()")
+vim.g.copilot_no_tab_map = true
