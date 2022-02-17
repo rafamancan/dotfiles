@@ -156,5 +156,10 @@ vim.opt.relativenumber = true
 -- keybinds
 lvim.keys.normal_mode = {
   ["<TAB>"] = ":bnext<CR>",
-  ["<S-TAB>"] = ":bprevious<CR>"
+  ["<S-TAB>"] = ":bprevious<CR>",
+  ["<C-a>"] = "ggVG",
+  ["<leader>rl"] = ":s//g<LEFT><LEFT>",
+  ["<leader>rf"] = ":%s//g<LEFT><LEFT>",
+  ["<C-p>"] = ":Telescope find_files<CR>",
+  ["<C-f>"] = ":Telescope live_grep<CR>"
 }
