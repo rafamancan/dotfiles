@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # PATHS
 export PATH="/Users/local/bin:/Users/bin:$PATH"
 export ZSH="/Users/rmancan/.oh-my-zsh"
@@ -117,7 +124,7 @@ alias pas='php artisan serve'
 
 # SYSTEM UTILS
 alias vim="nvim"
-alias v="nvim"
+alias v="lvim"
 alias c="code-insiders ."
 alias t="tmux"
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
@@ -160,3 +167,8 @@ function reset_trap {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec reset_trap
+
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
