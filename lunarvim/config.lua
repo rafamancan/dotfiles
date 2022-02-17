@@ -143,7 +143,9 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
+    { "github/copilot.vim" }
 }
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
@@ -157,9 +159,25 @@ vim.opt.relativenumber = true
 lvim.keys.normal_mode = {
   ["<TAB>"] = ":bnext<CR>",
   ["<S-TAB>"] = ":bprevious<CR>",
+  ["<C-s>"] = ":w<CR>",
   ["<C-a>"] = "ggVG",
   ["<leader>rl"] = ":s//g<LEFT><LEFT>",
   ["<leader>rf"] = ":%s//g<LEFT><LEFT>",
   ["<C-p>"] = ":Telescope find_files<CR>",
   ["<C-f>"] = ":Telescope live_grep<CR>"
 }
+
+-- copilot setup
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+local cmp = require "cmp"
+lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
+    cmp.mapping.abort()
+    local copilot_keys = vim.fn["copilot#Accept"]()
+    if copilot_keys ~= "" then
+        vim.api.nvim_feedkeys(copilot_keys, "i", true)
+    else
+        fallback()
+    end
+end
