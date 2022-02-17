@@ -149,5 +149,12 @@ lvim.plugins = {
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+-- fix buffer
 vim.opt.timeoutlen = 500
+-- enable relativenumber
 vim.opt.relativenumber = true
+-- keybinds
+lvim.keys.normal_mode = {
+  ["<TAB>"] = ":bnext<CR>",
+  ["<S-TAB>"] = ":bprevious<CR>"
+}
