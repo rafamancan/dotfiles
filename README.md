@@ -1,4 +1,4 @@
-# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [Neovim](https://www.neovim.io/), [iTerm2](https://iterm2.com/) and [Kitty](https://sw.kovidgoyal.net/kitty/)
+# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [Neovim](https://www.neovim.io/), [LunarVim](https://www.lunarvim.org/), [iTerm2](https://iterm2.com/) and [Kitty](https://sw.kovidgoyal.net/kitty/)
 
 # Neovim settings based on (with some customization by me):
 
