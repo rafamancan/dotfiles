@@ -143,7 +143,8 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
-    { "github/copilot.vim" }
+    { "github/copilot.vim" },
+    { "wakatime/vim-wakatime" }
 }
 
 
@@ -164,7 +165,8 @@ lvim.keys.normal_mode = {
   ["<leader>rl"] = ":s//g<LEFT><LEFT>",
   ["<leader>rf"] = ":%s//g<LEFT><LEFT>",
   ["<C-p>"] = ":Telescope find_files<CR>",
-  ["<C-f>"] = ":Telescope live_grep<CR>"
+  ["<C-f>"] = ":Telescope live_grep<CR>",
+  ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>"
 }
 
 -- copilot setup
