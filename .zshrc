@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # PATHS
 export PATH="/Users/local/bin:/Users/bin:$PATH"
 export ZSH="/Users/rmancan/.oh-my-zsh"
@@ -105,6 +98,7 @@ alias api='cd ~/workspace/services/app-fenix'
 alias doc='cd ~/workspace/services/fenix-dockerize'
 alias chat='cd ~/workspace/services/chat-fenix'
 alias tes='cd ~/workspace/personal/test'
+alias mpoc='cd ~/workspace/personal/manager_poc'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
@@ -115,6 +109,7 @@ alias yd='yarn dev'
 alias yb='yarn build'
 alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json yarn-error.log && yarn install'
 alias yst='yarn storybook'
+alias lint='./node_modules/eslint/bin/eslint.js src/ --fix'
 
 # ELIXIR DEVELOPMENT UTILS
 alias et='iex -S mix'
@@ -167,8 +162,5 @@ function reset_trap {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec reset_trap
-
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+eval "$(starship init zsh)"
