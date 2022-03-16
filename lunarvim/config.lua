@@ -183,3 +183,7 @@ lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
         fallback()
     end
 end
+
+lvim.autocommands.custom_groups = {
+  { "BufWinEnter", "*.php", "setlocal ts=4 sw=4" },
+}
