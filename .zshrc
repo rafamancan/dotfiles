@@ -151,6 +151,7 @@ function fet () {
   git fetch -u -p
 }
 
+# generate ctags
 function tags () {
   ctags -R --exclude=.git --exclude=node_modules
 }
