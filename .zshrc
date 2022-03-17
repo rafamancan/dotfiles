@@ -10,10 +10,10 @@ export PATH="$PATH:/Users/rmancan/.cargo/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
 
 # PHP
-export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
-# export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-# export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 # Android SDK / JAVA
@@ -99,6 +99,8 @@ alias doc='cd ~/workspace/services/fenix-dockerize'
 alias chat='cd ~/workspace/services/chat-fenix'
 alias tes='cd ~/workspace/personal/test'
 alias mpoc='cd ~/workspace/personal/manager_poc'
+alias bdj='cd ~/workspace/services/backend-dj'
+alias fdj='cd ~/workspace/services/frontend-dj'
 
 # ANDROID DEVELOPMENT UTILS
 alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
@@ -164,3 +166,5 @@ autoload -Uz add-zsh-hook
 add-zsh-hook preexec reset_trap
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 eval "$(starship init zsh)"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
