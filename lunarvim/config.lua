@@ -1,8 +1,7 @@
 -- general
 lvim.log.level = "warn"
-lvim.transparent_background = true
 lvim.format_on_save = true
-lvim.colorscheme = "darkplus"
+lvim.colorscheme = "gruvbox"
 vim.opt.relativenumber = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
@@ -42,6 +41,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
+    { "gruvbox-community/gruvbox" },
     { "martinsione/darkplus.nvim" },
     {
       "folke/trouble.nvim",
