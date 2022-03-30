@@ -1,6 +1,6 @@
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "gruvbox"
 vim.opt.relativenumber = true
 lvim.builtin.dashboard.active = true
@@ -20,7 +20,9 @@ lvim.keys.normal_mode = {
   ["<leader>rf"] = ":%s//g<LEFT><LEFT>",
   ["<C-p>"] = ":Telescope find_files<CR>",
   ["<C-f>"] = ":Telescope live_grep<CR>",
-  ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>"
+  ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>",
+  ["<leader>t"] = ":lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  ["<leader>a"] = ":lua require('harpoon.mark').add_file()<CR>"
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -43,6 +45,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.plugins = {
     { "gruvbox-community/gruvbox" },
     { "martinsione/darkplus.nvim" },
+    { "ThePrimeagen/harpoon" },
     {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
