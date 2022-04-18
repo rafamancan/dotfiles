@@ -1,7 +1,7 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "dracula"
 vim.opt.relativenumber = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
@@ -43,15 +43,15 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
-    { "gruvbox-community/gruvbox" },
-    { "martinsione/darkplus.nvim" },
-    { "ThePrimeagen/harpoon" },
-    {
-      "folke/trouble.nvim",
-      cmd = "TroubleToggle",
-    },
-    { "github/copilot.vim" },
-    { "wakatime/vim-wakatime" }
+  { "dracula/vim" },
+  { "martinsione/darkplus.nvim" },
+  { "ThePrimeagen/harpoon" },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  { "github/copilot.vim" },
+  { "wakatime/vim-wakatime" }
 }
 
 -- copilot setup
