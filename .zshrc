@@ -1,3 +1,7 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # PATHS
 export PATH="/Users/local/bin:/Users/bin:$PATH"
 export ZSH="/Users/rmancan/.oh-my-zsh"
@@ -15,19 +19,6 @@ export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
 export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
-
-# Android SDK / JAVA
-# export ANDROID_HOME=$HOME/Library/Android/sdk
-# export PATH=$PATH:$ANDROID_HOME/emulator
-# export PATH=$PATH:$ANDROID_HOME/tools
-# export PATH=$PATH:$ANDROID_HOME/tools/bin
-# export PATH=$PATH:$ANDROID_HOME/platform-tools
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -78,33 +69,31 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/Users/rmancan/.zfunctions")
 
 # PERSONAL ALIASES
+EXT_HD_PATH='/Volumes/MANCAN_EXT/dev'
+
 # DOCKER
-alias dbash='cd ~/workspace/services/fenix-dockerize/dev && docker compose exec app sh'
-alias dup='cd ~/workspace/services/fenix-dockerize/dev && docker compose up -d'
-alias ddown='cd ~/workspace/services/fenix-dockerize/dev && docker compose down'
-alias dres='cd ~/workspace/services/fenix-dockerize/dev && docker-compose restart'
-alias dlog='cd ~/workspace/services/fenix-dockerize/dev && docker compose logs -t -f'
-alias dps='docker ps'
+alias dbash="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose exec app sh"
+alias dup="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose up -d"
+alias ddown="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose down"
+alias dres="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker-compose restart"
+alias dlog="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose logs -t -f"
+alias dps="docker ps"
 
 # FOLDERS
-alias ser='cd ~/workspace/services/'
-alias api='cd ~/workspace/services/app-fenix'
-alias ges='cd ~/workspace/services/manager-fenix'
-alias con='cd ~/workspace/services/consultant-fenix'
-alias poc='cd ~/workspace/services/POCS/'
-alias per='cd ~/workspace/personal/'
+alias dev="cd ${EXT_HD_PATH}"
+alias ser="cd ${EXT_HD_PATH}/services/"
+alias cro="cd ${EXT_HD_PATH}/services/cronos"
+alias dj="cd ${EXT_HD_PATH}/services/dj/"
+alias fen="cd ${EXT_HD_PATH}/services/fenix"
+alias tes="cd ${EXT_HD_PATH}/personal/test"
+alias api="cd ${EXT_HD_PATH}/services/fenix/app-fenix"
+alias ges="cd ${EXT_HD_PATH}/services/fenix/manager-fenix"
+alias con="cd ${EXT_HD_PATH}/services/fenix/consultant-fenix"
+alias per="cd ${EXT_HD_PATH}/personal/"
+alias api="cd ${EXT_HD_PATH}/services/fenix/app-fenix"
+alias doc="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize"
+alias chat="cd ${EXT_HD_PATH}/services/fenix/chat-fenix"
 alias vf='cd ~/.config/nvim && v'
-alias api='cd ~/workspace/services/app-fenix'
-alias doc='cd ~/workspace/services/fenix-dockerize'
-alias chat='cd ~/workspace/services/chat-fenix'
-alias tes='cd ~/workspace/personal/test'
-alias mpoc='cd ~/workspace/personal/manager_poc'
-alias bdj='cd ~/workspace/services/backend-dj'
-alias fdj='cd ~/workspace/services/frontend-dj'
-alias cro='cd ~/workspace/services/cronos'
-
-# ANDROID DEVELOPMENT UTILS
-alias ya='yarn android --variant=developmentDebug  --appIdSuffix=dev'
 
 # JS and TS DEVELOPMENT UTILS
 alias ys='yarn start'
@@ -113,12 +102,6 @@ alias yb='yarn build'
 alias yrm='rm -Rf node_modules/ yarn.lock package-lock.json yarn-error.log && yarn install'
 alias yst='yarn storybook'
 alias lint='./node_modules/eslint/bin/eslint.js src/ --fix'
-
-# ELIXIR DEVELOPMENT UTILS
-alias et='iex -S mix'
-
-# PHP DEVELOPMENT UTILS
-alias pas='php artisan serve'
 
 # SYSTEM UTILS
 alias vim="nvim"
@@ -166,7 +149,9 @@ function reset_trap {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec reset_trap
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
-eval "$(starship init zsh)"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
