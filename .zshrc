@@ -69,30 +69,30 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 fpath=($fpath "/Users/rmancan/.zfunctions")
 
 # PERSONAL ALIASES
-EXT_HD_PATH='/Volumes/MANCAN_EXT/dev'
+HD_PATH='/Users/rmancan/workspace'
 
 # DOCKER
-alias dbash="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose exec app sh"
-alias dup="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose up -d"
-alias ddown="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose down"
-alias dres="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker-compose restart"
-alias dlog="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose logs -t -f"
+alias dbash="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose exec app sh"
+alias dup="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose up -d"
+alias ddown="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose down"
+alias dres="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker-compose restart"
+alias dlog="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose logs -t -f"
 alias dps="docker ps"
 
 # FOLDERS
-alias dev="cd ${EXT_HD_PATH}"
-alias ser="cd ${EXT_HD_PATH}/services/"
-alias cro="cd ${EXT_HD_PATH}/services/cronos"
-alias dj="cd ${EXT_HD_PATH}/services/dj/"
-alias fen="cd ${EXT_HD_PATH}/services/fenix"
-alias tes="cd ${EXT_HD_PATH}/personal/test"
-alias api="cd ${EXT_HD_PATH}/services/fenix/app-fenix"
-alias ges="cd ${EXT_HD_PATH}/services/fenix/manager-fenix"
-alias con="cd ${EXT_HD_PATH}/services/fenix/consultant-fenix"
-alias per="cd ${EXT_HD_PATH}/personal/"
-alias api="cd ${EXT_HD_PATH}/services/fenix/app-fenix"
-alias doc="cd ${EXT_HD_PATH}/services/fenix/fenix-dockerize"
-alias chat="cd ${EXT_HD_PATH}/services/fenix/chat-fenix"
+alias dev="cd ${HD_PATH}"
+alias ser="cd ${HD_PATH}/services/"
+alias cro="cd ${HD_PATH}/services/cronos"
+alias dj="cd ${HD_PATH}/services/dj/"
+alias fen="cd ${HD_PATH}/services/fenix"
+alias tes="cd ${HD_PATH}/personal/test"
+alias api="cd ${HD_PATH}/services/fenix/app-fenix"
+alias ges="cd ${HD_PATH}/services/fenix/manager-fenix"
+alias con="cd ${HD_PATH}/services/fenix/consultant-fenix"
+alias per="cd ${HD_PATH}/personal/"
+alias api="cd ${HD_PATH}/services/fenix/app-fenix"
+alias doc="cd ${HD_PATH}/services/fenix/fenix-dockerize"
+alias chat="cd ${HD_PATH}/services/fenix/chat-fenix"
 alias vf='cd ~/.config/nvim && v'
 
 # JS and TS DEVELOPMENT UTILS
