@@ -12,6 +12,8 @@ export PATH="/Users/local/lib/nodejs/node-v12.18.3-linux-x64/bin:$PATH"
 export PATH="$PATH:/Users/rmancan/.composer/vendor/bin"
 export PATH="$PATH:/Users/rmancan/.cargo/bin"
 export PATH="/System/Volumes/Data/Users/rmancan/.gem/ruby/2.6.0:$PATH"
+export PATH="/opt/homebrew/opt:$PATH"
+
 
 # PHP
 # export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
@@ -93,6 +95,7 @@ alias per="cd ${HD_PATH}/personal/"
 alias api="cd ${HD_PATH}/services/fenix/app-fenix"
 alias doc="cd ${HD_PATH}/services/fenix/fenix-dockerize"
 alias chat="cd ${HD_PATH}/services/fenix/chat-fenix"
+alias spe="cd ${HD_PATH}/services/special-forces"
 alias vf='cd ~/.config/nvim && v'
 
 # JS and TS DEVELOPMENT UTILS
