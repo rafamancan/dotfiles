@@ -16,10 +16,15 @@ export PATH="/opt/homebrew/opt:$PATH"
 
 
 # PHP
+# 7.0
 # export PATH="/opt/homebrew/opt/php@7.0/bin:$PATH"
 # export PATH="/opt/homebrew/opt/php@7.0/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+# 7.1
+export PATH="/opt/homebrew/opt/php@7.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.1/sbin:$PATH"
+# 8.1
+# export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PHP_CS_FIXER_IGNORE_ENV=false
 
 export NVM_DIR=~/.nvm
@@ -74,28 +79,15 @@ fpath=($fpath "/Users/rmancan/.zfunctions")
 HD_PATH='/Users/rmancan/workspace'
 
 # DOCKER
-alias dbash="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose exec app sh"
-alias dup="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose up -d"
-alias ddown="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose down"
-alias dres="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker-compose restart"
-alias dlog="cd ${HD_PATH}/services/fenix/fenix-dockerize/dev && docker compose logs -t -f"
 alias dps="docker ps"
+alias dup="docker-compose up -d"
+alias ddown="docker-compose down"
 
 # FOLDERS
 alias dev="cd ${HD_PATH}"
-alias ser="cd ${HD_PATH}/services/"
-alias cro="cd ${HD_PATH}/services/cronos"
-alias dj="cd ${HD_PATH}/services/dj/"
-alias fen="cd ${HD_PATH}/services/fenix"
+alias np="cd ${HD_PATH}/noping"
 alias tes="cd ${HD_PATH}/personal/test"
-alias api="cd ${HD_PATH}/services/fenix/app-fenix"
-alias ges="cd ${HD_PATH}/services/fenix/manager-fenix"
-alias con="cd ${HD_PATH}/services/fenix/consultant-fenix"
 alias per="cd ${HD_PATH}/personal/"
-alias api="cd ${HD_PATH}/services/fenix/app-fenix"
-alias doc="cd ${HD_PATH}/services/fenix/fenix-dockerize"
-alias chat="cd ${HD_PATH}/services/fenix/chat-fenix"
-alias spe="cd ${HD_PATH}/services/special-forces"
 alias vf='cd ~/.config/nvim && v'
 
 # JS and TS DEVELOPMENT UTILS

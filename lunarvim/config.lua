@@ -50,7 +50,13 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  { "wakatime/vim-wakatime" }
+  { "wakatime/vim-wakatime" },
+  {
+    "tzachar/cmp-tabnine",
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
