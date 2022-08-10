@@ -86,6 +86,8 @@ alias ddown="docker-compose down"
 # FOLDERS
 alias dev="cd ${HD_PATH}"
 alias np="cd ${HD_PATH}/noping"
+alias site="cd ${HD_PATH}/noping/nptunnel.com.new"
+alias adm="cd ${HD_PATH}/noping/nptunnel.service.panel"
 alias tes="cd ${HD_PATH}/personal/test"
 alias per="cd ${HD_PATH}/personal/"
 alias vf='cd ~/.config/nvim && v'
