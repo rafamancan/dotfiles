@@ -53,6 +53,8 @@ alias np="cd ${HD_PATH}/noping"
 alias site="cd ${HD_PATH}/noping/nptunnel.com.new"
 alias adm="cd ${HD_PATH}/noping/nptunnel.service.panel"
 alias land="cd ${HD_PATH}/noping/credit-card.landing.nptunnel.com"
+alias api="cd ${HD_PATH}/noping/com.nptunnel.auth_api.php"
+alias prox="cd ${HD_PATH}/noping/com.nptunnel.proxy_data_helper.php"
 
 alias tes="cd ${HD_PATH}/personal/test"
 alias per="cd ${HD_PATH}/personal/"
