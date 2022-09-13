@@ -1,7 +1,7 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "dracula"
 vim.opt.relativenumber = true
 lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
@@ -41,7 +41,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "gruvbox-community/gruvbox" },
+  { "dracula/vim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
@@ -56,13 +56,13 @@ vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 local cmp = require "cmp"
 lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
-    cmp.mapping.abort()
-    local copilot_keys = vim.fn["copilot#Accept"]()
-    if copilot_keys ~= "" then
-        vim.api.nvim_feedkeys(copilot_keys, "i", true)
-    else
-        fallback()
-    end
+  cmp.mapping.abort()
+  local copilot_keys = vim.fn["copilot#Accept"]()
+  if copilot_keys ~= "" then
+    vim.api.nvim_feedkeys(copilot_keys, "i", true)
+  else
+    fallback()
+  end
 end
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

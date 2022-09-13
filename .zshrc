@@ -1,12 +1,8 @@
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
-alias php="/usr/bin/php7.1"
+# alias php="/usr/bin/php7.1"
 
 ZSH_THEME="robbyrussell"
 
@@ -22,10 +18,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 . $HOME/.asdf/asdf.sh
 plugins=(
@@ -63,7 +55,7 @@ alias vf='cd ~/.config/nvim && v'
 # SYSTEM UTILS
 alias vim="nvim"
 alias v="lvim"
-alias c="code-insiders ."
+alias c="code ."
 alias t="tmux"
 # alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias bkp='cd && chmod +x .bkp-dot-win.sh && ./.bkp-dot-win.sh'
