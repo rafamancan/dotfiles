@@ -1,6 +1,6 @@
-# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [Neovim](https://www.neovim.io/), [LunarVim](https://www.lunarvim.org/), [iTerm2](https://iterm2.com/) and [Kitty](https://sw.kovidgoyal.net/kitty/)
+# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [Neovim](https://www.neovim.io/) and [LunarVim](https://www.lunarvim.org/)
 
-# Neovim settings based on (with some customization by me):
+# Neovim/LunarVim settings based on (with some customization by me):
 
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 - [CraftzDog](https://github.com/craftzdog)
