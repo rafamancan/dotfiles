@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/rmancan/.local/bin:$PATH"
@@ -25,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 plugins=(
     git
@@ -73,6 +81,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
 alias python='/usr/local/bin/python3.7'
 alias ls='exa --icons'
+alias cat='bat --style=auto'
 
 # PERSONAL FUNCTIONS
 # push actual branch
@@ -88,5 +97,7 @@ function fet () {
   git fetch -u -p
 }
 
-eval "$(starship init zsh)"
 eval "$(phpenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
