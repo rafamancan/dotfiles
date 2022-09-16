@@ -2,7 +2,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
-# alias php="/usr/bin/php7.1"
+export PATH="/opt/asdf-vm/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.phpenv/bin:$PATH"
 
 ZSH_THEME="robbyrussell"
 
@@ -19,7 +21,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-. $HOME/.asdf/asdf.sh
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+
 plugins=(
     git
     yarn
@@ -57,8 +63,7 @@ alias vim="nvim"
 alias v="lvim"
 alias c="code ."
 alias t="tmux"
-# alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
-alias bkp='cd && chmod +x .bkp-dot-win.sh && ./.bkp-dot-win.sh'
+alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias port='lsof -i'
@@ -84,3 +89,4 @@ function fet () {
 }
 
 eval "$(starship init zsh)"
+eval "$(phpenv init -)"

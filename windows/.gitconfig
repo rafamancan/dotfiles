@@ -1,9 +1,0 @@
-[user]
-	name = Rafael Mançan
-	email = rafael.mancan@gmail.com
-[pull]
-	rebase = true
-[init]
-	defaultBranch = main
-[core]
-	editor = /usr/bin/vim
