@@ -1,17 +1,13 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# Path to your oh-my-zsh installation.
+# PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/opt/asdf-vm/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.phpenv/bin:$PATH"
+
+# PHP 7
+alias php="/usr/sbin/php7"
 
 ZSH_THEME="robbyrussell"
 
@@ -32,8 +28,12 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+# OH-MY-ZSH PLUGINS
 plugins=(
     git
     yarn
@@ -73,7 +73,8 @@ alias c="code ."
 alias t="tmux"
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
 alias cl='xclip -sel clip'
-alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias fix='sudo apt update && sudo apt --fix-broken install && sudo apt upgrade -y && sudo apt install -f && sudo apt autoremove'
 alias port='lsof -i'
 alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
@@ -97,7 +98,4 @@ function fet () {
   git fetch -u -p
 }
 
-eval "$(phpenv init -)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
