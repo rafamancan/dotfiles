@@ -1,7 +1,5 @@
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/home/rmancan/.local/bin:$PATH"
-export PATH="/home/rmancan/.local/bin:$PATH"
 export PATH="/opt/asdf-vm/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.phpenv/bin:$PATH"
@@ -28,9 +26,11 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # OH-MY-ZSH PLUGINS
@@ -39,8 +39,6 @@ plugins=(
     yarn
     zsh-autosuggestions
     zsh-wakatime
-    brew
-    macos
     colorize
     zsh-syntax-highlighting
 )
