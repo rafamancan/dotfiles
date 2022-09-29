@@ -22,7 +22,7 @@ lvim.keys.normal_mode = {
   ["<C-f>"] = ":Telescope live_grep<CR>",
   ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>",
   ["<leader>a"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
-  ["<C-e>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
+  ["<C-h>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -51,6 +51,7 @@ lvim.plugins = {
   { "github/copilot.vim" },
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
+  { "terryma/vim-multiple-cursors" }
 }
 
 -- copilot setup
@@ -58,7 +59,7 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 local cmp = require "cmp"
-lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
+lvim.builtin.cmp.mapping["<C-l>"] = function(fallback)
   cmp.mapping.abort()
   local copilot_keys = vim.fn["copilot#Accept"]()
   if copilot_keys ~= "" then

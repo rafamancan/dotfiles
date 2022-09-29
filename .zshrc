@@ -5,9 +5,9 @@ export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.phpenv/bin:$PATH"
 
 # PHP 7
-alias php="/usr/sbin/php7"
+# alias php="/usr/sbin/php7"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
     git
@@ -23,15 +23,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # OH-MY-ZSH PLUGINS
 plugins=(
@@ -59,6 +54,7 @@ alias adm="cd ${HD_PATH}/noping/nptunnel.service.panel"
 alias land="cd ${HD_PATH}/noping/credit-card.landing.nptunnel.com"
 alias api="cd ${HD_PATH}/noping/com.nptunnel.auth_api.php"
 alias prox="cd ${HD_PATH}/noping/com.nptunnel.proxy_data_helper.php"
+alias ipn="cd ${HD_PATH}/noping/new-ipn"
 
 alias tes="cd ${HD_PATH}/personal/test"
 alias per="cd ${HD_PATH}/personal/"
@@ -97,3 +93,11 @@ function fet () {
 }
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+. $HOME/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
