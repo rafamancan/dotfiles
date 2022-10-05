@@ -45,6 +45,9 @@ HD_PATH='/home/rmancan/workspace'
 alias dps="docker ps"
 alias dup="docker-compose up -d"
 alias ddown="docker-compose down"
+dex() {
+  docker exec -it "$1" /bin/sh
+}
 
 # FOLDERS
 alias dev="cd ${HD_PATH}"
@@ -77,6 +80,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 alias python='/usr/local/bin/python3.7'
 alias ls='exa --icons'
 alias cat='bat --style=auto'
+alias so='source ~/.zshrc'
 
 # PERSONAL FUNCTIONS
 # push actual branch
