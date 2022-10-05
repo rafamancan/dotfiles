@@ -21,8 +21,8 @@ lvim.keys.normal_mode = {
   ["<C-p>"] = ":Telescope find_files<CR>",
   ["<C-f>"] = ":Telescope live_grep<CR>",
   ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>",
-  ["<leader>a"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
-  ["<leader>h"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
+  ["<A-a>"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
+  ["<A-h>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
