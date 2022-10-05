@@ -6,6 +6,7 @@ cp -r ~/.config/lvim/config.lua ~/dotfiles/lunarvim/ 2>/dev/null
 # cp ~/.config/starship.toml ~/dotfiles/
 # cp ~/.tmux.conf.local ~/dotfiles/.tmux.conf.local 2>/dev/null
 cp ~/.gitconfig ~/dotfiles/.gitconfig
+cp ~/wterm-keys.json ~/dotfiles/wterm-keys.json 2>/dev/null
 
 cp ~/.bkp-dot.sh ~/dotfiles/
 

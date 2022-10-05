@@ -1,0 +1,46 @@
+{
+  "command": {
+    "action": "splitPane",
+    "split": "vertical"
+  },
+  "keys": "ctrl+shift+e"
+},
+{
+  "command": {
+    "action": "splitPane",
+    "split": "horizontal"
+  },
+  "keys": "ctrl+shift+o"
+},
+{
+  "command": "closePane",
+  "keys": "ctrl+w"
+},
+{
+  "command": {
+    "action": "moveFocus",
+    "direction": "down"
+  },
+  "keys": "ctrl+j"
+},
+{
+  "command": {
+    "action": "moveFocus",
+    "direction": "left"
+  },
+  "keys": "ctrl+h"
+},
+{
+  "command": {
+    "action": "moveFocus",
+    "direction": "right"
+  },
+  "keys": "ctrl+l"
+},
+{
+  "command": {
+    "action": "moveFocus",
+    "direction": "up"
+  },
+  "keys": "ctrl+k"
+},
