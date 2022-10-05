@@ -81,6 +81,7 @@ alias python='/usr/local/bin/python3.7'
 alias ls='exa --icons'
 alias cat='bat --style=auto'
 alias so='source ~/.zshrc'
+alias ev='eval `ssh-agent` && ssh-add ~/.ssh/id_ed25519'
 
 # PERSONAL FUNCTIONS
 # push actual branch
