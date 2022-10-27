@@ -3,9 +3,11 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/asdf-vm/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.phpenv/bin:$PATH"
+export PATH="$HOME/.phpenv/bin:$PATH"
 
+eval "$(phpenv init -)"
 # PHP 7
-# alias php="/usr/sbin/php7"
+alias php="/usr/bin/php7.4"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -106,3 +108,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
+

@@ -24,6 +24,7 @@ lvim.keys.normal_mode = {
   ["<A-a>"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
   ["<A-h>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
 }
+-- Reminder: C-n multiple-cursors
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
