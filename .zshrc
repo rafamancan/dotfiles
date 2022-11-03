@@ -60,6 +60,7 @@ alias land="cd ${HD_PATH}/noping/credit-card.landing.nptunnel.com"
 alias api="cd ${HD_PATH}/noping/com.nptunnel.auth_api.php"
 alias prox="cd ${HD_PATH}/noping/com.nptunnel.proxy_data_helper.php"
 alias ipn="cd ${HD_PATH}/noping/new-ipn"
+alias sds="cd ${HD_PATH}/noping/smart-ds"
 
 alias tes="cd ${HD_PATH}/personal/test"
 alias per="cd ${HD_PATH}/personal/"
@@ -109,3 +110,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
