@@ -49,10 +49,26 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  { "github/copilot.vim" },
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
   { "terryma/vim-multiple-cursors" }
 }
+
+-- copilot setup
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+local cmp = require "cmp"
+lvim.builtin.cmp.mapping["<C-l>"] = function(fallback)
+  cmp.mapping.abort()
+  local copilot_keys = vim.fn["copilot#Accept"]()
+  if copilot_keys ~= "" then
+    vim.api.nvim_feedkeys(copilot_keys, "i", true)
+  else
+    fallback()
+  end
+end
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- New way to add custom autocmd (https://github.com/LunarVim/LunarVim/pull/2592)
