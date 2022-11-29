@@ -1,7 +1,8 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight-night"
+-- lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "darkplus"
 vim.opt.relativenumber = true
 lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
@@ -45,6 +46,7 @@ lvim.builtin.treesitter.ensure_installed = {
 -- Additional Plugins
 lvim.plugins = {
   { "folke/tokyonight.nvim" },
+  { "martinsione/darkplus.nvim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
