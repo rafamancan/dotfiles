@@ -1,17 +1,16 @@
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = false
--- lvim.colorscheme = "tokyonight-night"
-lvim.colorscheme = "darkplus"
+lvim.format_on_save.enabled = false
+lvim.colorscheme = "lunar"
 vim.opt.relativenumber = true
 lvim.builtin.alpha.active = true
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 vim.opt.timeoutlen = 500
 vim.opt.clipboard = "unnamedplus"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
+-- add your own keymapping
 lvim.keys.normal_mode = {
   ["<TAB>"] = ":bnext<CR>",
   ["<S-TAB>"] = ":bprevious<CR>",
@@ -25,11 +24,35 @@ lvim.keys.normal_mode = {
   ["<A-a>"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
   ["<A-h>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
 }
+
 -- Reminder: C-n multiple-cursors
+
+-- Change theme settings
+-- lvim.builtin.theme.options.dim_inactive = true
+-- lvim.builtin.theme.options.style = "storm"
+
+-- Use which-key to add extra bindings with the leader-key prefix
+-- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["t"] = {
+--   name = "+Trouble",
+--   r = { "<cmd>Trouble lsp_references<cr>", "References" },
+--   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+--   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+--   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+--   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+--   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+-- }
+
+-- TODO: User Config for predefined plugins
+-- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.builtin.alpha.active = true
+lvim.builtin.alpha.mode = "dashboard"
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
   "c",
   "javascript",
   "json",
@@ -43,10 +66,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.highlight.enable = true
+
 -- Additional Plugins
 lvim.plugins = {
-  { "folke/tokyonight.nvim" },
-  { "martinsione/darkplus.nvim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
