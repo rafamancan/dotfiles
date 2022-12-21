@@ -54,6 +54,7 @@ dex() {
 # FOLDERS
 alias dev="cd ${HD_PATH}"
 alias np="cd ${HD_PATH}/noping"
+alias np="cd ${HD_PATH}/navi"
 alias site="cd ${HD_PATH}/noping/nptunnel.com.new"
 alias adm="cd ${HD_PATH}/noping/nptunnel.service.panel"
 alias land="cd ${HD_PATH}/noping/credit-card.landing.nptunnel.com"
@@ -61,6 +62,10 @@ alias api="cd ${HD_PATH}/noping/com.nptunnel.auth_api.php"
 alias prox="cd ${HD_PATH}/noping/com.nptunnel.proxy_data_helper.php"
 alias ipn="cd ${HD_PATH}/noping/new-ipn"
 alias sds="cd ${HD_PATH}/noping/smart-ds"
+alias napi="cd ${HD_PATH}/navi/com.navivpn.api"
+alias nadm="cd ${HD_PATH}/navi/com.navivpn.panel"
+alias nsite="cd ${HD_PATH}/navi/com.navivpn.site"
+alias ndoc="cd ${HD_PATH}/navi/com.navivpn.dockerize"
 
 alias tes="cd ${HD_PATH}/personal/test"
 alias per="cd ${HD_PATH}/personal/"

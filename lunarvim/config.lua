@@ -63,7 +63,7 @@ lvim.plugins = {
   { "github/copilot.vim" },
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
-  { "terryma/vim-multiple-cursors" }
+  { "terryma/vim-multiple-cursors" },
 }
 
 -- copilot setup
@@ -80,6 +80,7 @@ lvim.builtin.cmp.mapping["<C-l>"] = function(fallback)
     fallback()
   end
 end
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- New way to add custom autocmd (https://github.com/LunarVim/LunarVim/pull/2592)
