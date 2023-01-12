@@ -54,7 +54,7 @@ dex() {
 # FOLDERS
 alias dev="cd ${HD_PATH}"
 alias np="cd ${HD_PATH}/noping"
-alias np="cd ${HD_PATH}/navi"
+alias navi="cd ${HD_PATH}/navi"
 alias site="cd ${HD_PATH}/noping/nptunnel.com.new"
 alias adm="cd ${HD_PATH}/noping/nptunnel.service.panel"
 alias land="cd ${HD_PATH}/noping/credit-card.landing.nptunnel.com"
