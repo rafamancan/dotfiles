@@ -1,13 +1,6 @@
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/opt/asdf-vm/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.phpenv/bin:$PATH"
-export PATH="$HOME/.phpenv/bin:$PATH"
-
-eval "$(phpenv init -)"
-# PHP 7
-alias php="/usr/bin/php7.4"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -107,14 +100,12 @@ function fet () {
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-. $HOME/.asdf/asdf.sh
 
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+. "$HOME/.asdf/asdf.sh"
