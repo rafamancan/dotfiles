@@ -1,7 +1,7 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "lunar"
+lvim.colorscheme = "catppuccin-mocha"
 vim.opt.relativenumber = true
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
@@ -20,10 +20,10 @@ lvim.keys.normal_mode = {
   ["<leader>rf"] = ":%s//g<LEFT><LEFT>",
   ["<C-p>"] = ":Telescope find_files<CR>",
   ["<C-f>"] = ":Telescope live_grep<CR>",
-  ["<leader>d"] = ":lua vim.lsp.buf.definition()<CR>",
   ["<A-a>"] = ":lua require(\"harpoon.mark\").add_file()<CR>",
   ["<A-h>"] = ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>",
   ["<C-t>"] = ":ToggleTerm<CR>",
+  ["<C-y>"] = ":Copilot panel<CR>",
 }
 
 -- Reminder: C-n multiple-cursors
@@ -49,6 +49,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "php",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -64,6 +65,8 @@ lvim.plugins = {
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
   { "terryma/vim-multiple-cursors" },
+  { "navarasu/onedark.nvim" },
+  { "catppuccin/nvim", as = "catppuccin" }
 }
 
 -- copilot setup
@@ -87,4 +90,15 @@ end
 vim.api.nvim_create_autocmd("BufWinEnter", {
   pattern = { "*.php" },
   command = "setlocal ts=4 sw=4"
+})
+
+require("lvim.lsp.manager").setup("emmet_ls")
+require("lvim.lsp.manager").setup("phpactor")
+require("lvim.lsp.manager").setup("phpcbf")
+require("lvim.lsp.manager").setup("phpstan")
+
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+  { command = "stylua",  filetype = { "lua" } },
+  { command = "prettier" },
 })

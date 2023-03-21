@@ -41,7 +41,7 @@ alias dps="docker ps"
 alias dup="docker-compose up -d"
 alias ddown="docker-compose down"
 dex() {
-  docker exec -it "$1" /bin/sh
+  docker exec -it "$1" /bin/bash
 }
 
 # FOLDERS

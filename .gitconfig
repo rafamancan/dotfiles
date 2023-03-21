@@ -7,3 +7,5 @@
 	defaultBranch = main
 [core]
 	editor = /usr/bin/vim
+[safe]
+	directory = /var/www/nopi.ng
