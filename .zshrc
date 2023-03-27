@@ -1,8 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 
 plugins=(
     git
@@ -19,9 +26,9 @@ source $ZSH/oh-my-zsh.sh
 
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # OH-MY-ZSH PLUGINS
 plugins=(
@@ -83,8 +90,14 @@ alias ls='exa --icons'
 alias cat='bat --style=auto'
 alias so='source ~/.zshrc'
 alias ev='eval `ssh-agent` && ssh-add ~/.ssh/id_ed25519'
+alias wip='git add . && git commit -m "wip"'
+alias par='php artisan'
 
 # PERSONAL FUNCTIONS
+# rebase commits
+function rbs () {
+  git rebase -i HEAD~$1
+}
 # push actual branch
 function push () {
   git push origin $(git branch --show-current)
@@ -98,7 +111,7 @@ function fet () {
   git fetch -u -p
 }
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # initialise completions with ZSH's compinit
@@ -109,3 +122,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 . "$HOME/.asdf/asdf.sh"
+
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
