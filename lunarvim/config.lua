@@ -65,7 +65,6 @@ lvim.plugins = {
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
   { "terryma/vim-multiple-cursors" },
-  { "navarasu/onedark.nvim" },
   { "catppuccin/nvim", as = "catppuccin" }
 }
 
