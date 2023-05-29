@@ -61,28 +61,62 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  { "github/copilot.vim" },
   { "ThePrimeagen/harpoon" },
   { "wakatime/vim-wakatime" },
   { "terryma/vim-multiple-cursors" },
-  { "catppuccin/nvim", as = "catppuccin" }
+  { "catppuccin/nvim",             name = "catppuccin" },
+  { "jwalton512/vim-blade" },
+  -- GITHUB COPILOT
+  -- { "github/copilot.vim" },
+  -- ZBIRENBAUM COPILOT
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
 }
 
--- copilot setup
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_tab_fallback = ""
-local cmp = require "cmp"
-lvim.builtin.cmp.mapping["<C-l>"] = function(fallback)
-  cmp.mapping.abort()
-  local copilot_keys = vim.fn["copilot#Accept"]()
-  if copilot_keys ~= "" then
-    vim.api.nvim_feedkeys(copilot_keys, "i", true)
-  else
-    fallback()
-  end
+-- copilot setup: GITHUB
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_tab_fallback = ""
+-- local cmp = require "cmp"
+-- lvim.builtin.cmp.mapping["<C-l>"] = function(fallback)
+--   cmp.mapping.abort()
+--   local copilot_keys = vim.fn["copilot#Accept"]()
+--   if copilot_keys ~= "" then
+--     vim.api.nvim_feedkeys(copilot_keys, "i", true)
+--   else
+--     fallback()
+--   end
+-- end
+
+-- copilot setup: ZBIRENBAUM
+local ok, copilot = pcall(require, "copilot")
+if not ok then
+  return
 end
 
+copilot.setup {
+  suggestion = {
+    keymap = {
+      accept = "<c-l>",
+      next = "<c-j>",
+      prev = "<c-k>",
+      dismiss = "<c-h>",
+    },
+  },
+}
+
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- New way to add custom autocmd (https://github.com/LunarVim/LunarVim/pull/2592)
@@ -91,10 +125,10 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   command = "setlocal ts=4 sw=4"
 })
 
-require("lvim.lsp.manager").setup("emmet_ls")
-require("lvim.lsp.manager").setup("phpactor")
-require("lvim.lsp.manager").setup("phpcbf")
-require("lvim.lsp.manager").setup("phpstan")
+-- require("lvim.lsp.manager").setup("emmet_ls")
+-- require("lvim.lsp.manager").setup("phpactor")
+-- require("lvim.lsp.manager").setup("phpcbf")
+-- require("lvim.lsp.manager").setup("phpstan")
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
