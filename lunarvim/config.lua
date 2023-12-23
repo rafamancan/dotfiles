@@ -99,6 +99,8 @@ lvim.plugins = {
 -- end
 
 -- copilot setup: ZBIRENBAUM
+copilot_node_command = vim.fn.expand("$HOME") .. "/.config/nvm/versions/node/v18.18.2/bin/node" -- Node.js version must be > 18.x
+
 local ok, copilot = pcall(require, "copilot")
 if not ok then
   return
@@ -127,8 +129,8 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 -- require("lvim.lsp.manager").setup("emmet_ls")
 -- require("lvim.lsp.manager").setup("phpactor")
--- require("lvim.lsp.manager").setup("phpcbf")
--- require("lvim.lsp.manager").setup("phpstan")
+require("lvim.lsp.manager").setup("phpcbf")
+require("lvim.lsp.manager").setup("phpstan")
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
