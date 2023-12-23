@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   command = "setlocal ts=4 sw=4"
 })
 
-vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>",
+vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>",
   { noremap = true, silent = true })
 
 vim.g.multi_cursor_start_word_key = "<A-j>"

@@ -69,12 +69,17 @@ return {
         })
         which.register({
 
-                ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-                ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },     -- Close current file
-                ["m"] = { "<cmd>Mason<cr>", "Mason" },             -- LSP Manager
-                ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" },     -- Invoking plugin manager
-                ["q"] = { "<cmd>wqall!<CR>", "Quit" },             -- Quit Neovim after saving the file
+                ["a"] = { "<cmd>Alpha<cr>", "[A]lpha" },
+                ["k"] = { "<cmd>bdelete<CR>", "[K]ill Buffer" },     -- Close current file
+                ["m"] = { "<cmd>Mason<cr>", "[M]ason" },             -- LSP Manager
+                ["p"] = { "<cmd>Lazy<CR>", "[P]lugin Manager" },     -- Invoking plugin manager
+                ["q"] = { "<cmd>wqall!<CR>", "[Q]uit" },             -- Quit Neovim after saving the file
                 ["w"] = { "<cmd>w!<CR>", "Save" },                 -- Save current file
+
+                c = {
+                    name = "Code",
+                    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
+                },
 
                 -- Language Support
                 l = {
@@ -113,7 +118,6 @@ return {
                 silent = true,  -- use `silent` when creating keymaps
                 noremap = true, -- use `noremap` when creating keymaps
                 nowait = true,  -- use `nowait` when creating keymaps
-
             })
     end
 }
