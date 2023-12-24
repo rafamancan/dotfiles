@@ -25,6 +25,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Personal :)
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set('n', "<leader>c", ":bd<CR>")
 vim.keymap.set('n', "<TAB>", ":bnext<CR>")
 vim.keymap.set('n', "<S-TAB>", ":bprevious<CR>")
 vim.keymap.set('n', "<C-s>", ":w<CR>")
@@ -34,15 +35,16 @@ vim.keymap.set('n', "<leader>rf", ":%s//g<LEFT><LEFT>")
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
-  pattern = { "*.php" },
-  command = "setlocal ts=4 sw=4"
+    pattern = { "*.php" },
+    command = "setlocal ts=4 sw=4"
 })
 
 vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>",
-  { noremap = true, silent = true })
+    { noremap = true, silent = true })
 
 vim.g.multi_cursor_start_word_key = "<A-j>"
 
 copilot_node_command = vim.fn.expand("$HOME") .. "/.config/nvm/versions/node/v20.10.0/bin/node"
 
 
+vim.keymap.set('n', '<leader>e', ':Neotree filesystem toggle left<CR>', {})

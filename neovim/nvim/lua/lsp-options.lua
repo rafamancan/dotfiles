@@ -1,15 +1,17 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
+local cmp = require('cmp')
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local lspkind = require("lspkind")
+local mason = require('mason')
+local mason_lspconfig = require('mason-lspconfig')
 
-lsp.preset("recommended")
+local cmp_action = lsp_zero.cmp_action()
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-lsp.ensure_installed({
-    'tsserver',
-    'rust_analyzer',
-    'php',
-})
+lsp_zero.preset("recommended")
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp_zero.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -19,25 +21,23 @@ lsp.configure('lua-language-server', {
     }
 })
 
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = nil,
+        ['<S-Tab>'] = nil,
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -46,25 +46,17 @@ cmp.setup({
         { name = 'path' },
         { name = 'buffer',  keyword_length = 4 },
     }),
+
 })
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-
-local lspkind = require("lspkind")
 lspkind.init({
     symbol_map = {
         Copilot = "",
     },
 })
-
-
 vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
-lsp.set_preferences({
+lsp_zero.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
         error = 'E',
@@ -74,8 +66,10 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+---@diagnostic disable-next-line: unused-local
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
+    lsp_zero.default_keymaps({ buffer = bufnr })
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -90,8 +84,38 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+mason.setup({})
+mason_lspconfig.setup({
+    ensure_installed = { 'tsserver', 'intelephense', 'lua_ls' },
+    handlers = {
+        lsp_zero.default_setup,
+    },
+})
+
+local handlers = {
+    function(server_name)         -- default handler (optional)
+        require("lspconfig")[server_name].setup {}
+    end,
+    ["lua_ls"] = function()
+        local lspconfig = require("lspconfig")
+        lspconfig.lua_ls.setup {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        }
+    end,
+}
+
+require("mason-lspconfig").setup_handlers(handlers)
+
+lsp_zero.setup()
 
 vim.diagnostic.config({
     virtual_text = true
 })
+
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
