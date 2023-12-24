@@ -14,12 +14,14 @@ return {
             },
             buffers = {
                 follow_current_file = {
-                    enbaled = true,
+                    enabled = true,
+                    leave_dirs_open = false,
                 },
             },
             filesystem = {
                 follow_current_file = {
                     enbaled = true,
+                    leave_dirs_open = false,
                 },
                 filtered_items = {
                     hide_dotfiles = false,

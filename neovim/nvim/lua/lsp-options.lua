@@ -86,14 +86,14 @@ end)
 
 mason.setup({})
 mason_lspconfig.setup({
-    ensure_installed = { 'tsserver', 'intelephense', 'lua_ls' },
+    ensure_installed = { 'tsserver', 'intelephense', 'lua_ls', 'cssls' },
     handlers = {
         lsp_zero.default_setup,
     },
 })
 
 local handlers = {
-    function(server_name)         -- default handler (optional)
+    function(server_name) -- default handler (optional)
         require("lspconfig")[server_name].setup {}
     end,
     ["lua_ls"] = function()

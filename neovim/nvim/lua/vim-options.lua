@@ -47,4 +47,4 @@ vim.g.multi_cursor_start_word_key = "<A-j>"
 copilot_node_command = vim.fn.expand("$HOME") .. "/.config/nvm/versions/node/v20.10.0/bin/node"
 
 
-vim.keymap.set('n', '<leader>e', ':Neotree filesystem toggle left<CR>', {})
+vim.keymap.set('n', '<leader>e', ':Neotree reveal toggle<CR>', {})
