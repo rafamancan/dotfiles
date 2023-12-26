@@ -14,12 +14,12 @@ cd ~/dotfiles || exit
 git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating $dt"
-push
+git push -u origin master
 
 cd ~/dotfiles || exit
 git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating private $dt"
-push
+git push -u origin main
 
 echo "Atualização realizada: $dt"
