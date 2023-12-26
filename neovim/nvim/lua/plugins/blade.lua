@@ -1,3 +1,3 @@
 return {
-  "jwalton512/vim-blade"
+    "jwalton512/vim-blade"
 }

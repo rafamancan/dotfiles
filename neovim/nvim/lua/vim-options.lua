@@ -2,6 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
+vim.o.hlsearch = false
 vim.opt.swapfile = false
 vim.opt.smartindent = true
 vim.opt.backup = false
@@ -16,6 +17,12 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.opt.timeoutlen = 500
 vim.opt.clipboard = "unnamedplus"
+vim.opt.breakindent = true
+vim.wo.signcolumn = "yes"
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+vim.o.completeopt = 'menuone,noselect'
+vim.o.termguicolors = true
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
