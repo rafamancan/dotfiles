@@ -16,4 +16,10 @@ dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating $dt"
 push
 
+cd ~/dotfiles || exit
+git add .
+dt=$(date '+%d/%m/%Y %H:%M:%S')
+git commit -m "updating private $dt"
+push
+
 echo "Atualização realizada: $dt"
