@@ -22,7 +22,7 @@ dtp=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating private $dtp"
 git push -u origin main
 
-echo "_______________________________________"
+echo "________________________________________________"
 echo "Atualização realizada: $dt"
 echo "Atualização realizada privado: $dtp"
-echo "_______________________________________"
+echo "________________________________________________"
