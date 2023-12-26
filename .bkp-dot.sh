@@ -16,7 +16,7 @@ dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating $dt"
 git push -u origin master
 
-cd ~/dotfiles || exit
+cd ~/dotfiles-pv || exit
 git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating private $dt"
