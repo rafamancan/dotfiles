@@ -15,7 +15,7 @@ git add .
 dt=$(date '+%d/%m/%Y %H:%M:%S')
 git commit -m "updating $dt"
 git push -u origin master
-echo "Atualização realizada privado: $dt"
+echo "Atualização realizada: $dt"
 
 cd ~/dotfiles-pv || exit
 git add .
