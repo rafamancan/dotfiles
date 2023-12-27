@@ -7,7 +7,7 @@ fi
 
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
