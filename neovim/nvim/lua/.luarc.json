@@ -1,8 +1,0 @@
-{
-    "diagnostics.globals": [
-        "vim",
-        "copilot_node_command",
-        "use_preview",
-        "on_attach"
-    ]
-}
