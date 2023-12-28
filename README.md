@@ -1,6 +1,6 @@
-# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/), [Neovim](https://www.neovim.io/) and [LunarVim](https://www.lunarvim.org/)
+# My personal dotfiles for [Oh My Zsh](https://ohmyz.sh/) and [Neovim](https://www.neovim.io/)
 
-# Neovim/LunarVim settings based on (with some customization by me):
+# Neovim settings based on (with some customization by me):
 
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 - [CraftzDog](https://github.com/craftzdog)
@@ -12,6 +12,5 @@
 - Javascript
 - Typescript
 - PHP
-- React
-- Git
 - Copilot
+- Autocompletions
