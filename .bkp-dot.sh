@@ -1,7 +1,7 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
 
-cp -r ~/.config/nvim/ ~/dotfiles/nvim/ 2>/dev/null
+cp -r ~/.config/nvim/ ~/dotfiles/ 2>/dev/null
 cp ~/.tmux.conf ~/dotfiles/.tmux.conf 2>/dev/null
 
 cp ~/.gitconfig ~/dotfiles-pv/.gitconfig

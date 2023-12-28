@@ -28,7 +28,7 @@ require("lazy").setup({
 	"rafamadriz/friendly-snippets",
 	{ "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
 	"zbirenbaum/copilot-cmp",
-	"onsails/lspkind.nvim",
+    "onsails/lspkind.nvim",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
