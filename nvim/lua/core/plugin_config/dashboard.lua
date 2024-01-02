@@ -18,8 +18,10 @@ local footer = [[
 require("dashboard").setup({
 	config = {
 		header = vim.split(logo, "\n"),
+		mru = { limit = 5, cwd_only = false },
+		project = { enable = true, limit = 5 },
 		shortcut = {
-			{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+			{ desc = " Sync Update", group = "@property", action = "Lazy sync", key = "s" },
 			{
 				icon = " ",
 				icon_hl = "@variable",
@@ -36,6 +38,7 @@ require("dashboard").setup({
 				action = "Mason",
 				key = "m",
 			},
+			{ desc = "󰿅 Quit", group = "@property", action = "q", key = "q" },
 		},
 		footer = vim.split(footer, "\n"),
 	},
