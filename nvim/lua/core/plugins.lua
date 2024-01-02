@@ -54,7 +54,6 @@ require("lazy").setup({
 	{
 		"jwalton512/vim-blade",
 	},
-	{ "stevearc/conform.nvim" },
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
@@ -79,4 +78,5 @@ require("lazy").setup({
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
 	{ "NvChad/nvim-colorizer.lua" },
+	{ "nvimtools/none-ls.nvim" },
 })

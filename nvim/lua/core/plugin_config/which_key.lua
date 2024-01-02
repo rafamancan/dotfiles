@@ -31,7 +31,7 @@ wk.register({
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "[R]ename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document [S]ymbols" },
 		t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "[T]ype Definition" },
-		f = { "<cmd>lua require('conform').format()<cr>", "[F]ormat" },
+		f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "[F]ormat" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace [S]ymbols",
