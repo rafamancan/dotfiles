@@ -79,4 +79,6 @@ require("lazy").setup({
 	},
 	{ "NvChad/nvim-colorizer.lua" },
 	{ "nvimtools/none-ls.nvim" },
+	{ "rcarriga/nvim-notify" },
+	{ "mrded/nvim-lsp-notify" },
 })
