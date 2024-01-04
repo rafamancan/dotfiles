@@ -81,4 +81,5 @@ require("lazy").setup({
 	{ "nvimtools/none-ls.nvim" },
 	{ "rcarriga/nvim-notify" },
 	{ "mrded/nvim-lsp-notify" },
+	{ "folke/zen-mode.nvim" },
 })

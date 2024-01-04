@@ -19,6 +19,7 @@ wk.register({
 	["u"] = { "<cmd>UndoTreeToggle<CR>", "[U]ndo tree" },
 	["e"] = { "<cmd>Neotree reveal toggle<CR>", "[E]xplore Files" },
 	["s"] = { "<cmd>so %<CR>", "[S]ource file config" },
+	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
 	c = {
 		name = "[C]ode",
