@@ -11,7 +11,7 @@ logo = string.rep("\n", 8) .. logo .. "\n\n"
 
 local footer = [[
 
-  🐷 Bora trabalhar um pouco?
+  🐷 Bora trabalhar um porco?
 
 ]]
 
