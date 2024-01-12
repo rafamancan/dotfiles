@@ -1,7 +1,7 @@
 require("neo-tree").setup({
 	close_if_last_window = true,
 	window = {
-		width = 30,
+		width = 60,
 	},
 	buffers = {
 		follow_current_file = {
@@ -29,4 +29,4 @@ require("neo-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>e", ":Neotree reveal toggle <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":Neotree right reveal toggle <CR>", { noremap = true, silent = true })

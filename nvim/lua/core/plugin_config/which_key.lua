@@ -17,13 +17,20 @@ wk.register({
 	["r"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
 	["f"] = { "<cmd>HopPattern<CR>", "[F]ind in file" },
 	["u"] = { "<cmd>UndoTreeToggle<CR>", "[U]ndo tree" },
-	["e"] = { "<cmd>Neotree reveal toggle<CR>", "[E]xplore Files" },
+	["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },
 	["s"] = { "<cmd>so %<CR>", "[S]ource file config" },
 	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
 	c = {
 		name = "[C]ode",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
+	},
+	g = {
+		name = "[G]oTo",
+		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "[D]eclaration" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "[D]efinition" },
+		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "[I]mplementation" },
+		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "[R]eferences" },
 	},
 	-- Language Support
 	l = {
