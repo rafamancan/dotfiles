@@ -16,3 +16,7 @@ keymap.set("n", "<C-s>", ":w<CR>", opts)
 keymap.set("n", "<C-a>", "ggVG", opts)
 keymap.set("n", "<leader>rl", ":s//g<LEFT><LEFT>")
 keymap.set("n", "<leader>rf", ":%s//g<LEFT><LEFT>")
+
+-- Stay in indent mode
+keymap.set("v", "<", "<gv", opts)
+keymap.set("v", ">", ">gv", opts)
