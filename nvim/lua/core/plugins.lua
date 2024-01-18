@@ -1,9 +1,10 @@
 require("lazy").setup({
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- },
+    {"rebelot/kanagawa.nvim"},
 	"tpope/vim-commentary",
 	"mattn/emmet-vim",
 	"nvim-tree/nvim-web-devicons",
