@@ -20,4 +20,6 @@ require("core.plugin_config.colorizer")
 require("core.plugin_config.kind")
 require("core.plugin_config.none_ls")
 require("core.plugin_config.notify")
+require("core.plugin_config.ibl")
+require("core.plugin_config.identscope")
 

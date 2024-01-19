@@ -4,7 +4,7 @@ require("lazy").setup({
 	-- 	name = "catppuccin",
 	-- 	priority = 1000,
 	-- },
-    {"rebelot/kanagawa.nvim"},
+	{ "rebelot/kanagawa.nvim" },
 	"tpope/vim-commentary",
 	"mattn/emmet-vim",
 	"nvim-tree/nvim-web-devicons",
@@ -83,4 +83,6 @@ require("lazy").setup({
 	{ "rcarriga/nvim-notify" },
 	{ "mrded/nvim-lsp-notify" },
 	{ "folke/zen-mode.nvim" },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "echasnovski/mini.indentscope" },
 })
