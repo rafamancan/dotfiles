@@ -21,6 +21,15 @@ wk.register({
 	["s"] = { "<cmd>so %<CR>", "[S]ource file config" },
 	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
+	x = {
+		name = "Trouble Diagnostic",
+		x = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
+		w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "[W]orkspace Diagnostic" },
+		d = { "<cmd>TroubleToggle document_diagnostics<cr>", "[D]ocument Diagnostic" },
+		q = { "<cmd>TroubleToggle quickfix<cr>", "[Q]uick Fix" },
+		l = { "<cmd>TroubleToggle loclist<cr>", "[L]oclist" },
+		r = { "<cmd>TroubleToggle lsp_references<cr>", "[R]eferences" },
+	},
 	c = {
 		name = "[C]ode",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
