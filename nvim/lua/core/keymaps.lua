@@ -20,3 +20,6 @@ keymap.set("n", "<leader>rf", ":%s//g<LEFT><LEFT>")
 -- Stay in indent mode
 keymap.set("v", "<", "<gv", opts)
 keymap.set("v", ">", ">gv", opts)
+
+-- Paste without overwriting register
+keymap.set("v", "p", '"_dP')
