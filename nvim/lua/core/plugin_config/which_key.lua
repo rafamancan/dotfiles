@@ -33,6 +33,8 @@ wk.register({
 	c = {
 		name = "[C]ode",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
+        f = {"<cmd>let @+ = expand(\"%\")<CR>", "[C]opy [F]ile Name"},
+        p = {"<cmd>let @+ = expand(\"%:p\")<CR>", "[C]opy File [P]ath"},
 	},
 	g = {
 		name = "[G]oTo",

@@ -23,3 +23,7 @@ keymap.set("v", ">", ">gv", opts)
 
 -- Paste without overwriting register
 keymap.set("v", "p", '"_dP')
+
+-- Move block
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Block Down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Block Up" })
