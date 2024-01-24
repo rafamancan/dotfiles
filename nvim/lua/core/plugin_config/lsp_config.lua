@@ -1,6 +1,27 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "intelephense", "tsserver", "html", "cssls", "tailwindcss" },
+	ensure_installed = {
+		"cssls",
+		"eslint",
+		"html",
+		"intelephense",
+		"jsonls",
+		"lua_ls",
+		"tailwindcss",
+		"tsserver",
+		"yamlls",
+	},
 })
+
+-- ALL installed linters, formatters
+-- "blade-formatter",
+-- "luacheck",
+-- "php-cs-fixer",
+-- "phpcs",
+-- "prettier",
+-- "selene",
+-- "shellcheck",
+-- "shfmt",
+-- "stylua",
 
 local lspconfig = require("lspconfig")
 
