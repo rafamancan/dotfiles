@@ -22,6 +22,7 @@ require("dashboard").setup({
 		project = { enable = true, limit = 5 },
 		shortcut = {
 			{ desc = " Sync Update", group = "@property", action = "Lazy sync", key = "s" },
+			{ desc = " Treesitter Update", group = "@property", action = "TSUpdateSync", key = "t" },
 			{
 				icon = " ",
 				icon_hl = "@variable",
