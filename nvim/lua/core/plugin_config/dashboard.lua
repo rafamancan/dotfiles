@@ -24,14 +24,6 @@ require("dashboard").setup({
 			{ desc = " Sync Update", group = "@property", action = "Lazy sync", key = "s" },
 			{ desc = " Treesitter Update", group = "@property", action = "TSUpdateSync", key = "t" },
 			{
-				icon = " ",
-				icon_hl = "@variable",
-				desc = "Files",
-				group = "Label",
-				action = "Telescope find_files",
-				key = "f",
-			},
-			{
 				icon = "󱚝 ",
 				icon_hl = "@variable",
 				desc = "Mason",
