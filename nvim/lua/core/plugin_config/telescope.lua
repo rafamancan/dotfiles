@@ -1,6 +1,8 @@
-require("telescope").setup({
-	file_ignore_patterns = { "node%_modules/.*", "./public/.*" },
-})
+require("telescope")
+	.setup({
+		file_ignore_patterns = { "node%_modules/.*", "./public/.*" },
+	})
+
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<c-p>", builtin.find_files, {})

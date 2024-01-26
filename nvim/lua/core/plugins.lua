@@ -58,8 +58,11 @@ require("lazy").setup({
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
 	},
-	{ "mbbill/undotree" },
-	{ "windwp/nvim-autopairs" },
+	{
+		"jiaoshijie/undotree",
+		dependencies = "nvim-lua/plenary.nvim",
+		{ "windwp/nvim-autopairs" },
+	},
 	{ "tpope/vim-surround" },
 	{ "ThePrimeagen/refactoring.nvim" },
 	{
@@ -84,4 +87,6 @@ require("lazy").setup({
 	{ "folke/zen-mode.nvim" },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "echasnovski/mini.indentscope" },
+	{ "ThePrimeagen/harpoon" },
+	{ "folke/todo-comments.nvim" },
 })

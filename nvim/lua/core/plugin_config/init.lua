@@ -23,4 +23,5 @@ require("core.plugin_config.notify")
 require("core.plugin_config.ibl")
 require("core.plugin_config.identscope")
 require("core.plugin_config.trouble")
-
+require("core.plugin_config.harpoon")
+require("core.plugin_config.todos")

@@ -9,6 +9,8 @@ wk.setup({
 })
 
 wk.register({
+	["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "[a]dd file in Harpoon" },
+	["A"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "H[A]rpoon Menu" },
 	["d"] = { "<cmd>Dashboard<CR>", "[D]ashboard" },
 	["m"] = { "<cmd>Mason<CR>", "[M]ason" },
 	["L"] = { "<cmd>Lazy<CR>", "[P]lugin Manager" },
@@ -16,11 +18,11 @@ wk.register({
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["r"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
 	["f"] = { "<cmd>HopPattern<CR>", "[F]ind in file" },
-	["u"] = { "<cmd>UndoTreeToggle<CR>", "[U]ndo tree" },
+	["u"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
 	["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },
-	["s"] = { "<cmd>so %<CR>", "[S]ource file config" },
 	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
+	["t"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
 	x = {
 		name = "Trouble Diagnostic",
 		x = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
@@ -33,8 +35,8 @@ wk.register({
 	c = {
 		name = "[C]ode",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
-        f = {"<cmd>let @+ = expand(\"%\")<CR>", "[C]opy [F]ile Name"},
-        p = {"<cmd>let @+ = expand(\"%:p\")<CR>", "[C]opy File [P]ath"},
+		f = { '<cmd>let @+ = expand("%")<CR>', "[C]opy [F]ile Name" },
+		p = { '<cmd>let @+ = expand("%:p")<CR>', "[C]opy File [P]ath" },
 	},
 	g = {
 		name = "[G]oTo",
