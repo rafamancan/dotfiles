@@ -9,8 +9,6 @@ wk.setup({
 })
 
 wk.register({
-	["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "[a]dd file in Harpoon" },
-	["A"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "H[A]rpoon Menu" },
 	["d"] = { "<cmd>Dashboard<CR>", "[D]ashboard" },
 	["m"] = { "<cmd>Mason<CR>", "[M]ason" },
 	["L"] = { "<cmd>Lazy<CR>", "[P]lugin Manager" },
@@ -23,6 +21,11 @@ wk.register({
 	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
 	["t"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
+	h = {
+		name = "[H]arpoon",
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "[A]dd file Harpoon" },
+		l = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "[L]ist Harpoon" },
+	},
 	x = {
 		name = "Trouble Diagnostic",
 		x = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
