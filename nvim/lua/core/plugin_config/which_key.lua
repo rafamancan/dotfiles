@@ -9,7 +9,6 @@ wk.setup({
 })
 
 wk.register({
-	["d"] = { "<cmd>Dashboard<CR>", "[D]ashboard" },
 	["m"] = { "<cmd>Mason<CR>", "[M]ason" },
 	["L"] = { "<cmd>Lazy<CR>", "[P]lugin Manager" },
 	["q"] = { "<cmd>wqall!<CR>", "[Q]uit" },
@@ -56,6 +55,7 @@ wk.register({
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document [S]ymbols" },
 		t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "[T]ype Definition" },
 		f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "[F]ormat" },
+		R = { "<cmd>LspRestart<cr>", "[R]estart" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace [S]ymbols",

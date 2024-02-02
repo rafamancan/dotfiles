@@ -1,9 +1,5 @@
 require("lazy").setup({
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
+	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
 	"tpope/vim-commentary",
 	"mattn/emmet-vim",
 	"nvim-tree/nvim-web-devicons",
@@ -89,4 +85,11 @@ require("lazy").setup({
 	{ "echasnovski/mini.indentscope" },
 	{ "ThePrimeagen/harpoon" },
 	{ "folke/todo-comments.nvim" },
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"tpope/vim-fugitive",
+		},
+	},
 })
