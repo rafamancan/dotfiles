@@ -20,6 +20,7 @@ wk.register({
 	["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
 	["D"] = "which_key_ignore",
 	["t"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
+    ["C"] = {"<cmd>:%s/\r//g<CR>", "[C]lear ^M"},
 	h = {
 		name = "[H]arpoon",
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "[A]dd file Harpoon" },
