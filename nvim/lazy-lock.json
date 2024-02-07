@@ -1,4 +1,5 @@
 {
+  "ChatGPT.nvim": { "branch": "main", "commit": "aadb607038d53d97be4da368b07355f65ad3f047" },
   "LazyVim": { "branch": "main", "commit": "c433ea7aa842c446edc2b1570998bf5440c68188" },
   "LuaSnip": { "branch": "master", "commit": "2dbef19461198630b3d7c39f414d09fb07d1fdd2" },
   "SchemaStore.nvim": { "branch": "main", "commit": "898a19cb54f310dda7cdeedf3d75aeeffcf19136" },
@@ -18,7 +19,6 @@
   "friendly-snippets": { "branch": "main", "commit": "b8fae73a479ae0a1c54f5c98fa687ae8a0addc53" },
   "git.nvim": { "branch": "main", "commit": "6b4a66f8a66e567bf27a0ef1de72cf5e338df4c3" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },
-  "gruvbox.nvim": { "branch": "main", "commit": "6e4027ae957cddf7b193adfaec4a8f9e03b4555f" },
   "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
   "headlines.nvim": { "branch": "master", "commit": "e3d7bfdf40e41a020d966d35f8b48d75b90367d2" },
   "hop.nvim": { "branch": "master", "commit": "6d853addd6e11df8338b26e869a29b36f2c3e893" },

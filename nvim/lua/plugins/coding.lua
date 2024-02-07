@@ -64,4 +64,9 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   cmd = { "ChatGPTActAs", "ChatGPT" },
+  --   opts = {},
+  -- },
 }
