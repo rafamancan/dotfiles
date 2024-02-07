@@ -1,0 +1,10 @@
+{
+    "diagnostics.disable": [
+        "incomplete-signature-doc",
+        "trailing-space",
+        "missing-fields"
+    ],
+    "diagnostics.globals": [
+        "vim"
+    ]
+}
