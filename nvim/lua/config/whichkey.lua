@@ -5,7 +5,7 @@ wk.register({
   ["L"] = { "<cmd>Lazy<CR>", "[P]lugin Manager" },
   ["q"] = { "<cmd>wqall!<CR>", "[Q]uit" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["r"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
+  ["R"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
   ["f"] = { "<cmd>HopPattern<CR>", "[F]ind in file" },
   ["u"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
   ["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },

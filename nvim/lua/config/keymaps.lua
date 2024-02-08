@@ -20,6 +20,9 @@ keymap.set("n", "<C-a>", "gg<S-v>G", opts)
 keymap.set("n", "<leader>rl", ":s//g<LEFT><LEFT>")
 keymap.set("n", "<leader>rf", ":%s//g<LEFT><LEFT>")
 
+-- Inc Rename
+keymap.set("n", "<leader>rn", ":IncRename ")
+
 -- Stay in indent mode
 keymap.set("v", "<", "<gv", opts)
 keymap.set("v", ">", ">gv", opts)
