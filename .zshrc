@@ -1,6 +1,9 @@
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # OH-MY-ZSH PLUGINS
 plugins=(
@@ -96,4 +99,5 @@ source $HOME/.agent-bridge.sh
 
 eval "$(starship init zsh)"
 ev
+
 

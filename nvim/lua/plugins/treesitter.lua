@@ -3,29 +3,56 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    build = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+    dependencies = {
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = {
+          custom_calculation = function(_, language_tree)
+            if vim.bo.filetype == "blade" and language_tree._lang ~= "javascript" and language_tree._lang ~= "php" then
+              return "{{-- %s --}}"
+            end
+          end,
+        },
+      },
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     opts = {
       ensure_installed = {
-        "astro",
+        "bash",
         "cmake",
         "cpp",
         "css",
-        "fish",
         "gitignore",
         "go",
         "graphql",
+        "html",
         "http",
         "java",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
         "php",
+        "python",
+        "query",
+        "regex",
         "rust",
         "scss",
         "sql",
         "svelte",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
       },
-
-      -- matchup = {
-      -- 	enable = true,
-      -- },
-
+      auto_install = true,
+      highlight = {
+        enable = true,
+      },
       -- https://github.com/nvim-treesitter/playground#query-linter
       query_linter = {
         enable = true,
@@ -54,6 +81,17 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      ---@diagnostic disable-next-line: inject-field
+      parser_config.blade = {
+        install_info = {
+          url = "https://github.com/EmranMR/tree-sitter-blade",
+          files = { "src/parser.c" },
+          branch = "main",
+        },
+        filetype = "blade",
+      }
 
       -- MDX
       vim.filetype.add({

@@ -5,16 +5,36 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
+        "actionlint",
+        "ansible-language-server",
+        "ansible-lint",
+        "antlers-language-server",
+        "bash-language-server",
+        "black",
+        "blade-formatter",
+        "css-lsp",
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+        "dot-language-server",
+        "eslint_d",
+        "flake8",
+        "hadolint",
+        "html-lsp",
         "intelephense",
-        "php-cs-fixer",
-        "stylua",
-        "selene",
         "luacheck",
+        "nginx-language-server",
+        "php-debug-adapter",
+        "phpstan",
+        "pint",
+        "prettierd",
+        "pyright",
+        "rustywind",
+        "selene",
         "shellcheck",
         "shfmt",
+        "stylua",
         "tailwindcss-language-server",
         "typescript-language-server",
-        "css-lsp",
       })
     end,
   },
@@ -26,6 +46,18 @@ return {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
+        intelephense = {
+          filetypes = { "php", "blade" },
+          settings = {
+            intelephense = {
+              filetypes = { "php", "blade" },
+              files = {
+                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                maxSize = 5000000,
+              },
+            },
+          },
+        },
         cssls = {},
         tailwindcss = {
           root_dir = function(...)
