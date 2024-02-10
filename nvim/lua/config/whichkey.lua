@@ -7,7 +7,7 @@ wk.register({
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["R"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
   ["f"] = { "<cmd>HopPattern<CR>", "[F]ind in file" },
-  ["u"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
+  ["U"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
   ["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },
   ["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
   ["D"] = "which_key_ignore",

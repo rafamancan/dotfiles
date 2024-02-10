@@ -99,5 +99,4 @@ source $HOME/.agent-bridge.sh
 
 eval "$(starship init zsh)"
 ev
-
-
+clear

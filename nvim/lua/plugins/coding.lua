@@ -21,6 +21,7 @@ return {
       {
         "<leader>r",
         function()
+          ---@diagnostic disable-next-line: missing-parameter
           require("refactoring").select_refactor()
         end,
         mode = "v",
@@ -74,22 +75,6 @@ return {
   },
   {
     "jwalton512/vim-blade",
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function()
-      ---@diagnostic disable-next-line: no-unknown
-      local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.diagnostics.phpstan.with({
-            extra_args = {
-              "--memory-limit=2G",
-            },
-          }),
-        },
-      }
-    end,
   },
   {
     "NvChad/nvim-colorizer.lua",
