@@ -50,6 +50,7 @@ alias par='php artisan'
 alias cf='composer fix'
 alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
+alias gc='git-cz'
 
 # PERSONAL FUNCTIONS
 
