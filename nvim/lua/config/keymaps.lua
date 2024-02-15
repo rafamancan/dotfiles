@@ -38,7 +38,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Block Up" })
 keymap.set("n", "dw", 'vb"_d')
 
 -- Neotree toggle
-keymap.set("n", "<leader>e", ":Neotree right reveal toggle <CR>", { noremap = true, silent = true })
+keymap.set("x", "<leader>e", "<cmd>Neotree right reveal toggle<CR>", { noremap = false, silent = true })
 
 keymap.set("n", "<c-f>", "<cmd>HopPattern<CR>", { noremap = false })
 
