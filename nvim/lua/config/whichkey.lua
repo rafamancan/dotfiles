@@ -6,13 +6,15 @@ wk.register({
   ["q"] = { "<cmd>wqall!<CR>", "[Q]uit" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["R"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "[R]efactor" },
-  ["f"] = { "<cmd>HopPattern<CR>", "[F]ind in file" },
   ["U"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
   ["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },
-  ["z"] = { "<cmd>ZenMode<CR>", "[Z]en ^^" },
   ["D"] = "which_key_ignore",
   ["t"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
   ["C"] = { "<cmd>:%s/\r//g<CR>", "[C]lear ^M" },
+  f = {
+    name = "[F]ind",
+    ["/"] = { "<cmd>Telescope live_grep<cr>", "Find Grep" },
+  },
   h = {
     name = "[H]arpoon",
     a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "[A]dd file Harpoon" },
@@ -32,6 +34,7 @@ wk.register({
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
     f = { '<cmd>let @+ = expand("%")<CR>', "[C]opy [F]ile Name" },
     p = { '<cmd>let @+ = expand("%:p")<CR>', "[C]opy File [P]ath" },
+    t = { "<cmd>CloakToggle<CR>", "[T]oggle [C]loak" },
   },
   g = {
     name = "[G]oTo",

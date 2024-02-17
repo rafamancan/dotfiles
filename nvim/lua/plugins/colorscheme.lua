@@ -1,44 +1,55 @@
 return {
   {
-    "tokyonight.nvim",
-    priority = 1000,
-    opts = function()
-      return {
-        style = "moon",
-        transparent = true,
-        styles = {
-          --   sidebars = "transparent",
-          floats = "transparent",
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
+    opts = {
+      transparent_background = true,
+      background = {
+        light = "latte",
+        dark = "mocha",
+      },
+      integrations = {
+        aerial = true,
+        alpha = true,
+        cmp = true,
+        dashboard = true,
+        flash = true,
+        gitsigns = true,
+        headlines = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
+        leap = true,
+        lsp_trouble = true,
+        mason = true,
+        markdown = true,
+        mini = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
         },
-        sidebars = {
-          "qf",
-          "vista_kind",
-          "terminal",
-          "spectre_panel",
-          "startuptime",
-          "Outline",
-        },
-        on_highlights = function(hl, c)
-          hl.CursorLineNr = { fg = c.orange, bold = true }
-          -- hl.LineNr = { fg = c.orange, bold = true }
-          hl.LineNrAbove = { fg = c.fg_gutter }
-          hl.LineNrBelow = { fg = c.fg_gutter }
-          local prompt = "#2d3149"
-          hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
-          hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
-          hl.TelescopePromptNormal = { bg = prompt }
-          hl.TelescopePromptBorder = { bg = prompt, fg = prompt }
-          hl.TelescopePromptTitle = { bg = c.fg_gutter, fg = c.orange }
-          hl.TelescopePreviewTitle = { bg = c.bg_dark, fg = c.bg_dark }
-          hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
-        end,
-      }
-    end,
+        navic = { enabled = true, custom_bg = "lualine" },
+        neotest = true,
+        neotree = true,
+        noice = true,
+        notify = true,
+        semantic_tokens = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
+        which_key = true,
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
     },
   },
 }

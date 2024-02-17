@@ -13,12 +13,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- -- Set the tabstop and shiftwidth for PHP files
--- vim.api.nvim_create_autocmd("BufWinEnter", {
---   pattern = { "*.php" },
---   command = "setlocal ts=4 sw=4",
--- })
-
 -- workaround from https://github.com/kauffinger
 local augroup = vim.api.nvim_create_augroup("lsp_blade_workaround", { clear = true })
 

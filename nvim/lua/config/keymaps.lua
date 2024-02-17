@@ -12,7 +12,6 @@ keymap.set("n", "<c-l>", ":wincmd l<CR>", opts)
 
 -- Personal :)
 keymap.set("n", "<leader>h", ":nohlsearch<CR>", opts)
-keymap.set("n", "<leader>c", ":bd<CR>", opts)
 keymap.set("n", "<TAB>", ":bnext<CR>", opts)
 keymap.set("n", "<S-TAB>", ":bprevious<CR>", opts)
 keymap.set("n", "<C-s>", ":w<CR>", opts)
@@ -36,9 +35,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Block Up" })
 
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
-
--- Neotree toggle
-keymap.set("x", "<leader>e", "<cmd>Neotree right reveal toggle<CR>", { noremap = false, silent = true })
 
 keymap.set("n", "<c-f>", "<cmd>HopPattern<CR>", { noremap = false })
 

@@ -52,7 +52,7 @@ return {
     opts = {
       options = {
         -- globalstatus = false,
-        theme = "tokyonight",
+        theme = "catppuccin",
       },
     },
   },
@@ -128,7 +128,9 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-
+    keys = {
+      { "<leader>e", "<cmd>Neotree right reveal toggle<CR>", desc = "Toggle file tree" },
+    },
     config = function()
       require("neo-tree").setup({
         close_if_last_window = true,

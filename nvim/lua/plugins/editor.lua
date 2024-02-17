@@ -2,7 +2,6 @@ return {
   {
     enabled = false,
     "folke/flash.nvim",
-    ---@type Flash.Config
     opts = {
       search = {
         forward = true,
@@ -39,12 +38,23 @@ return {
           require("lazyvim.util").on_load("telescope.nvim", function()
             require("telescope").load_extension("projects")
           end)
+          require("telescope").setup({
+            defaults = {
+              file_ignore_patterns = {
+                "node_modules",
+                ".git",
+                "public",
+                "dist",
+                "vendor",
+                "composer.lock",
+              },
+            },
+          })
         end,
         keys = {
           { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
           { "<C-e>", "<Cmd>Telescope buffers<CR>", desc = "Buffers" },
-          { "<C-p>", "<Cmd>Telescope find_files hidden=true<CR>", desc = "List files" },
-          { "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Search in files" },
+          { "<C-p>", "<Cmd>Telescope find_files<CR>", desc = "List files" },
         },
       },
     },
@@ -53,5 +63,19 @@ return {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
     config = true,
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "gsa",
+        delete = "gsd",
+        find = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
+        replace = "gsr",
+        update_n_lines = "gsn",
+      },
+    },
   },
 }
