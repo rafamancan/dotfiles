@@ -40,10 +40,8 @@ vim.opt.showtabline = 2
 -- show hidden characters
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "▸",
   trail = "·",
   eol = "↴",
-  nbsp = "_",
 }
 
 -- use spaces for tabs and whatnot
