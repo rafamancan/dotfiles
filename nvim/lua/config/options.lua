@@ -7,7 +7,6 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.backspace = "2"
 vim.opt.showcmd = true
-vim.opt.list = true
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.cursorline = true
@@ -38,9 +37,14 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 vim.opt.showtabline = 2
 
--- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
+-- show hidden characters
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "▸",
+  trail = "·",
+  eol = "↴",
+  nbsp = "_",
+}
 
 -- use spaces for tabs and whatnot
 vim.opt.shiftround = true
