@@ -83,7 +83,6 @@ function cb () {
         echo
         echo "Cancelando.."
     fi
-  # print response
 }
 
 # docker bash
