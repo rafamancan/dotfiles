@@ -41,7 +41,7 @@ vim.opt.showtabline = 2
 vim.opt.list = true
 vim.opt.listchars = {
   trail = "·",
-  eol = "↴",
+  tab = " »",
 }
 
 -- use spaces for tabs and whatnot
