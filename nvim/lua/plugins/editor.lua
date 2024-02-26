@@ -90,4 +90,5 @@ return {
       -- configurations go here
     },
   },
+  { "wakatime/vim-wakatime", lazy = false },
 }
