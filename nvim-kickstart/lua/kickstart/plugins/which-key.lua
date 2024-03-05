@@ -17,7 +17,8 @@ return {
         ['U'] = { "<cmd>lua require('undotree').toggle()<cr>", '[U]ndo tree' },
         ['e'] = { '<cmd>Neotree right reveal toggle<CR>', '[E]xplore Files' },
         ['D'] = 'which_key_ignore',
-        ['t'] = { '<cmd>TodoTrouble<CR>', '[T]odo List' },
+        ['t'] = { "<cmd>lua require('neotest').run.run()<CR>", '[T]est' },
+        ['T'] = { '<cmd>TodoTrouble<CR>', '[T]odo List' },
         ['C'] = { '<cmd>:%s/\r//g<CR>', '[C]lear ^M' },
         b = {
           name = '[B]uffer',
