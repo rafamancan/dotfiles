@@ -23,6 +23,9 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
+-- Insert column at 120 characters
+vim.opt.colorcolumn = '120'
+
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
