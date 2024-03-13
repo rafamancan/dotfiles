@@ -183,6 +183,13 @@ return {
             },
           },
         },
+        bashls = {
+          filetypes = { 'sh' },
+          files = {
+            associations = { '*.sh' },
+            maxSize = 5000000,
+          },
+        },
         tailwindcss = {
           root_dir = function(...)
             return require('lspconfig.util').root_pattern '.git'(...)
