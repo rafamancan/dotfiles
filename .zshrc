@@ -42,7 +42,7 @@ echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
 alias python='/usr/local/bin/python3.7'
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias cat='bat --style=auto'
 alias so='source ~/.zshrc'
 alias wip='git add . && git commit -m "wip"'
