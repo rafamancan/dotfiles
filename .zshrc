@@ -41,7 +41,7 @@ alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
-alias python='/usr/local/bin/python3.7'
+# alias python='/usr/local/bin/python3.7'
 alias ls='eza --icons'
 alias cat='bat --style=auto'
 alias so='source ~/.zshrc'
@@ -110,10 +110,10 @@ source  $HOME/dotfiles-pv/gcp
 
 eval "$(op completion zsh)"; compdef _op op
 
-source $HOME/.agent-bridge.sh
+# source $HOME/.agent-bridge.sh
 
 eval "$(starship init zsh)"
 ev
-clear
+# clear
 
 PATH=~/.console-ninja/.bin:$PATH
