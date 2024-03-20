@@ -1,9 +1,8 @@
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/julia/bin
 
 # OH-MY-ZSH PLUGINS
 plugins=(
@@ -41,7 +40,6 @@ alias not='echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
 '
-# alias python='/usr/local/bin/python3.7'
 alias ls='eza --icons'
 alias cat='bat --style=auto'
 alias so='source ~/.zshrc'
@@ -114,6 +112,4 @@ eval "$(op completion zsh)"; compdef _op op
 
 eval "$(starship init zsh)"
 ev
-# clear
-
-PATH=~/.console-ninja/.bin:$PATH
+clear
