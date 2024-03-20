@@ -52,6 +52,8 @@ alias ct='composer test'
 alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
 alias gc='git-cz'
+# changing php version
+alias phpc='sudo update-alternatives --config php'
 
 # PERSONAL FUNCTIONS
 
