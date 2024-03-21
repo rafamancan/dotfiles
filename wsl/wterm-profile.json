@@ -1,0 +1,11 @@
+{
+ "profiles": 
+    {
+        "defaults": 
+        {
+            "bellStyle": "none",
+             "opacity": 92,
+            "useAcrylic": false
+        },
+    }
+}
