@@ -49,7 +49,7 @@ alias cf='composer fix'
 alias ct='composer test'
 alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
-alias gc='git-cz'
+alias gc='git-cz --disable-emoji'
 # changing php version
 alias phpc='sudo update-alternatives --config php'
 
