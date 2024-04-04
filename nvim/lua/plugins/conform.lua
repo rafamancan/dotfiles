@@ -15,7 +15,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint" },
+        php = { "php-cs-fixer" },
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
@@ -37,6 +37,18 @@ return {
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
         -- },
+        php_cs_fixer = {
+          meta = {
+            url = "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer",
+            description = "The PHP Coding Standards Fixer.",
+          },
+          command = util.find_executable({
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer",
+            "vendor/bin/php-cs-fixer",
+          }, "php-cs-fixer"),
+          args = { "fix", "$FILENAME" },
+          stdin = false,
+        },
         pint = {
           meta = {
             url = "https://github.com/laravel/pint",
