@@ -36,7 +36,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 vim.opt.showtabline = 2
-vim.g.autoformat = true
+vim.g.autoformat = false
 
 -- show hidden characters
 vim.opt.list = true
