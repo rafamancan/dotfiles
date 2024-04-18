@@ -97,6 +97,11 @@ dex2() {
   docker exec -it "$1" /bin/sh
 }
 
+# docker get ip
+dip(){
+    docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$1"
+}
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
