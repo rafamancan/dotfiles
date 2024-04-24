@@ -54,6 +54,10 @@ alias gc='git-cz --disable-emoji'
 # changing php version
 alias phpc='sudo update-alternatives --config php'
 
+
+# neovim alternatives
+alias avim="NVIM_APPNAME=astronvim nvim"
+
 # PERSONAL FUNCTIONS
 
 # rebase commits
