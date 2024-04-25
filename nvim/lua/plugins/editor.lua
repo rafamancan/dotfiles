@@ -91,4 +91,24 @@ return {
     },
   },
   { "wakatime/vim-wakatime", lazy = false },
+  {
+    "stevearc/aerial.nvim",
+    opts = {
+      backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
+      layout = {
+        max_width = { 50, 0.3 },
+        width = nil,
+        min_width = 30,
+        win_opts = {},
+        default_direction = "prefer_right",
+        placement = "window",
+        resize_to_content = true,
+        preserve_equality = false,
+      },
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 }

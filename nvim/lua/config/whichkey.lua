@@ -9,8 +9,12 @@ wk.register({
   ["U"] = { "<cmd>lua require('undotree').toggle()<cr>", "[U]ndo tree" },
   ["e"] = { "<cmd>Neotree right reveal toggle<CR>", "[E]xplore Files" },
   ["D"] = "which_key_ignore",
-  ["t"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
   ["C"] = { "<cmd>:%s/\r//g<CR>", "[C]lear ^M" },
+  t = {
+    name = "[T]oogle",
+    ["o"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
+    ["a"] = { "<cmd>AerialToggle<CR>", "[A]erial" },
+  },
   f = {
     name = "[F]ind",
     ["/"] = { "<cmd>Telescope live_grep<cr>", "Find Grep" },
@@ -59,7 +63,7 @@ wk.register({
   },
   o = {
     name = "ChatGPT",
-    m = { "<cmd>ChatGPT<CR>", "ChatGPT" , mode = { "n", "v" } },
+    m = { "<cmd>ChatGPT<CR>", "ChatGPT", mode = { "n", "v" } },
     e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
     g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
     t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
