@@ -11,7 +11,7 @@ wk.register({
   ["D"] = "which_key_ignore",
   ["C"] = { "<cmd>:%s/\r//g<CR>", "[C]lear ^M" },
   t = {
-    name = "[T]oogle",
+    name = "[T]oggle",
     ["o"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
     ["a"] = { "<cmd>AerialToggle<CR>", "[A]erial" },
   },
