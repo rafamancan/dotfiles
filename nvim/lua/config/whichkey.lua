@@ -12,8 +12,9 @@ wk.register({
   ["C"] = { "<cmd>:%s/\r//g<CR>", "[C]lear ^M" },
   t = {
     name = "[T]oggle",
-    ["o"] = { "<cmd>TodoTrouble<CR>", "[T]odo List" },
+    ["o"] = { "<cmd>TodoTrouble<CR>", "T[o]do List" },
     ["a"] = { "<cmd>AerialToggle<CR>", "[A]erial" },
+    ["c"] = { "<cmd>CloakToggle<CR>", "[C]loak" },
   },
   f = {
     name = "[F]ind",
@@ -38,7 +39,6 @@ wk.register({
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction" },
     f = { '<cmd>let @+ = expand("%")<CR>', "[C]opy [F]ile Name" },
     p = { '<cmd>let @+ = expand("%:p")<CR>', "[C]opy File [P]ath" },
-    t = { "<cmd>CloakToggle<CR>", "[T]oggle [C]loak" },
   },
   g = {
     name = "[G]oTo",
