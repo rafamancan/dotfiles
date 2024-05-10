@@ -74,9 +74,6 @@ return {
     end,
   },
   {
-    "jwalton512/vim-blade",
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {
