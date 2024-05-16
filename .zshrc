@@ -123,5 +123,6 @@ eval "$(op completion zsh)"; compdef _op op
 # source $HOME/.agent-bridge.sh
 
 eval "$(starship init zsh)"
+eval $(thefuck --alias fuck)
 ev
 clear
