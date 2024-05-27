@@ -1,5 +1,5 @@
-local discipline = require("rmancan.discipline")
-discipline.cowboy()
+-- local discipline = require("rmancan.discipline")
+-- discipline.cowboy()
 
 local keymap = vim.keymap
 
