@@ -1,0 +1,34 @@
+{
+    "Controller": {
+        "prefix": "cont",
+        "body": [
+            "<?php",
+            "",
+            "namespace App\\Http\\Controllers;",
+            "",
+            "class $1Controller extends Controller",
+            "{",
+            "    public function __construct()",
+            "    {",
+            "    }",
+            "}"
+        ],
+        "description": "Controller handler"
+    },
+    "Service": {
+        "prefix": "serv",
+        "body": [
+            "<?php",
+            "",
+            "namespace App\\Http\\Services;",
+            "",
+            "class $1Service extends BaseService",
+            "{",
+            "    public function __construct()",
+            "    {",
+            "    }",
+            "}"
+        ],
+        "description": "Service handler"
+    }
+}

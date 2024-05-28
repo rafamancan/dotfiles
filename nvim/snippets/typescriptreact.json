@@ -1,0 +1,11 @@
+{
+    "UseEffect": {
+        "prefix": "eff",
+        "body": [
+            "useEffect(() => {",
+            "  console.log($1);",
+            "}, [$1]);"
+        ],
+        "description": "useEffect handler"
+    }
+}
