@@ -27,12 +27,12 @@ wk.register({
   },
   x = {
     name = "Trouble Diagnostic",
-    x = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
-    w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "[W]orkspace Diagnostic" },
-    d = { "<cmd>TroubleToggle document_diagnostics<cr>", "[D]ocument Diagnostic" },
-    q = { "<cmd>TroubleToggle quickfix<cr>", "[Q]uick Fix" },
-    l = { "<cmd>TroubleToggle loclist<cr>", "[L]oclist" },
-    r = { "<cmd>TroubleToggle lsp_references<cr>", "[R]eferences" },
+    x = { "<cmd>Trouble toggle<cr>", "Trouble Toggle" },
+    w = { "<cmd>Trouble toggle workspace_diagnostics<cr>", "[W]orkspace Diagnostic" },
+    d = { "<cmd>Trouble toggle diagnostics<cr>", "[D]ocument Diagnostic" },
+    q = { "<cmd>Trouble toggle quickfix<cr>", "[Q]uick Fix" },
+    l = { "<cmd>Trouble toggle loclist<cr>", "[L]oclist" },
+    r = { "<cmd>Trouble toggle lsp_references<cr>", "[R]eferences" },
   },
   c = {
     name = "[C]ode",
