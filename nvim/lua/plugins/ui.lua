@@ -54,7 +54,7 @@ return {
     opts = {
       options = {
         globalstatus = true,
-        theme = "rose-pine",
+        theme = "tokyonight",
       },
     },
   },
