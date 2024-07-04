@@ -52,10 +52,10 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
-      -- options = {
-      --   globalstatus = true,
-      --   theme = "tokyonight",
-      -- },
+      options = {
+        globalstatus = true,
+        theme = "tokyonight",
+      },
     },
   },
 
