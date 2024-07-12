@@ -132,5 +132,6 @@ source  $HOME/dotfiles-pv/gcp
 
 eval "$(starship init zsh)"
 eval $(thefuck --alias fuck)
+
 ev
 clear
