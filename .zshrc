@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/julia/bin
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # OH-MY-ZSH PLUGINS
 plugins=(
@@ -126,7 +126,7 @@ autoload -Uz compinit && compinit
 
 source  $HOME/dotfiles-pv/gcp
 
-eval "$(op completion zsh)"; compdef _op op
+# eval "$(op completion zsh)"; compdef _op op
 
 # source $HOME/.agent-bridge.sh
 
