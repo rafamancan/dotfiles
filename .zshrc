@@ -51,7 +51,6 @@ alias cf='composer fix'
 alias ct='composer test'
 alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
-alias gc='git-cz --disable-emoji'
 # changing php version
 alias phpc='sudo update-alternatives --config php'
 
@@ -128,7 +127,7 @@ source  $HOME/dotfiles-pv/gcp
 
 # eval "$(op completion zsh)"; compdef _op op
 
-# source $HOME/.agent-bridge.sh
+source $HOME/.agent-bridge.sh
 
 eval "$(starship init zsh)"
 eval $(thefuck --alias fuck)
