@@ -1,7 +1,7 @@
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/usr/local/go/bin/bin
 export PATH=$PATH:/usr/local/julia/bin
 # source "$HOME/.cargo/env"
 
