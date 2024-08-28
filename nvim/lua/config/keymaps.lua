@@ -38,4 +38,9 @@ keymap.set("n", "dw", 'vb"_d')
 
 keymap.set("n", "<c-f>", "<cmd>HopPattern<CR>", { noremap = false })
 
+keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", {})
+keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
+keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
+keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
+
 require("config/whichkey")
