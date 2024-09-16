@@ -102,6 +102,11 @@ function ta {
   tmux a -t "$1"
 }
 
+# tmux new session
+function tn {
+  tmux new -s "$1"
+}
+
 # docker bash
 dex() {
   docker exec -it "$1" /bin/bash
