@@ -7,6 +7,7 @@ cp ~/.p10k.zsh ~/dotfiles/.p10k.zsh 2>/dev/null
 cp ~/.config/starship.toml ~/dotfiles/startship.toml 2>/dev/null
 
 cp ~/.gitconfig ~/dotfiles-pv/.gitconfig
+cp ~/.ssh/config ~/dotfiles-pv/config
 
 cp ~/wterm-keys.json ~/dotfiles/wterm-keys.json 2>/dev/null
 
