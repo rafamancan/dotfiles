@@ -53,6 +53,7 @@ alias cf='composer fix'
 alias ct='composer test'
 alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
+alias sail='bash vendor/bin/sail'
 # changing php version
 alias phpc='sudo update-alternatives --config php'
 
