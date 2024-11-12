@@ -38,10 +38,11 @@ return {
     opts = {
       options = {
         mode = "buffers",
-        separator_style = "thick",
+        separator_style = "sloped",
         show_buffer_close_icons = false,
-        show_close_icon = false,
+        show_close_icon = true,
         persist_size = false,
+        diagnostics = "nvim_lsp",
       },
     },
   },
@@ -60,11 +61,11 @@ return {
   },
 
   -- filename
-  {
-    "b0o/incline.nvim",
-    opts = {},
-    event = "VeryLazy",
-  },
+  -- {
+  --   "b0o/incline.nvim",
+  --   opts = {},
+  --   event = "VeryLazy",
+  -- },
 
   {
     "folke/zen-mode.nvim",

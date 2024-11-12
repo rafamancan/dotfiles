@@ -12,13 +12,13 @@ function M.cowboy()
       if vim.v.count > 0 then
         count = 0
       end
-      if count >= 10 then
+      if count >= 20 then
         ---@diagnostic disable-next-line: param-type-mismatch
         ok, id = pcall(vim.notify, "SEGURAAAA PEÃOOO!", vim.log.levels.WARN, {
           icon = "🤠 🐴 ",
           replace = id,
           keep = function()
-            return count >= 10
+            return count >= 20
           end,
         })
         if not ok then
