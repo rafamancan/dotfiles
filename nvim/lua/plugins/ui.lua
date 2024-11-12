@@ -172,7 +172,8 @@ return {
     version = "*",
     config = function()
       require("toggleterm").setup({
-        direction = "float",
+        size = 15,
+        direction = "horizontal",
         open_mapping = [[<c-t>]],
       })
     end,
