@@ -115,6 +115,36 @@ return {
     "alexghergh/nvim-tmux-navigation",
     config = function()
       require("nvim-tmux-navigation").setup({})
+    end,
+  },
+
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      dashboard = {
+        enable = false,
+        formats = {
+          key = function(item)
+            return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
           end,
+        },
+        sections = {
+          { title = "Welcome 🐷", padding = 1 },
+          {
+            section = "keys",
+            padding = 4,
+          },
+          { title = "Recent files ⏲️", padding = 1 },
+          { section = "recent_files", limit = 5, padding = 4 },
+        },
+      },
+      bigfile = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+    },
   },
 }
