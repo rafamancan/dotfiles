@@ -117,34 +117,64 @@ return {
       require("nvim-tmux-navigation").setup({})
     end,
   },
-
   {
     "folke/snacks.nvim",
-    priority = 1000,
     lazy = false,
-    opts = {
-      dashboard = {
-        enable = false,
-        formats = {
-          key = function(item)
-            return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
-          end,
+    opts = function()
+      local logo = [[
+            ██████╗  █████╗ ███████╗ █████╗ ███╗   ███╗ █████╗ ███╗   ██╗ ██████╗ █████╗ ███╗   ██╗
+            ██╔══██╗██╔══██╗██╔════╝██╔══██╗████╗ ████║██╔══██╗████╗  ██║██╔════╝██╔══██╗████╗  ██║
+            ██████╔╝███████║█████╗  ███████║██╔████╔██║███████║██╔██╗ ██║██║     ███████║██╔██╗ ██║
+            ██╔══██╗██╔══██║██╔══╝  ██╔══██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║     ██╔══██║██║╚██╗██║
+            ██║  ██║██║  ██║██║     ██║  ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╗██║  ██║██║ ╚████║
+            ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+
+  🐷
+            ]]
+
+      logo = string.rep("\n", 1) .. logo .. "\n"
+
+      local footer = [[
+
+  🐷 Bora trabalhar um porco?
+
+]]
+
+      local keys = {
+        { icon = " ", key = "s", desc = "Lazy Sync Update", action = ":Lazy sync" },
+        { icon = " ", key = "t", desc = "Treesitter Update", action = ":TSUpdateSync" },
+        {
+          icon = "󱚝 ",
+          desc = "Mason",
+          action = ":Mason",
+          key = "m",
         },
-        sections = {
-          { title = "Welcome 🐷", padding = 1 },
-          {
-            section = "keys",
-            padding = 4,
+        { icon = "󰿅 ", key = "q", desc = "Quit", action = ":q" },
+      }
+      return {
+        dashboard = {
+          width = 100,
+          enabled = true,
+          pane_gap = 1,
+          preset = {
+            header = logo,
+            keys = keys,
+            footer = footer,
           },
-          { title = "Recent files ⏲️", padding = 1 },
-          { section = "recent_files", limit = 5, padding = 4 },
+          sections = {
+            { section = "header" },
+            { section = "keys", gap = 1 },
+            { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = { 1, 1 } },
+            { icon = " ", title = "Projects", section = "projects", indent = 2, padding = { 1, 0 } },
+            { section = "startup" },
+          },
         },
-      },
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
-    },
+        bigfile = { enabled = true },
+        notifier = { enabled = true },
+        quickfile = { enabled = true },
+        statuscolumn = { enabled = true },
+        words = { enabled = true },
+      }
+    end,
   },
 }
