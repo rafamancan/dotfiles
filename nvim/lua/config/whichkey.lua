@@ -10,6 +10,7 @@ wk.add({
   { "<leader>to", "<cmd>TodoTrouble<CR>", desc = "T[o]do List" },
   { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[A]erial" },
   { "<leader>tc", "<cmd>CloakToggle<CR>", desc = "[C]loak" },
+  { "<leader>td", "<cmd>Dooing<CR>", desc = "[T]o [D]o" },
 
   { "<leader>f", group = "[F]ind" },
   { "<leader>f/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
