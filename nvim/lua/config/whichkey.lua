@@ -2,7 +2,7 @@ local wk = require("which-key")
 
 wk.add({
   { "<leader>m", "<cmd>Mason<cr>", desc = "[M]ason" },
-  { "<leader>q", "<cmd>wqall!<cr>", desc = "[Q]uit" },
+  -- { "<leader>q", "<cmd>wqall!<cr>", desc = "[Q]uit" },
   { "<leader>w", "<cmd>w!<cr>", desc = "Save" },
   { "<leader>e", "<cmd>Neotree right reveal toggle<cr>", desc = "[E]xplore Files" },
 
