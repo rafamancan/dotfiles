@@ -43,4 +43,6 @@ keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
 keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
 keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
 
+keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 require("config/whichkey")
