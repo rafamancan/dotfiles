@@ -55,6 +55,7 @@ alias cs='composer sniff'
 alias zon='find . -name "*:Zone.Identifier" -type f -delete'
 alias sail='bash vendor/bin/sail'
 alias gc='npx czg'
+alias lg='lazygit'
 # changing php version
 alias phpc='sudo update-alternatives --config php'
 
