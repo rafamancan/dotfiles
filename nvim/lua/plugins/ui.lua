@@ -55,7 +55,7 @@ return {
     opts = {
       options = {
         globalstatus = true,
-        theme = "catppuccin",
+        theme = "gruvbox",
       },
     },
   },

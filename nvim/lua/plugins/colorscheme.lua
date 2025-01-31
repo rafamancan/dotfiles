@@ -151,9 +151,23 @@ return {
     },
   },
   {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+      style = "dark",
+      contrast = "medium",
+      transparent = false,
+      sidebars = { "qf", "vista_kind", "terminal", "packer" },
+      colors = {
+        bg = "#282828",
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "gruvbox",
     },
   },
 }
