@@ -46,6 +46,7 @@ wk.add({
   { "<leader>le", "<cmd>LspRestart<cr>", desc = "[R]estart" },
   { "<leader>ly", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace [S]ymbols" },
 
+  { "<leader>O", "<cmd>Oil<CR>", desc = "OIL", mode = { "n", "v" } },
   { "<leader>o", group = "ChatGPT" },
   { "<leader>om", "<cmd>ChatGPT<CR>", desc = "ChatGPT", mode = { "n", "v" } },
   { "<leader>oe", "<cmd>ChatGPTEditWithInstruction<CR>", desc = "Edit with instruction", mode = { "n", "v" } },
