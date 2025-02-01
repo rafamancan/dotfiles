@@ -18,6 +18,7 @@ $rust\
 $scala\
 $conda\
 $python\
+$php\
 $time\n  \
 [󱞪](fg:iris) \
 """
@@ -71,7 +72,7 @@ behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
 
 [time]
 disabled = false
-format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
+format = "[](fg:overlay)[ $time 󰐁 ]($style)[](fg:overlay)"
 style = "bg:overlay fg:rose"
 time_format = "%I:%M%P"
 use_12hr = true
@@ -163,6 +164,11 @@ format = "[](fg:overlay)[$symbol$environment]($style)[](fg:overlay) "
 disabled = false
 symbol = '🅒 '
 
+[php]
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol $version]($style)[](fg:overlay) "
+disabled = false
+symbol = ""
 
 #
 # GRUVBOX
