@@ -28,6 +28,8 @@ wk.add({
   { "<leader>xr", "<cmd>Trouble toggle lsp_references<cr>", desc = "[R]eferences" },
 
   { "<leader>c", group = "[C]ode" },
+  { "<leader>cu", "g~", desc = "[C]ode [U]ppercase", mode = { "v" } },
+  { "<leader>cl", "gu", desc = "[C]ode [L]owercase", mode = { "v" } },
   { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "[C]ode [A]ction" },
   { "<leader>cf", '<cmd>let @+ = expand("%")<CR>', desc = "[C]opy [F]ile Name" },
   { "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', desc = "[C]opy File [P]ath" },
