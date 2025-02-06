@@ -45,7 +45,7 @@ keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
 
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- keymap.set("n", "<C-S-F>", "<CMD>FzfLua live_grep<CR>", { desc = "Live grep" })
 keymap.set("n", "<C-p>", "<CMD>FzfLua files<CR>", { desc = "Files" })
+keymap.set("n", "<C-e>", "<CMD>FzfLua buffers<CR>", { desc = "Buffers" })
 
 require("config/whichkey")
