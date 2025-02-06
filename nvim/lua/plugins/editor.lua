@@ -1,29 +1,5 @@
 return {
   {
-    enabled = false,
-    "folke/flash.nvim",
-    opts = {
-      search = {
-        forward = true,
-        multi_window = false,
-        wrap = false,
-        incremental = true,
-      },
-    },
-  },
-  {
-    "dinhhuy258/git.nvim",
-    event = "BufReadPre",
-    opts = {
-      keymaps = {
-        -- Open blame window
-        blame = "<Leader>gb",
-        -- Open file/folder in git repository
-        browse = "<Leader>go",
-      },
-    },
-  },
-  {
     "telescope.nvim",
     dependencies = {
       -- project management
@@ -60,11 +36,6 @@ return {
     },
   },
   {
-    "jiaoshijie/undotree",
-    dependencies = "nvim-lua/plenary.nvim",
-    config = true,
-  },
-  {
     "echasnovski/mini.surround",
     opts = {
       mappings = {
@@ -76,18 +47,6 @@ return {
         replace = "gsr",
         update_n_lines = "gsn",
       },
-    },
-  },
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- configurations go here
     },
   },
   { "wakatime/vim-wakatime", lazy = false },
@@ -178,14 +137,6 @@ return {
     end,
   },
   {
-    "atiladefreitas/dooing",
-    config = function()
-      require("dooing").setup({
-        -- your custom config here (optional)
-      })
-    end,
-  },
-  {
     "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts
@@ -193,5 +144,16 @@ return {
     -- Optional dependencies
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        size = 15,
+        direction = "float",
+        open_mapping = [[<c-t>]],
+      })
+    end,
   },
 }

@@ -2,8 +2,6 @@ local wk = require("which-key")
 
 wk.add({
   { "<leader>m", "<cmd>Mason<cr>", desc = "[M]ason" },
-  -- { "<leader>q", "<cmd>wqall!<cr>", desc = "[Q]uit" },
-  { "<leader>w", "<cmd>w!<cr>", desc = "Save" },
   { "<leader>e", "<cmd>Neotree right reveal toggle<cr>", desc = "[E]xplore Files" },
 
   { "<leader>t", group = "[T]oggle" },
@@ -11,9 +9,6 @@ wk.add({
   { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[A]erial" },
   { "<leader>tc", "<cmd>CloakToggle<CR>", desc = "[C]loak" },
   { "<leader>td", "<cmd>Dooing<CR>", desc = "[T]o [D]o" },
-
-  { "<leader>f", group = "[F]ind" },
-  { "<leader>f/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
 
   { "<leader>h", group = "[H]arpoon" },
   { "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "[A]dd file Harpoon" },
@@ -49,6 +44,7 @@ wk.add({
   { "<leader>ly", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace [S]ymbols" },
 
   { "<leader>O", "<cmd>Oil<CR>", desc = "OIL", mode = { "n", "v" } },
+
   { "<leader>o", group = "ChatGPT" },
   { "<leader>om", "<cmd>ChatGPT<CR>", desc = "ChatGPT", mode = { "n", "v" } },
   { "<leader>oe", "<cmd>ChatGPTEditWithInstruction<CR>", desc = "Edit with instruction", mode = { "n", "v" } },

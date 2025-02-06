@@ -1,6 +1,4 @@
 return {
-  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
-
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
@@ -9,8 +7,7 @@ return {
     dependencies = {
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        opts = {
-        },
+        opts = {},
       },
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
