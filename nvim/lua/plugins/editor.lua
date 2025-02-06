@@ -1,40 +1,40 @@
 return {
-  {
-    "telescope.nvim",
-    dependencies = {
-      -- project management
-      {
-        "ahmedkhalf/project.nvim",
-        opts = {
-          manual_mode = true,
-        },
-        event = "VeryLazy",
-        config = function(_, opts)
-          require("project_nvim").setup(opts)
-          require("lazyvim.util").on_load("telescope.nvim", function()
-            require("telescope").load_extension("projects")
-          end)
-          require("telescope").setup({
-            defaults = {
-              file_ignore_patterns = {
-                "node_modules",
-                ".git",
-                "public",
-                "dist",
-                "vendor",
-                "composer.lock",
-              },
-            },
-          })
-        end,
-        keys = {
-          { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
-          { "<C-e>", "<Cmd>Telescope buffers<CR>", desc = "Buffers" },
-          { "<C-p>", "<Cmd>Telescope find_files<CR>", desc = "List files" },
-        },
-      },
-    },
-  },
+  -- {
+  --   "telescope.nvim",
+  --   dependencies = {
+  --     -- project management
+  --     {
+  --       "ahmedkhalf/project.nvim",
+  --       opts = {
+  --         manual_mode = true,
+  --       },
+  --       event = "VeryLazy",
+  --       config = function(_, opts)
+  --         require("project_nvim").setup(opts)
+  --         require("lazyvim.util").on_load("telescope.nvim", function()
+  --           require("telescope").load_extension("projects")
+  --         end)
+  --         require("telescope").setup({
+  --           defaults = {
+  --             file_ignore_patterns = {
+  --               "node_modules",
+  --               ".git",
+  --               "public",
+  --               "dist",
+  --               "vendor",
+  --               "composer.lock",
+  --             },
+  --           },
+  --         })
+  --       end,
+  --       keys = {
+  --         { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+  --         { "<C-e>", "<Cmd>Telescope buffers<CR>", desc = "Buffers" },
+  --         { "<C-p>", "<Cmd>Telescope find_files<CR>", desc = "List files" },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "echasnovski/mini.surround",
     opts = {
