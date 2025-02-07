@@ -1,175 +1,175 @@
 # ROSE PINE
-format = """
-$username\
-$directory\
-$git_branch\
-$git_status\
-$fill\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-$conda\
-$python\
-$php\
-$time\n  \
-[󱞪](fg:iris) \
-"""
-
-palette = "rose-pine"
-
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-
-[directory]
-format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-Documents = "󰈙"
-Downloads = " "
-Music = " "
-Pictures = " "
-
-[fill]
-style = "fg:overlay"
-symbol = " "
-
-[git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
-style = "bg:overlay fg:foam"
-symbol = ""
-
-[git_status]
-disabled = false
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
-up_to_date = '[ ✓ ](bg:overlay fg:iris)'
-untracked = '[?\($count\)](bg:overlay fg:gold)'
-stashed = '[\$](bg:overlay fg:iris)'
-modified = '[!\($count\)](bg:overlay fg:gold)'
-renamed = '[»\($count\)](bg:overlay fg:iris)'
-deleted = '[✘\($count\)](style)'
-staged = '[++\($count\)](bg:overlay fg:gold)'
-ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
-diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
-behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
-
-[time]
-disabled = false
-format = "[](fg:overlay)[ $time 󰐁 ]($style)[](fg:overlay)"
-style = "bg:overlay fg:rose"
-# time_format = "%I:%M%P"
-time_format = "%R"
-# use_12hr = false
-
-[username]
-disabled = false
-format = "[](fg:overlay)[ 󰐁 $user ]($style)[](fg:overlay) "
-show_always = true
-style_root = "bg:overlay fg:iris"
-style_user = "bg:overlay fg:iris"
-
-# Languages
-
-[c]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[elixir]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[elm]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[golang]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[haskell]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[java]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[julia]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[nodejs]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = "󰎙 "
-
-[nim]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = "󰆥 "
-
-[rust]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = ""
-
-[scala]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[python]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = ' '
-
-[conda]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$environment]($style)[](fg:overlay) "
-disabled = false
-symbol = '🅒 '
-
-[php]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol $version]($style)[](fg:overlay) "
-disabled = false
-symbol = ""
+# format = """
+# $username\
+# $directory\
+# $git_branch\
+# $git_status\
+# $fill\
+# $c\
+# $elixir\
+# $elm\
+# $golang\
+# $haskell\
+# $java\
+# $julia\
+# $nodejs\
+# $nim\
+# $rust\
+# $scala\
+# $conda\
+# $python\
+# $php\
+# $time\n  \
+# [󱞪](fg:iris) \
+# """
+#
+# palette = "rose-pine"
+#
+# [palettes.rose-pine]
+# overlay = '#26233a'
+# love = '#eb6f92'
+# gold = '#f6c177'
+# rose = '#ebbcba'
+# pine = '#31748f'
+# foam = '#9ccfd8'
+# iris = '#c4a7e7'
+#
+# [directory]
+# format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) "
+# style = "bg:overlay fg:pine"
+# truncation_length = 3
+# truncation_symbol = "…/"
+#
+# [directory.substitutions]
+# Documents = "󰈙"
+# Downloads = " "
+# Music = " "
+# Pictures = " "
+#
+# [fill]
+# style = "fg:overlay"
+# symbol = " "
+#
+# [git_branch]
+# format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
+# style = "bg:overlay fg:foam"
+# symbol = ""
+#
+# [git_status]
+# disabled = false
+# style = "bg:overlay fg:love"
+# format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
+# up_to_date = '[ ✓ ](bg:overlay fg:iris)'
+# untracked = '[?\($count\)](bg:overlay fg:gold)'
+# stashed = '[\$](bg:overlay fg:iris)'
+# modified = '[!\($count\)](bg:overlay fg:gold)'
+# renamed = '[»\($count\)](bg:overlay fg:iris)'
+# deleted = '[✘\($count\)](style)'
+# staged = '[++\($count\)](bg:overlay fg:gold)'
+# ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
+# diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
+# behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
+#
+# [time]
+# disabled = false
+# format = "[](fg:overlay)[ $time 󰐁 ]($style)[](fg:overlay)"
+# style = "bg:overlay fg:rose"
+# # time_format = "%I:%M%P"
+# time_format = "%R"
+# # use_12hr = false
+#
+# [username]
+# disabled = false
+# format = "[](fg:overlay)[ 󰐁 $user ]($style)[](fg:overlay) "
+# show_always = true
+# style_root = "bg:overlay fg:iris"
+# style_user = "bg:overlay fg:iris"
+#
+# # Languages
+#
+# [c]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [elixir]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [elm]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [golang]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [haskell]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [java]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [julia]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [nodejs]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = "󰎙 "
+#
+# [nim]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = "󰆥 "
+#
+# [rust]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = ""
+#
+# [scala]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = " "
+#
+# [python]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = ' '
+#
+# [conda]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol$environment]($style)[](fg:overlay) "
+# disabled = false
+# symbol = '🅒 '
+#
+# [php]
+# style = "bg:overlay fg:pine"
+# format = "[](fg:overlay)[$symbol $version]($style)[](fg:overlay) "
+# disabled = false
+# symbol = ""
 
 #
 # GRUVBOX
@@ -344,78 +344,71 @@ symbol = ""
 # vimcmd_visual_symbol = '[](bold fg:color_yellow)'
 #
 
-
-
-
-
-
-
-#
 # CATPUCCIN
-# format = """
-# [ 🐷 ](bg:#000000 fg:#090c0c)\
-# [](bg:#769ff0 fg:#000000)\
-# $directory\
-# [](fg:#769ff0 bg:#394260)\
-# $git_branch\
-# $git_status\
-# [](fg:#394260 bg:#212736)\
-# $nodejs\
-# $rust\
-# $golang\
-# $php\
-# [](fg:#212736 bg:#1d2230)\
-# $time\
-# [ ](fg:#1d2230)\
-# \n$character"""
-#
-# [character] # The name of the module we are configuring is 'character'
-# success_symbol = '[  ❯](bold green)'
-#
-# [directory]
-# style = "fg:#e3e5e5 bg:#769ff0"
-# format = "[ $path ]($style)"
-# truncation_length = 2
-# truncation_symbol = "…/"
-# truncate_to_repo = false
-#
-# [directory.substitutions]
-# "Documents" = "󰈙 "
-# "Downloads" = " "
-# "Music" = " "
-# "Pictures" = " "
-#
-# [git_branch]
-# symbol = ""
-# style = "bg:#394260"
-# format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
-#
-# [git_status]
-# style = "bg:#394260"
-# format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
-#
-# [nodejs]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-#
-# [rust]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-#
-# [golang]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-#
-# [php]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-#
-# [time]
-# disabled = false
-# time_format = "%R"                                      # Hour:Minute Format
-# style = "bg:#1d2230"
-# format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = """
+[ 🐷 ](bg:#000000 fg:#090c0c)\
+[](bg:#769ff0 fg:#000000)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#212736 bg:#1d2230)\
+$time\
+[ ](fg:#1d2230)\
+\n$character"""
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[  ❯](bold green)'
+
+[directory]
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"                                      # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
