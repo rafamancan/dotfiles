@@ -50,3 +50,5 @@ vim.opt.expandtab = true
 
 vim.cmd([[ set noswapfile ]])
 vim.cmd([[ set termguicolors ]])
+
+vim.g.snacks_animate = false
