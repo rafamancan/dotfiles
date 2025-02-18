@@ -29,6 +29,7 @@ alias ddown="docker-compose down"
 # SYSTEM UTILS
 alias vim="nvim"
 alias v='nvim'
+alias vk='NVIM_APPNAME="nvim-kickstart" nvim'
 alias c="code ."
 alias vf='cd ~/.config/nvim && v'
 alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
