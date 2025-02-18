@@ -22,3 +22,4 @@ vim.opt.scrolloff = 10
 vim.opt.laststatus = 2
 vim.opt.colorcolumn = { '80', '120' }
 vim.opt.termguicolors = true
+

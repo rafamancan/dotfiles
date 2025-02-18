@@ -87,4 +87,14 @@ return {
       { '<leader>gg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    opts = {
+      term_colors = true,
+      flavour = 'mocha',
+      transparent_background = true,
+    },
+  },
 }
