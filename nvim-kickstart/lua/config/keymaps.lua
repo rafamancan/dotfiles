@@ -27,9 +27,8 @@ keymap.set('v', '>', '>gv', opts)
 -- Paste without overwriting register
 keymap.set('v', 'p', '"_dP')
 
--- Move block
--- keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
--- keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
+-- Close buffer
+keymap.set('n', '<leader>bd', ':bd<CR>', opts)
 
 -- Plugins remap
 keymap.set('n', '<leader>ta', '<Cmd>AerialToggle<CR>', opts)
@@ -41,5 +40,3 @@ keymap.set('n', '<c-f>', '<cmd>HopPattern<CR>', opts)
 keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 keymap.set('n', '<leader>ha', "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = '[A]dd file Harpoon' })
 keymap.set('n', '<leader>hl', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = '[L]ist Harpoon' })
-keymap.set('n', '<leader>bd', '<Cmd>BufferClose<CR>', opts)
-keymap.set('n', '<leader>br', '<Cmd>BufferRestore<CR>', opts)

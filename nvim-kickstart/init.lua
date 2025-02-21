@@ -513,6 +513,13 @@ require('lazy').setup({
       -- Better Around/Inside textobjects
       require('mini.ai').setup { n_lines = 500 }
       require('mini.surround').setup()
+      require('mini.notify').setup()
+      require('mini.tabline').setup {
+        show_icons = true,
+        format = nil,
+        set_vim_settings = true,
+        tabpage_section = 'left',
+      }
       require('mini.move').setup {
         mappings = {
           -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
