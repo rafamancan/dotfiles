@@ -28,8 +28,8 @@ keymap.set('v', '>', '>gv', opts)
 keymap.set('v', 'p', '"_dP')
 
 -- Move block
-keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
-keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
+-- keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
+-- keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins remap
 keymap.set('n', '<leader>ta', '<Cmd>AerialToggle<CR>', opts)
