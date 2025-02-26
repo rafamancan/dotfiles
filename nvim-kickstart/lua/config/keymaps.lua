@@ -40,3 +40,7 @@ keymap.set('n', '<c-f>', '<cmd>HopPattern<CR>', opts)
 keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 keymap.set('n', '<leader>ha', "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = '[A]dd file Harpoon' })
 keymap.set('n', '<leader>hl', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = '[L]ist Harpoon' })
+
+keymap.set('x', '<leader>re', function()
+  require('refactoring').refactor 'Extract Function'
+end)

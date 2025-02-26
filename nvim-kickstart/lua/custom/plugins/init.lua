@@ -84,16 +84,27 @@ return {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     build = ':Copilot auth',
-    -- event = 'BufReadPost',
+    event = 'BufReadPost',
     opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
+      suggestion = { enabled = true },
+      panel = { enabled = true },
     },
   },
   {
     'zbirenbaum/copilot-cmp',
     config = function()
       require('copilot_cmp').setup()
+    end,
+  },
+  {
+    'ThePrimeagen/refactoring.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    lazy = false,
+    config = function()
+      require('refactoring').setup()
     end,
   },
 }
