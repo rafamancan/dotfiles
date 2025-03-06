@@ -12,15 +12,23 @@ config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color"
-config.window_background_opacity = 0.95
 config.prefer_egl = true
 config.font_size = 16.0
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 10,
 }
+
+config.window_background_image = "C:\\macos-cataline-night-6k.jpg"
+config.window_background_image_hsb = {
+	brightness = 0.03,
+	hue = 1.0,
+	saturation = 1.0,
+}
+
+config.window_background_opacity = 1.0
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 
@@ -83,4 +91,5 @@ config.keys = {
 		}),
 	},
 }
+
 return config
