@@ -28,9 +28,9 @@ alias ddown="docker-compose down"
 
 # SYSTEM UTILS
 alias vim="nvim"
-# alias v='nvim'
-# alias vk='NVIM_APPNAME="nvim-kickstart" nvim'
-alias v='NVIM_APPNAME="nvim-kickstart" nvim'
+alias v='nvim'
+alias vk='NVIM_APPNAME="nvim-kickstart" nvim'
+# alias v='NVIM_APPNAME="nvim-kickstart" nvim'
 alias c="code ."
 alias vf='cd ~/.config/nvim && v'
 alias vfk='cd ~/.config/nvim-kickstart && v'
