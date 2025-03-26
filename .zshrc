@@ -73,6 +73,23 @@ function rbs () {
   git rebase -i HEAD~$1
 }
 
+# fix wips
+function fwip () {
+  # Contar o número de commits 'wip' no histórico
+  count=$(git log --oneline --grep="wip" | wc -l)
+
+  # Se houver commits 'wip'
+  if [ "$count" -gt 0 ]; then
+    # Exibir o número de commits a serem resetados
+    echo "Você tem $count commits 'wip'."
+    
+    # Fazer o reset soft
+    git reset --soft HEAD~$count
+  else
+    echo "Não há commits 'wip' no histórico."
+  fi
+}
+
 # push actual branch
 function push () {
   git push origin $(git branch --show-current)
