@@ -1,16 +1,13 @@
 return {
+  { "ThePrimeagen/harpoon" },
   {
-    "echasnovski/mini.surround",
-    opts = {
-      mappings = {
-        add = "gsa",
-        delete = "gsd",
-        find = "gsf",
-        find_left = "gsF",
-        highlight = "gsh",
-        replace = "gsr",
-        update_n_lines = "gsn",
-      },
+    "L3MON4D3/LuaSnip",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
+      end,
     },
   },
   { "wakatime/vim-wakatime", lazy = false },
@@ -59,10 +56,5 @@ return {
         open_mapping = [[<c-t>]],
       })
     end,
-  },
-  {
-    "folke/trouble.nvim",
-    -- opts will be merged with the parent spec
-    opts = { use_diagnostic_signs = true },
   },
 }

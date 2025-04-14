@@ -1,6 +1,3 @@
--- local discipline = require("rmancan.discipline")
--- discipline.cowboy()
-
 local keymap = vim.keymap
 
 local opts = { noremap = true, silent = true }
@@ -44,8 +41,5 @@ keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
 keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
 
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
-keymap.set("n", "<C-p>", "<CMD>FzfLua files<CR>", { desc = "Files" })
-keymap.set("n", "<C-e>", "<CMD>FzfLua buffers<CR>", { desc = "Buffers" })
 
 require("config/whichkey")
