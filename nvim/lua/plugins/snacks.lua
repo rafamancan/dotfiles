@@ -55,11 +55,29 @@ return {
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
       words = { enabled = true },
+      picker = {
+        sources = {
+          explorer = {
+            layout = { layout = { position = "right" } },
+          },
+        },
+      },
     },
-        keys = {
-            { "<C-p>", function() Snacks.picker.files() end, desc = "Find Files" },
-            { "<C-e>", function() Snacks.picker.buffers() end, desc = "Buffers" },
-        }
+    keys = {
+      {
+        "<C-p>",
+        function()
+          Snacks.picker.files()
+        end,
+        desc = "Find Files",
+      },
+      {
+        "<C-e>",
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = "Buffers",
+      },
+    },
   },
 }
-

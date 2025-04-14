@@ -11,6 +11,9 @@ wk.add({
   { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "[C]ode [A]ction" },
   { "<leader>cn", '<cmd>let @+ = expand("%")<CR>', desc = "[C]opy [F]ile Name" },
   { "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', desc = "[C]opy File [P]ath" },
+
+  { "<leader>t", group = "[T]oggle" },
+  { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[A]erial" },
 }, {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",
