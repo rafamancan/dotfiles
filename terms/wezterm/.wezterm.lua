@@ -13,7 +13,7 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color"
 config.prefer_egl = true
-config.font_size = 16.0
+config.font_size = 14.0
 config.window_padding = {
 	left = 10,
 	right = 10,
@@ -21,16 +21,16 @@ config.window_padding = {
 	bottom = 10,
 }
 
-config.window_background_image = "C:\\macos-cataline-night-6k.jpg"
+-- config.window_background_image = 'C:\\macos-cataline-night-6k.jpg'
 config.window_background_image_hsb = {
 	brightness = 0.03,
 	hue = 1.0,
 	saturation = 1.0,
 }
 
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.95
 config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 
 -- keymaps
 config.keys = {
@@ -50,30 +50,34 @@ config.keys = {
 			size = { Percent = 50 },
 		}),
 	},
+	-- move pane focus
+	{ key = "h", mods = "ALT", action = act.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "ALT", action = act.ActivatePaneDirection("Down") },
+	{ key = "l", mods = "ALT", action = act.ActivatePaneDirection("Right") },
+	{ key = "k", mods = "ALT", action = act.ActivatePaneDirection("Up") },
+
+	-- resize panes
 	{
 		key = "h",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
-	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
 	{
 		key = "j",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
-	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
 	{
 		key = "k",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
-	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
 	{
 		key = "l",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
-	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
+
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
 	{ key = "w", mods = "CTRL", action = act.CloseCurrentPane({ confirm = false }) },
 	{ key = "Tab", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = 1 }) },
