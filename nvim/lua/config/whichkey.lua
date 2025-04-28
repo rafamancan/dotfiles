@@ -14,6 +14,16 @@ wk.add({
 
   { "<leader>t", group = "[T]oggle" },
   { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[A]erial" },
+
+  { "<leader>a", group = "[A]I" },
+  { "<leader>aa", "<cmd>AvanteAsk<CR>", desc = "Chat [A]I" },
+  { "<leader>ax", "<cmd>AvanteAsk Explique este código:<CR>", desc = "[E]xplicar código", mode = { "v" } },
+  { "<leader>ar", "<cmd>AvanteAsk Refatore este código:<CR>", desc = "[R]efatorar código", mode = { "v" } },
+  { "<leader>af", "<cmd>AvanteAsk Corrija este código:<CR>", desc = "[F]ixar código", mode = { "v" } },
+  { "<leader>ag", "<cmd>AvanteAsk Gere código que:<CR>", desc = "[G]erar código" },
+  { "<leader>ac", "<cmd>AvanteAsk Complete este código atual:<CR>", desc = "[C]ompletar código" },
+  { "<leader>ae", "<cmd>AvanteEdit<CR>", desc = "A[P]licar edições sugeridas" },
+  { "<leader>au", "<cmd>AvanteRefresh<CR>", desc = "At[U]alizar resposta" },
 }, {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",

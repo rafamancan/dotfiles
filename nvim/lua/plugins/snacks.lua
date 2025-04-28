@@ -67,7 +67,22 @@ return {
       {
         "<C-p>",
         function()
-          Snacks.picker.files()
+          Snacks.picker.files({
+            hidden = true,
+            ignored = true,
+            exclude = {
+              "node_modules/.*",
+              ".git/.*",
+              "vendor/*",
+              "storage/*",
+              ".idea/*",
+              "dist/.*",
+              "build/.*",
+              "*.png",
+              "*.jpg",
+              "*.jpeg",
+            },
+          })
         end,
         desc = "Find Files",
       },
