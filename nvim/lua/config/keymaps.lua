@@ -15,6 +15,7 @@ keymap.set("n", "<C-s>", ":w<CR>", opts)
 keymap.set("n", "<C-a>", "gg<S-v>G", opts)
 keymap.set("n", "<leader>rl", ":s//g<LEFT><LEFT>")
 keymap.set("n", "<leader>rf", ":%s//g<LEFT><LEFT>")
+keymap.set("n", "<leader>wr", ":set wrap!<CR>", {desc = "Toggle [wr]ap"})
 
 -- Inc Rename
 keymap.set("n", "<leader>rn", ":IncRename ")
