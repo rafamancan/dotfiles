@@ -71,7 +71,7 @@ return {
             hidden = true,
             ignored = true,
             exclude = {
-              "node_modules/.*",
+              "**/node_modules/**",
               ".git/.*",
               "vendor/*",
               "storage/*",
