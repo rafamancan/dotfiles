@@ -19,6 +19,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 source $HOME/dotfiles-pv/folders
+source $HOME/dotfiles-pv/vars
+source $HOME/dotfiles-pv/pvalias
 source $HOME/dotfiles-pv/ssh
 
 # DOCKER
