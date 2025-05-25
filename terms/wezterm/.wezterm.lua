@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 config.window_close_confirmation = "NeverPrompt"
-config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
+config.font = wezterm.font("Hack Nerd Font Mono")
 config.color_scheme = "catppuccin-mocha"
 config.default_domain = "WSL:Ubuntu-22.04"
 config.front_end = "OpenGL"
@@ -13,7 +13,7 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color"
 config.prefer_egl = true
-config.font_size = 14.0
+config.font_size = 12.0
 config.window_padding = {
 	left = 10,
 	right = 10,
