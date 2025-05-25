@@ -37,6 +37,11 @@ vim.o.completeopt = "menuone,noselect"
 vim.opt.showtabline = 2
 vim.g.autoformat = false
 
+vim.opt.ttyfast = true
+vim.opt.synmaxcol = 300
+vim.opt.history = 100
+vim.opt.writebackup = false
+
 -- show hidden characters
 vim.opt.list = true
 vim.opt.listchars = {

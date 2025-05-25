@@ -45,6 +45,11 @@ return {
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "mason.nvim",
+      "mason-lspconfig.nvim",
+    },
     opts = {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
