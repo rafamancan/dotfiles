@@ -168,3 +168,10 @@ ev
 clear
 export PATH="/home/rmancan/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/rmancan/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# bun completions
+[ -s "/home/rmancan/.bun/_bun" ] && source "/home/rmancan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
