@@ -175,5 +175,5 @@ export PHP_INI_SCAN_DIR="/home/rmancan/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-alias claude="/home/rmancan/.claude/local/claude"
 alias obs="cd /mnt/c/Users/rrcm0/Dropbox/Obsidian"
+alias claude="~/.claude/local/claude"
