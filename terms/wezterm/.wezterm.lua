@@ -4,7 +4,7 @@ local act = wezterm.action
 
 config.window_close_confirmation = "NeverPrompt"
 config.font = wezterm.font("Hack Nerd Font Mono")
-config.color_scheme = "catppuccin-mocha"
+config.color_scheme = "tokyonight_night"
 config.default_domain = "WSL:Ubuntu-22.04"
 config.front_end = "OpenGL"
 config.max_fps = 144
