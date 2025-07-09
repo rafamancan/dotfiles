@@ -1,26 +1,26 @@
-# CATPUCCIN
+# TOKYO NIGHT
 format = """
-[ 🐷 ](bg:#000000 fg:#090c0c)\
-[](bg:#cba6f7 fg:#000000)\
+[ 🐷 ](bg:#1a1b26 fg:#c0caf5)\
+[](bg:#7aa2f7 fg:#1a1b26)\
 $directory\
-[](fg:#cba6f7 bg:#394260)\
+[](fg:#7aa2f7 bg:#414868)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
+[](fg:#414868 bg:#24283b)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#212736 bg:#1d2230)\
+[](fg:#24283b bg:#1a1b26)\
 $time\
-[ ](fg:#1d2230)\
+[ ](fg:#1a1b26)\
 \n$character"""
 
 [character] # The name of the module we are configuring is 'character'
 success_symbol = '[  ❯](bold green)'
 
 [directory]
-style = "fg:#e3e5e5 bg:#cba6f7"
+style = "fg:#c0caf5 bg:#7aa2f7"
 format = "[ $path ]($style)"
 truncation_length = 2
 truncation_symbol = "…/"
@@ -34,35 +34,35 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#cba6f7 bg:#394260)]($style)'
+style = "bg:#414868"
+format = '[[ $symbol $branch ](fg:#7aa2f7 bg:#414868)]($style)'
 
 [git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#cba6f7 bg:#394260)]($style)'
+style = "bg:#414868"
+format = '[[($all_status$ahead_behind )](fg:#7aa2f7 bg:#414868)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#cba6f7 bg:#212736)]($style)'
+style = "bg:#24283b"
+format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#cba6f7 bg:#212736)]($style)'
+style = "bg:#24283b"
+format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#cba6f7 bg:#212736)]($style)'
+style = "bg:#24283b"
+format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#cba6f7 bg:#212736)]($style)'
+style = "bg:#24283b"
+format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"                                      # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:#1a1b26"
+format = '[[  $time ](fg:#c0caf5 bg:#1a1b26)]($style)'

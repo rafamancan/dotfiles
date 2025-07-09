@@ -1,59 +1,82 @@
+-- Leaders
+vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Encoding
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
-vim.opt.backspace = "2"
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
-vim.opt.autowrite = true
-vim.opt.cursorline = true
-vim.opt.autoread = true
+-- Editor behavior
 vim.opt.mouse = "a"
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.o.hlsearch = false
-vim.opt.smartindent = true
-vim.opt.backup = false
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 50
-vim.opt.colorcolumn = { "80", "120" }
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-vim.g.mapleader = " "
-vim.wo.relativenumber = true
-vim.wo.number = true
-vim.opt.timeoutlen = 500
-vim.opt.clipboard = "unnamedplus"
+vim.opt.autowrite = true
+vim.opt.autoread = true
+vim.opt.cursorline = true
 vim.opt.breakindent = true
-vim.wo.signcolumn = "yes"
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.completeopt = "menuone,noselect"
-vim.opt.showtabline = 2
-vim.g.autoformat = false
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
-vim.opt.ttyfast = true
-vim.opt.synmaxcol = 300
-vim.opt.history = 100
-vim.opt.writebackup = false
+-- Search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
--- show hidden characters
+-- Indentation
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+vim.opt.smartindent = true
+vim.opt.shiftround = true
+
+-- Line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
+
+-- Visual guides
+vim.opt.colorcolumn = { "80", "120" }
 vim.opt.list = true
 vim.opt.listchars = {
   trail = "·",
   tab = " »",
+  nbsp = "␣",
 }
 
--- use spaces for tabs and whatnot
-vim.opt.shiftround = true
-vim.opt.expandtab = true
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
 
-vim.cmd([[ set noswapfile ]])
-vim.cmd([[ set termguicolors ]])
+-- Undo
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
+-- Backup and swap
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+
+-- Completion
+vim.opt.completeopt = "menuone,noselect"
+vim.opt.pumheight = 10
+
+-- Timing
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
+-- UI
+vim.opt.termguicolors = true
+vim.opt.showcmd = true
+vim.opt.laststatus = 3
+vim.opt.showtabline = 2
+vim.opt.cmdheight = 1
+
+-- Performance
+vim.opt.synmaxcol = 300
+vim.opt.history = 1000
+vim.opt.ttyfast = true
+
+-- Plugin settings
+vim.g.autoformat = false
 vim.g.snacks_animate = false

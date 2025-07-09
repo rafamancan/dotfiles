@@ -3,24 +3,20 @@ return {
     "ThePrimeagen/harpoon",
     keys = {
       {
-        "<leader>ha",
+        "<leader>Ha",
         function()
           require("harpoon.mark").add_file()
         end,
         desc = "Add Harpoon",
       },
       {
-        "<leader>hl",
+        "<leader>Hl",
         function()
           require("harpoon.ui").toggle_quick_menu()
         end,
         desc = "Harpoon Menu",
       },
     },
-  },
-  {
-    "wakatime/vim-wakatime",
-    event = "BufReadPost", -- ao invés de lazy = false
   },
   {
     "L3MON4D3/LuaSnip",
