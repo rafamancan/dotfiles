@@ -1,11 +1,7 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Window/Pane Navigation (Tmux integration takes precedence)
-keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", opts)
-keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", opts)
-keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", opts)
-keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", opts)
+-- Window/Pane Navigation handled by nvim-tmux-navigation plugin
 
 -- Buffer Navigation
 keymap.set("n", "<TAB>", ":bnext<CR>", opts)
