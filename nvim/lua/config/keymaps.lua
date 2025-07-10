@@ -29,6 +29,35 @@ keymap.set("n", "<leader>wr", ":set wrap!<CR>", { desc = "Toggle wrap" })
 
 -- LSP
 keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Rename" })
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+keymap.set("n", "<leader>ci", "<cmd>lua vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } } })<CR>", { desc = "Organize Imports" })
+keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format Document" })
+-- PHPActor specific keybindings
+keymap.set("n", "<leader>cu", function()
+  vim.lsp.buf.code_action({ filter = function(action)
+    return action.title:match("unused") or action.title:match("Unused") or action.title:match("Remove")
+  end })
+end, { desc = "Remove Unused Code" })
+
+keymap.set("n", "<leader>cm", function()
+  vim.lsp.buf.code_action({ filter = function(action)
+    return action.title:match("import") or action.title:match("Import") or action.title:match("Add")
+  end })
+end, { desc = "Add Missing Code" })
+
+-- PHPActor refactoring commands
+keymap.set("n", "<leader>pe", "<cmd>lua vim.lsp.buf.code_action({ filter = function(action) return action.title:match('Extract') end })<CR>", { desc = "Extract Method" })
+keymap.set("n", "<leader>pg", "<cmd>lua vim.lsp.buf.code_action({ filter = function(action) return action.title:match('Generate') end })<CR>", { desc = "Generate Code" })
+keymap.set("n", "<leader>pt", "<cmd>lua vim.lsp.buf.code_action({ filter = function(action) return action.title:match('Transform') end })<CR>", { desc = "Transform Code" })
+keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to References" })
+keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show Diagnostics" })
+
+-- Terminal
+keymap.set("n", "<C-t>", ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
+keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Toggle Terminal from terminal mode" })
 
 -- Visual Mode Enhancements
 -- Stay in indent mode

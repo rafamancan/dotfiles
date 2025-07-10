@@ -17,7 +17,7 @@ return {
         "hadolint",
         "html-lsp",
         "impl",
-        "intelephense",
+        "phpactor",
         "js-debug-adapter",
         "json-lsp",
         "lua-language-server",
@@ -54,16 +54,70 @@ return {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
-        intelephense = {
-          filetypes = { "php", "blade" },
+        phpactor = {
+          filetypes = { "php" },
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("composer.json", ".git")(fname)
+          end,
+          single_file_support = false,
+          init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+            ["language_server_worse_reflection.enabled"] = true,
+            ["worse_reflection.cache_lifetime"] = 60,
+            ["worse_reflection.stub_cache.enabled"] = true,
+            ["indexer.enabled"] = true,
+            ["indexer.include_patterns"] = { "**/*.php" },
+            ["indexer.exclude_patterns"] = { "**/vendor/**", "**/node_modules/**", "**/storage/**", "**/public/**" },
+            ["code_transform.import_globals"] = true,
+            ["completion_worse.completor.constant.enabled"] = true,
+            ["completion_worse.completor.constructor.enabled"] = true,
+            ["completion_worse.completor.class_member.enabled"] = true,
+            ["completion_worse.completor.local_variable.enabled"] = true,
+            ["completion_worse.completor.use.enabled"] = true,
+            ["completion_worse.completor.scoped_class.enabled"] = true,
+          },
           settings = {
-            intelephense = {
-              filetypes = { "php", "blade" },
-              files = {
-                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
-                maxSize = 5000000,
+            phpactor = {
+              completion = {
+                insertUseDeclaration = true,
+                triggerParameterHints = true,
+              },
+              diagnostics = {
+                enable = true,
+              },
+              references = {
+                enabled = true,
+              },
+              goto_definition = {
+                strategy = "tolerant",
+              },
+              indexer = {
+                enabled = true,
+                poll_time = 100,
+                watch_patterns = { "**/*.php" },
+                exclude_patterns = { "**/vendor/**", "**/node_modules/**", "**/storage/**", "**/public/**" },
+              },
+              composer = {
+                autoload_deduction = true,
+                enable_cache = true,
+              },
+              file_path_resolver = {
+                enable_cache = true,
+                cache_lifetime = 5,
               },
             },
+          },
+          capabilities = {
+            textDocument = {
+              definition = {
+                dynamicRegistration = false,
+                linkSupport = true,
+              },
+            },
+          },
+          flags = {
+            debounce_text_changes = 150,
           },
         },
         cssls = {},
