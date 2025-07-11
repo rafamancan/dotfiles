@@ -28,6 +28,7 @@ return {
         "php-debug-adapter",
         "phpstan",
         "php-cs-fixer",
+        "pint",
         "prettier",
         "pyright",
         "shellcheck",
@@ -50,6 +51,9 @@ return {
       "mason.nvim",
       "mason-lspconfig.nvim",
     },
+    keys = {
+      { "<leader>cf", false },
+    },
     opts = {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
@@ -60,6 +64,10 @@ return {
             return require("lspconfig.util").root_pattern("composer.json", ".git")(fname)
           end,
           single_file_support = false,
+          capabilities = {
+            documentFormattingProvider = false,
+            documentRangeFormattingProvider = false,
+          },
           init_options = {
             ["language_server_phpstan.enabled"] = false,
             ["language_server_psalm.enabled"] = false,
