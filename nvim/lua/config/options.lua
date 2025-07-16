@@ -72,6 +72,14 @@ vim.opt.laststatus = 3
 vim.opt.showtabline = 2
 vim.opt.cmdheight = 1
 
+-- Transparency
+vim.cmd([[
+  highlight Normal guibg=NONE ctermbg=NONE
+  highlight NonText guibg=NONE ctermbg=NONE
+  highlight SignColumn guibg=NONE ctermbg=NONE
+  highlight EndOfBuffer guibg=NONE ctermbg=NONE
+]])
+
 -- Performance
 vim.opt.synmaxcol = 300
 vim.opt.history = 1000

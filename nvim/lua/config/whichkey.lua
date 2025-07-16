@@ -3,7 +3,7 @@ local wk = require("which-key")
 wk.add({
   -- Search
   { "<leader>h", ":nohlsearch<CR>", desc = "Clear search highlight" },
-  
+
   -- Harpoon
   { "<leader>H", group = "[H]arpoon" },
   { "<leader>Ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "[A]dd file Harpoon" },
@@ -23,14 +23,20 @@ wk.add({
 
   -- AI (disabled by default)
   { "<leader>a", group = "[A]I" },
-  { "<leader>aa", "<cmd>AvanteAsk<CR>", desc = "Chat [A]I" },
-  { "<leader>ax", "<cmd>AvanteAsk Explique este código:<CR>", desc = "[E]xplicar código", mode = { "v" } },
-  { "<leader>ar", "<cmd>AvanteAsk Refatore este código:<CR>", desc = "[R]efatorar código", mode = { "v" } },
-  { "<leader>af", "<cmd>AvanteAsk Corrija este código:<CR>", desc = "[F]ixar código", mode = { "v" } },
-  { "<leader>ag", "<cmd>AvanteAsk Gere código que:<CR>", desc = "[G]erar código" },
-  { "<leader>ac", "<cmd>AvanteAsk Complete este código atual:<CR>", desc = "[C]ompletar código" },
-  { "<leader>ae", "<cmd>AvanteEdit<CR>", desc = "A[P]licar edições sugeridas" },
-  { "<leader>au", "<cmd>AvanteRefresh<CR>", desc = "At[U]alizar resposta" },
+  -- { "<leader>aa", "<cmd>AvanteAsk<CR>", desc = "Chat [A]I" },
+  -- { "<leader>ax", "<cmd>AvanteAsk Explique este código:<CR>", desc = "[E]xplicar código", mode = { "v" } },
+  -- { "<leader>ar", "<cmd>AvanteAsk Refatore este código:<CR>", desc = "[R]efatorar código", mode = { "v" } },
+  -- { "<leader>af", "<cmd>AvanteAsk Corrija este código:<CR>", desc = "[F]ixar código", mode = { "v" } },
+  -- { "<leader>ag", "<cmd>AvanteAsk Gere código que:<CR>", desc = "[G]erar código" },
+  -- { "<leader>ac", "<cmd>AvanteAsk Complete este código atual:<CR>", desc = "[C]ompletar código" },
+  -- { "<leader>ae", "<cmd>AvanteEdit<CR>", desc = "A[P]licar edições sugeridas" },
+  -- { "<leader>au", "<cmd>AvanteRefresh<CR>", desc = "At[U]alizar resposta" },
+
+  { "<leader>ac", "<cmd>CodeCompanionToggle<CR>", { desc = "Toggle CodeCompanion" } },
+  { "<leader>aa", "<cmd>CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" } },
+  { "<leader>aa", "<cmd>CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" } },
+  { "<leader>ah", "<cmd>CodeCompanionChat<CR>", { desc = "CodeCompanion Chat" } },
+  { "<leader>a<CR>", "<cmd>CodeCompanion<CR>", { desc = "CodeCompanion" } },
 }, {
   mode = "n",
   prefix = "<leader>",
@@ -39,3 +45,4 @@ wk.add({
   noremap = true,
   nowait = true,
 })
+

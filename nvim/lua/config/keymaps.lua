@@ -72,5 +72,12 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- Text Editing
 keymap.set("n", "dw", 'vb"_d', { desc = "Delete word backwards" })
 
+-- CodeCompanion
+keymap.set("n", "<leader>ac", ":CodeCompanionToggle<CR>", { desc = "Toggle CodeCompanion" })
+keymap.set("n", "<leader>aa", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })
+keymap.set("v", "<leader>aa", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })
+keymap.set("n", "<leader>ah", ":CodeCompanionChat<CR>", { desc = "CodeCompanion Chat" })
+keymap.set("n", "<leader>a<CR>", ":CodeCompanion<CR>", { desc = "CodeCompanion" })
+
 -- Load which-key mappings
 require("config/whichkey")

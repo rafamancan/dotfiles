@@ -1,4 +1,26 @@
-return {} 
+return {
+  {
+    "olimorris/codecompanion.nvim",
+    cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionToggle", "CodeCompanionActions" },
+    opts = {
+      strategies = {
+        chat = {
+          name = "copilot",
+          -- model = "claude-sonnet-4-20250514",
+        },
+        inline = {
+          adapter = "anthropic",
+        },
+      },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "hrsh7th/nvim-cmp",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+}
 -- return {
 --   "yetone/avante.nvim",
 --   event = "VeryLazy",
