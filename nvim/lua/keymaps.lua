@@ -19,6 +19,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<TAB>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>', opts)
 vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { desc = 'Close all buffers except current' })
 
 -- File Operations
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
@@ -35,6 +36,9 @@ vim.keymap.set('n', '<leader>rf', ':%s//g<LEFT><LEFT>', { desc = 'Replace in fil
 
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'LazyGit' })
+
+-- Aerial
+vim.keymap.set('n', '<leader>ta', ':AerialToggle<CR>', { desc = 'Toggle Aerial' })
 
 -- Visual Mode Enhancements
 -- Stay in indent mode
