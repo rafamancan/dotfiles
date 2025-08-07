@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/rmancan/.zsh/completions:"* ]]; then export FPATH="/home/rmancan/.zsh/completions:$FPATH"; fi
 # PATHS
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"

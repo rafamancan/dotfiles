@@ -65,6 +65,13 @@ return {
     },
     keys = {
       {
+        '<leader><space>',
+        function()
+          Snacks.picker.smart()
+        end,
+        desc = 'Smart Open',
+      },
+      {
         '<C-p>',
         function()
           Snacks.picker.files {
