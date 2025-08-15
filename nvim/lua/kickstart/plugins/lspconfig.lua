@@ -80,6 +80,9 @@ return {
           --  the definition of its *type*, not where it was *defined*.
           map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
+          -- Show hover documentation with K
+          map('K', vim.lsp.buf.hover, 'Hover Documentation')
+
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
@@ -133,6 +136,34 @@ return {
           end
         end,
       })
+
+      -- Override LSP hover handler with custom window configuration
+      local orig_open_floating_preview = vim.lsp.util.open_floating_preview
+      vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
+        opts = opts or {}
+        opts.border = 'rounded'
+        opts.max_width = 80
+        opts.max_height = 20
+        opts.wrap = true
+        opts.pad_top = 1
+        opts.pad_bottom = 1
+        
+        -- Force solid background by setting winhighlight
+        local bufnr, winnr = orig_open_floating_preview(contents, syntax, opts, ...)
+        
+        if winnr and vim.api.nvim_win_is_valid(winnr) then
+          -- Set solid background colors for this specific window
+          vim.api.nvim_win_set_option(winnr, 'winhighlight', 
+            'Normal:NormalFloat,FloatBorder:FloatBorder,FloatTitle:FloatTitle')
+          
+          -- Override the window's colorscheme to ensure visibility
+          vim.api.nvim_set_hl(0, 'NormalFloat', { fg = '#c0caf5', bg = '#24283b' })
+          vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#7aa2f7', bg = '#24283b' })
+          vim.api.nvim_set_hl(0, 'FloatTitle', { fg = '#7dcfff', bg = '#24283b', bold = true })
+        end
+        
+        return bufnr, winnr
+      end
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
