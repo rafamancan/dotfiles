@@ -80,6 +80,7 @@ return {
             exclude = {
               '**/node_modules/**',
               '.git/.*',
+              '.next/**',
               'vendor/*',
               'storage/*',
               '.idea/*',
