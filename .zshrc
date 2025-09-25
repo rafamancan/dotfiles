@@ -150,6 +150,38 @@ dip(){
     docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$1"
 }
 
+# Update Neovim to stable version
+vus() {
+    echo "🔄 Updating Neovim to stable version..."
+    wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz && \
+    rm -Rf nvim-linux-x86_64 && \
+    tar xzvf nvim-linux-x86_64.tar.gz && \
+    rm nvim-linux-x86_64.tar.gz && \
+    sudo rm -Rf /opt/nvim_bkp && \
+    sudo mv /opt/nvim /opt/nvim_bkp && \
+    sudo mv nvim-linux-x86_64 /opt/nvim && \
+    sudo rm -Rf /usr/local/bin/nvim && \
+    sudo ln -s /opt/nvim/bin/nvim /usr/local/bin/nvim && \
+    echo "✅ Neovim stable version installed:" && \
+    nvim --version
+}
+
+# Update Neovim to nightly version
+vun() {
+    echo "🌙 Updating Neovim to nightly version..."
+    wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz && \
+    rm -Rf nvim-linux-x86_64 && \
+    tar xzvf nvim-linux-x86_64.tar.gz && \
+    rm nvim-linux-x86_64.tar.gz && \
+    sudo rm -Rf /opt/nvim_bkp && \
+    sudo mv /opt/nvim /opt/nvim_bkp && \
+    sudo mv nvim-linux-x86_64 /opt/nvim && \
+    sudo rm -Rf /usr/local/bin/nvim && \
+    sudo ln -s /opt/nvim/bin/nvim /usr/local/bin/nvim && \
+    echo "✅ Neovim nightly version installed:" && \
+    nvim --version
+}
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
