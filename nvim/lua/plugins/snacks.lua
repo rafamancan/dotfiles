@@ -9,7 +9,7 @@ local logo = [[
   🐷
             ]]
 
-logo = string.rep('\n', 1) .. logo .. '\n'
+logo = string.rep("\n", 1) .. logo .. "\n"
 
 local footer = [[
 
@@ -18,19 +18,19 @@ local footer = [[
 ]]
 
 local keys = {
-  { icon = ' ', key = 's', desc = 'Lazy Sync Update', action = ':Lazy sync' },
-  { icon = ' ', key = 't', desc = 'Treesitter Update', action = ':TSUpdateSync' },
+  { icon = " ", key = "s", desc = "Lazy Sync Update", action = ":Lazy sync" },
+  { icon = " ", key = "t", desc = "Treesitter Update", action = ":TSUpdate" },
   {
-    icon = '󱚝 ',
-    desc = 'Mason',
-    action = ':Mason',
-    key = 'm',
+    icon = "󱚝 ",
+    desc = "Mason",
+    action = ":Mason",
+    key = "m",
   },
-  { icon = '󰿅 ', key = 'q', desc = 'Quit', action = ':q' },
+  { icon = "󰿅 ", key = "q", desc = "Quit", action = ":q" },
 }
 return {
   {
-    'folke/snacks.nvim',
+    "folke/snacks.nvim",
     lazy = false,
     opts = {
       dashboard = {
@@ -43,11 +43,11 @@ return {
           footer = footer,
         },
         sections = {
-          { section = 'header' },
-          { section = 'keys', gap = 1 },
-          { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = { 1, 1 } },
-          { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = { 1, 0 } },
-          { section = 'startup' },
+          { section = "header" },
+          { section = "keys", gap = 1 },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = { 1, 1 } },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = { 1, 0 } },
+          { section = "startup" },
         },
       },
       bigfile = { enabled = true },
@@ -58,49 +58,42 @@ return {
       picker = {
         sources = {
           explorer = {
-            layout = { layout = { position = 'right' } },
+            layout = { layout = { position = "right" } },
           },
         },
       },
     },
     keys = {
       {
-        '<leader><space>',
+        "<C-p>",
         function()
-          Snacks.picker.smart()
-        end,
-        desc = 'Smart Open',
-      },
-      {
-        '<C-p>',
-        function()
-          Snacks.picker.files {
+          Snacks.picker.files({
             hidden = true,
             ignored = true,
             exclude = {
-              '**/node_modules/**',
-              '.git/.*',
-              '.next/**',
-              'vendor/*',
-              'storage/*',
-              '.idea/*',
-              'dist/.*',
-              'build/.*',
-              '*.png',
-              '*.jpg',
-              '*.jpeg',
+              "**/node_modules/**",
+              ".git/.*",
+              "vendor/*",
+              "storage/*",
+              ".idea/*",
+              "dist/.*",
+              "build/.*",
+              "*.png",
+              "*.jpg",
+              "*.jpeg",
             },
-          }
+          })
         end,
-        desc = 'Find Files',
+        desc = "Find Files",
       },
       {
-        '<C-e>',
+        "<C-e>",
         function()
           Snacks.picker.buffers()
         end,
-        desc = 'Buffers',
+        desc = "Buffers",
       },
     },
   },
 }
+
