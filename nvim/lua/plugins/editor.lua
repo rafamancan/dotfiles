@@ -53,7 +53,7 @@ return {
     "christoomey/vim-tmux-navigator",
     cmd = {
       "TmuxNavigateLeft",
-      "TmuxNavigateDown", 
+      "TmuxNavigateDown",
       "TmuxNavigateUp",
       "TmuxNavigateRight",
       "TmuxNavigatePrevious",
@@ -92,5 +92,23 @@ return {
       })
     end,
   },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = false,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
+  },
 }
-
