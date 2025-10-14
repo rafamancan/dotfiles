@@ -34,6 +34,7 @@ alias ddown="docker-compose down"
 alias vim="nvim"
 alias v='nvim'
 alias vk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias vm='NVIM_APPNAME="nvim-minimax" nvim'
 # alias v='NVIM_APPNAME="nvim-kickstart" nvim'
 alias c="code ."
 alias vf='cd ~/.config/nvim && v'
@@ -213,3 +214,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias obs="cd /mnt/c/Users/rrcm0/Dropbox/Obsidian"
 alias claude="~/.claude/local/claude"
 alias spec="uvx --from git+https://github.com/github/spec-kit.git specify"
+
+. "$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"

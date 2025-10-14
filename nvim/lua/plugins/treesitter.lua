@@ -1,8 +1,61 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
+    branch = "main", -- Explicitly use the main branch
+    build = ":TSUpdate",
+    lazy = false, -- TreeSitter should not be lazy-loaded
+    config = function()
+      -- Setup treesitter with new API
+      require("nvim-treesitter").setup({
+        -- Directory to install parsers and queries (optional, uses default if not specified)
+        -- install_dir = vim.fn.stdpath('data') .. '/site'
+      })
+
+      -- Install parsers
+      local parsers_to_install = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
+        "css",
+        "scss",
+        "php",
+        "php_only",
+        "phpdoc",
+        "json",
+        "yaml",
+        "markdown",
+        "markdown_inline",
+        "bash",
+        "regex",
+        "sql",
+        "dockerfile",
+        "gitignore",
+      }
+
+      -- Install parsers asynchronously
+      require("nvim-treesitter").install(parsers_to_install)
+
+      -- Enable treesitter highlighting for supported filetypes
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "lua",
+          "javascript",
+          "typescript",
+          "typescriptreact",
+          "html",
+          "css",
+          "php",
+          "json",
+          "yaml",
+          "markdown",
+          "bash",
+        },
+        callback = function()
+          vim.treesitter.start()
+        end,
+      })
     end,
     dependencies = {
       {
@@ -10,52 +63,6 @@ return {
         opts = {},
       },
       "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    opts = {
-      ensure_installed = {
-        "lua",
-        "javascript",
-        "typescript",
-        "tsx",
-        "html",
-        "css",
-        "php",
-        "json",
-        "yaml",
-        "markdown",
-        "bash",
-      },
-      auto_install = false,
-      ignore_install = { "jsonc" },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      -- https://github.com/nvim-treesitter/playground#query-linter
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
-      },
-
-      playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = true, -- Whether the query persists across vim sessions
-        keybindings = {
-          toggle_query_editor = "o",
-          toggle_hl_groups = "i",
-          toggle_injected_languages = "t",
-          toggle_anonymous_nodes = "a",
-          toggle_language_display = "I",
-          focus_language = "f",
-          unfocus_language = "F",
-          update = "R",
-          goto_node = "<cr>",
-          show_help = "?",
-        },
-      },
     },
   },
   {

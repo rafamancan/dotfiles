@@ -1,86 +1,147 @@
 {
-    "Controller": {
-        "prefix": "cont",
-        "body": [
-            "<?php",
-            "",
-            "namespace App\\Http\\Controllers;",
-            "",
-            "class $1Controller extends Controller",
-            "{",
-            "    public function __construct()",
-            "    {",
-            "    }",
-            "}"
-        ],
-        "description": "Controller handler"
-    },
-    "Service": {
-        "prefix": "serv",
-        "body": [
-            "<?php",
-            "",
-            "namespace App\\Http\\Services;",
-            "",
-            "class $1Service extends BaseService",
-            "{",
-            "    public function __construct()",
-            "    {",
-            "    }",
-            "}"
-        ],
-        "description": "Service handler"
-    },
-    "Console": {
-        "prefix": "console",
-        "body": [
-            "<?php",
-            "",
-            "namespace App\\Console\\Commands;",
-            "",
-            "use Exception;",
-            "use Illuminate\\Console\\Command;",
-            "use Illuminate\\Support\\Facades\\Log;",
-            "",
-            "class $1 extends Command",
-            "{",
-            "    protected \\$signature = '$2:$3 {arg}';",
-            "",
-            "    protected \\$description = '$1 description';",
-            "",
-            "    public function __construct()",
-            "    {",
-            "        parent::__construct();",
-            "    }",
-            "",
-            "    public function handle()",
-            "    {",
-            "        try {",
-            "            // do something",
-            "            // arg example",
-            "            // \\$arg = \\$this->argument('arg');",
-            "",
-            "            // command error example",
-            "            // return Command::FAILURE;",
-            "",
-            "            // command success example",
-            "            // return Command::SUCCESS;",
-            "",
-            "            // start progress bar",
-            "            // \\$this->output->progressStart(1000);",
-            "",
-            "            // advance progress bar",
-            "            // \\$this->output->progressAdvance();",
-            "",
-            "            // finish progress bar",
-            "            // \\$this->output->progressFinish();",
-            "        } catch (Exception \\$e) {",
-            "            Log::error('Error on script $1: ' . \\$e->getMessage());",
-            "        }",
-            "    }",
-            "}"
-        ],
-        "description": "Console handler"
-    }
+  "PHP Class": {
+    "prefix": "class",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:Namespace};",
+      "",
+      "class ${2:ClassName}",
+      "{",
+      "\t${3:// class body}",
+      "}"
+    ],
+    "description": "Create a PHP class"
+  },
+  "PHP Method": {
+    "prefix": "method",
+    "body": [
+      "public function ${1:methodName}(${2:}): ${3:void}",
+      "{",
+      "\t${4:// method body}",
+      "}"
+    ],
+    "description": "Create a public method"
+  },
+  "PHP Private Method": {
+    "prefix": "pmethod",
+    "body": [
+      "private function ${1:methodName}(${2:}): ${3:void}",
+      "{",
+      "\t${4:// method body}",
+      "}"
+    ],
+    "description": "Create a private method"
+  },
+  "Laravel Controller": {
+    "prefix": "lcontroller",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:App\\\\Http\\\\Controllers};",
+      "",
+      "use Illuminate\\\\Http\\\\Request;",
+      "",
+      "class ${2:ControllerName} extends Controller",
+      "{",
+      "\tpublic function index()",
+      "\t{",
+      "\t\t${3:// index logic}",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a Laravel resource controller"
+  },
+  "Laravel Model": {
+    "prefix": "lmodel",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:App\\\\Models};",
+      "",
+      "use Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory;",
+      "use Illuminate\\\\Database\\\\Eloquent\\\\Model;",
+      "",
+      "class ${2:ModelName} extends Model",
+      "{",
+      "\tuse HasFactory;",
+      "",
+      "\tprotected \\$fillable = [",
+      "\t\t${3:'column'}",
+      "\t];",
+      "}"
+    ],
+    "description": "Create a Laravel Eloquent model"
+  },
+  "Laravel Migration": {
+    "prefix": "lmigration",
+    "body": [
+      "<?php",
+      "",
+      "use Illuminate\\\\Database\\\\Migrations\\\\Migration;",
+      "use Illuminate\\\\Database\\\\Schema\\\\Blueprint;",
+      "use Illuminate\\\\Support\\\\Facades\\\\Schema;",
+      "",
+      "return new class extends Migration",
+      "{",
+      "\tpublic function up(): void",
+      "\t{",
+      "\t\tSchema::create('${1:table_name}', function (Blueprint \\$table) {",
+      "\t\t\t\\$table->id();",
+      "\t\t\t${2:// columns}",
+      "\t\t\t\\$table->timestamps();",
+      "\t\t});",
+      "\t}",
+      "",
+      "\tpublic function down(): void",
+      "\t{",
+      "\t\tSchema::dropIfExists('${1:table_name}');",
+      "\t}",
+      "};"
+    ],
+    "description": "Create a Laravel migration"
+  },
+  "Laravel Route": {
+    "prefix": "lroute",
+    "body": [
+      "Route::${1:get}('${2:uri}', [${3:Controller}::class, '${4:method}']);"
+    ],
+    "description": "Create a Laravel route"
+  },
+  "Pest Test": {
+    "prefix": "test",
+    "body": [
+      "test('${1:description}', function () {",
+      "\t${2:// test body}",
+      "});"
+    ],
+    "description": "Create a Pest test"
+  },
+  "Pest It Test": {
+    "prefix": "it",
+    "body": [
+      "it('${1:description}', function () {",
+      "\t${2:// test body}",
+      "});"
+    ],
+    "description": "Create a Pest it test"
+  },
+  "Pest Expect": {
+    "prefix": "expect",
+    "body": [
+      "expect(${1:\\$value})->toBe(${2:expected});"
+    ],
+    "description": "Pest expect assertion"
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1:// code}",
+      "} catch (${2:Exception} \\$e) {",
+      "\t${3:// handle exception}",
+      "}"
+    ],
+    "description": "Try-catch block"
+  }
 }
-

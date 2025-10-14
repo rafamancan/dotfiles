@@ -54,3 +54,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- Text Editing
 vim.keymap.set("n", "dw", 'vb"_d', { desc = "Delete word backwards" })
+
+-- Code Formatting
+vim.keymap.set("n", "<leader>cf", function()
+  require("config.formatting").format_buffer()
+end, { desc = "Format current buffer" })
