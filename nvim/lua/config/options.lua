@@ -1,78 +1,118 @@
--- Leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- ============================================================================
+-- NEOVIM OPTIONS CONFIGURATION
+-- ============================================================================
+-- This file contains all core Neovim settings and options.
+-- Organized by category for easy maintenance.
+-- ============================================================================
 
--- Encoding
-vim.scriptencoding = "utf-8"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
+-- ============================================================================
+-- LEADERS
+-- ============================================================================
+vim.g.mapleader = " " -- Space as leader key for custom mappings
+vim.g.maplocalleader = " " -- Space as local leader for filetype-specific mappings
 
--- Editor behavior
-vim.opt.mouse = "a"
-vim.opt.autowrite = true
-vim.opt.autoread = true
-vim.opt.cursorline = true
-vim.opt.breakindent = true
-vim.opt.wrap = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+-- ============================================================================
+-- ENCODING
+-- ============================================================================
+vim.scriptencoding = "utf-8" -- Script encoding
+vim.opt.encoding = "utf-8" -- Internal encoding
+vim.opt.fileencoding = "utf-8" -- File encoding when writing
 
--- Search
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+-- ============================================================================
+-- EDITOR BEHAVIOR
+-- ============================================================================
+vim.opt.mouse = "a" -- Enable mouse support in all modes
+vim.opt.autowrite = true -- Automatically write file when switching buffers
+vim.opt.autoread = true -- Automatically read file when changed outside Vim
+vim.opt.cursorline = true -- Highlight current line
+vim.opt.breakindent = true -- Preserve indentation in wrapped text
+vim.opt.wrap = false -- Disable line wrapping
+vim.opt.scrolloff = 8 -- Keep 8 lines above/below cursor
+vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
+vim.opt.splitright = true -- Vertical splits open to the right
+vim.opt.splitbelow = true -- Horizontal splits open below
 
--- Indentation
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.tabstop = 4
-vim.opt.smartindent = true
-vim.opt.shiftround = true
+-- ============================================================================
+-- SEARCH
+-- ============================================================================
+vim.opt.hlsearch = false -- Don't highlight search results
+vim.opt.incsearch = true -- Show search matches as you type
+vim.opt.ignorecase = true -- Ignore case in search patterns
+vim.opt.smartcase = true -- Override ignorecase if search contains uppercase
 
--- Line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = "yes"
+-- ============================================================================
+-- INDENTATION
+-- ============================================================================
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.shiftwidth = 4 -- Number of spaces for each indentation level
+vim.opt.softtabstop = 4 -- Number of spaces for <Tab> in insert mode
+vim.opt.tabstop = 4 -- Number of spaces a <Tab> counts for
+vim.opt.smartindent = true -- Smart autoindenting on new lines
+vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 
--- Visual guides
-vim.opt.colorcolumn = { "80", "120" }
-vim.opt.list = true
+-- ============================================================================
+-- LINE NUMBERS & SIGNS
+-- ============================================================================
+vim.opt.number = true -- Show absolute line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
+vim.opt.signcolumn = "yes" -- Always show sign column to prevent text shifting
+
+-- ============================================================================
+-- VISUAL GUIDES
+-- ============================================================================
+vim.opt.colorcolumn = { "80", "120" } -- Show vertical rulers at 80 and 120 columns
+vim.opt.list = true -- Show invisible characters
 vim.opt.listchars = {
-  trail = "·",
-  tab = " »",
-  nbsp = "␣",
+  trail = "·", -- Show trailing spaces
+  tab = " »", -- Show tabs
+  nbsp = "␣", -- Show non-breaking spaces
 }
 
--- Clipboard
-vim.opt.clipboard = "unnamedplus"
+-- ============================================================================
+-- CLIPBOARD
+-- ============================================================================
+vim.opt.clipboard = "unnamedplus" -- Use system clipboard for all operations
 
--- Undo
-vim.opt.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- ============================================================================
+-- UNDO & HISTORY
+-- ============================================================================
+vim.opt.undofile = true -- Enable persistent undo
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Undo file directory
+vim.opt.history = 1000 -- Command history size
 
--- Backup and swap
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
+-- ============================================================================
+-- BACKUP & SWAP FILES
+-- ============================================================================
+vim.opt.backup = false -- Disable backup files
+vim.opt.writebackup = false -- Disable backup before overwriting file
+vim.opt.swapfile = false -- Disable swap files
 
--- Completion
-vim.opt.completeopt = "menuone,noselect"
-vim.opt.pumheight = 10
+-- ============================================================================
+-- COMPLETION
+-- ============================================================================
+vim.opt.completeopt = "menuone,noselect" -- Better completion experience
+vim.opt.pumheight = 10 -- Maximum popup menu height
 
--- Timing
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+-- ============================================================================
+-- TIMING & PERFORMANCE
+-- ============================================================================
+vim.opt.updatetime = 250 -- Faster completion (default 4000ms)
+vim.opt.timeoutlen = 300 -- Time to wait for mapped sequence (ms)
+vim.opt.synmaxcol = 300 -- Max column for syntax highlighting (performance)
+vim.opt.ttyfast = true -- Faster redrawing
 
+-- ============================================================================
 -- UI
-vim.opt.termguicolors = true
-vim.opt.showcmd = true
-vim.opt.laststatus = 3
-vim.opt.showtabline = 2
-vim.opt.cmdheight = 1
+-- ============================================================================
+vim.opt.termguicolors = true -- Enable 24-bit RGB colors
+vim.opt.showcmd = true -- Show command in status line
+vim.opt.laststatus = 3 -- Global statusline
+vim.opt.showtabline = 2 -- Always show tabline
+vim.opt.cmdheight = 1 -- Command line height
 
--- Transparency
+-- ============================================================================
+-- TRANSPARENCY
+-- ============================================================================
 vim.cmd([[
   highlight Normal guibg=NONE ctermbg=NONE
   highlight NonText guibg=NONE ctermbg=NONE
@@ -80,17 +120,17 @@ vim.cmd([[
   highlight EndOfBuffer guibg=NONE ctermbg=NONE
 ]])
 
--- Performance
-vim.opt.synmaxcol = 300
-vim.opt.history = 1000
-vim.opt.ttyfast = true
+-- ============================================================================
+-- PLUGIN SETTINGS
+-- ============================================================================
+vim.g.autoformat = false -- Disable auto-formatting on save
+vim.g.snacks_animate = false -- Disable Snacks animations for better performance
 
--- Plugin settings
-vim.g.autoformat = false
-vim.g.snacks_animate = false
-
+-- ============================================================================
+-- FILETYPE ASSOCIATIONS
+-- ============================================================================
 vim.filetype.add({
-  extension = { jsonc = 'json' }
+  extension = { jsonc = "json" }, -- Treat .jsonc files as JSON
 })
 
 

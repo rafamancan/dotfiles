@@ -1,4 +1,9 @@
--- Configuração do none-ls (null-ls) para PHP
+-- ============================================================================
+-- NONE-LS CONFIGURATION (formerly null-ls)
+-- ============================================================================
+-- LSP-like diagnostics and formatting for languages without native LSP support.
+-- ============================================================================
+
 return {
   "nvimtools/none-ls.nvim",
   opts = function(_, opts)
@@ -6,7 +11,10 @@ return {
     local h = require("null-ls.helpers")
     opts.sources = opts.sources or {}
 
-    -- Remover PHPCS e phpcsfixer dos sources
+    -- ========================================================================
+    -- REMOVE DEFAULT PHP FORMATTERS
+    -- ========================================================================
+    -- Remove PHPCS and phpcsfixer from sources (we use custom formatting)
     local filtered = {}
     for _, source in ipairs(opts.sources) do
       local name = type(source) == "table" and source.name or tostring(source)
@@ -16,7 +24,11 @@ return {
     end
     opts.sources = filtered
 
-    -- PHP CS Fixer - formatter customizado que executa diretamente no arquivo
+    -- ========================================================================
+    -- PHP CS FIXER - Custom formatter
+    -- ========================================================================
+    -- Note: This is disabled by default. Use <leader>cf for manual formatting.
+    -- Auto-formatting is disabled in options.lua (vim.g.autoformat = false)
     table.insert(
       opts.sources,
       h.make_builtin({
@@ -33,7 +45,9 @@ return {
       })
     )
 
-    -- PHPStan - builtin padrão
+    -- ========================================================================
+    -- PHPSTAN - Static analysis
+    -- ========================================================================
     table.insert(opts.sources, null_ls.builtins.diagnostics.phpstan)
 
     return opts

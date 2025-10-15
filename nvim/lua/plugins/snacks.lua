@@ -1,3 +1,10 @@
+-- ============================================================================
+-- SNACKS.NVIM CONFIGURATION
+-- ============================================================================
+-- Dashboard, picker, and UI enhancements.
+-- ============================================================================
+
+-- Custom dashboard logo
 local logo = [[
             ██████╗  █████╗ ███████╗ █████╗ ███╗   ███╗ █████╗ ███╗   ██╗ ██████╗ █████╗ ███╗   ██╗
             ██╔══██╗██╔══██╗██╔════╝██╔══██╗████╗ ████║██╔══██╗████╗  ██║██╔════╝██╔══██╗████╗  ██║
@@ -17,22 +24,22 @@ local footer = [[
 
 ]]
 
+-- Dashboard action keys
 local keys = {
-  { icon = " ", key = "s", desc = "Lazy Sync Update", action = ":Lazy sync" },
-  { icon = " ", key = "t", desc = "Treesitter Update", action = ":TSUpdate" },
-  {
-    icon = "󱚝 ",
-    desc = "Mason",
-    action = ":Mason",
-    key = "m",
-  },
+  { icon = " ", key = "s", desc = "Lazy Sync Update", action = ":Lazy sync" },
+  { icon = " ", key = "t", desc = "Treesitter Update", action = ":TSUpdate" },
+  { icon = "󱚝 ", key = "m", desc = "Mason", action = ":Mason" },
   { icon = "󰿅 ", key = "q", desc = "Quit", action = ":q" },
 }
+
 return {
   {
     "folke/snacks.nvim",
     lazy = false,
     opts = {
+      -- ======================================================================
+      -- DASHBOARD
+      -- ======================================================================
       dashboard = {
         width = 100,
         enabled = true,
@@ -45,16 +52,24 @@ return {
         sections = {
           { section = "header" },
           { section = "keys", gap = 1 },
-          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = { 1, 1 } },
-          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = { 1, 0 } },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = { 1, 1 } },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = { 1, 0 } },
           { section = "startup" },
         },
       },
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
+
+      -- ======================================================================
+      -- FEATURES
+      -- ======================================================================
+      bigfile = { enabled = true }, -- Better handling of large files
+      notifier = { enabled = true }, -- Notifications
+      quickfile = { enabled = true }, -- Quick file opening
+      statuscolumn = { enabled = true }, -- Enhanced status column
+      words = { enabled = true }, -- Word highlighting
+
+      -- ======================================================================
+      -- PICKER
+      -- ======================================================================
       picker = {
         sources = {
           explorer = {
@@ -63,6 +78,10 @@ return {
         },
       },
     },
+
+    -- ========================================================================
+    -- KEYMAPS
+    -- ========================================================================
     keys = {
       {
         "<C-p>",
@@ -71,13 +90,24 @@ return {
             hidden = true,
             ignored = true,
             exclude = {
+              -- Dependencies
               "**/node_modules/**",
-              ".git/.*",
               "vendor/*",
-              "storage/*",
-              ".idea/*",
+
+              -- Build outputs
               "dist/.*",
               "build/.*",
+
+              -- Storage and cache
+              "storage/*",
+
+              -- IDE
+              ".idea/*",
+
+              -- Version control
+              ".git/.*",
+
+              -- Media files (performance)
               "*.png",
               "*.jpg",
               "*.jpeg",
@@ -96,4 +126,3 @@ return {
     },
   },
 }
-

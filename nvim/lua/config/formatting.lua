@@ -1,47 +1,60 @@
--- Configuração de formatação customizada
+-- ============================================================================
+-- CUSTOM FORMATTING CONFIGURATION
+-- ============================================================================
+-- Custom formatting logic for different filetypes.
+-- PHP uses php-cs-fixer, others use LSP formatting.
+-- ============================================================================
+
 local M = {}
 
--- Formata arquivo PHP usando php-cs-fixer + phpcbf (igual composer fix)
+-- ============================================================================
+-- PHP FORMATTING
+-- ============================================================================
+--- Formats PHP file using php-cs-fixer (matches `composer fix` command)
+--- This runs synchronously and preserves cursor position.
 function M.format_php()
   local buf = vim.api.nvim_get_current_buf()
   local filepath = vim.api.nvim_buf_get_name(buf)
   local pos = vim.api.nvim_win_get_cursor(0)
 
-  -- Salvar o arquivo primeiro
+  -- Save file first to ensure formatters work on latest content
   vim.cmd("write")
 
-  -- Encontrar o root do projeto
+  -- Find project root (directory containing .git)
   local root = vim.fn.finddir(".git/..", vim.fn.expand("%:p:h") .. ";")
   if root == "" then
     root = vim.fn.getcwd()
   end
 
-  -- Executar php-cs-fixer
-  local cmd1 = string.format(
+  -- Run php-cs-fixer
+  local cmd = string.format(
     "cd %s && vendor/bin/php-cs-fixer fix --using-cache=no %s 2>&1",
     vim.fn.shellescape(root),
     vim.fn.shellescape(filepath)
   )
-  vim.fn.system(cmd1)
+  local output = vim.fn.system(cmd)
 
-  -- Executar phpcbf (PSR12)
-  local cmd2 = string.format(
-    "cd %s && vendor/bin/phpcbf --standard=PSR12 %s 2>&1",
-    vim.fn.shellescape(root),
-    vim.fn.shellescape(filepath)
-  )
-  vim.fn.system(cmd2)
+  -- Check for errors
+  if vim.v.shell_error ~= 0 then
+    vim.notify("php-cs-fixer error:\n" .. output, vim.log.levels.ERROR)
+    return
+  end
 
-  -- Recarregar o arquivo
+  -- Reload file to show changes
   vim.cmd("edit!")
 
-  -- Restaurar posição do cursor
+  -- Restore cursor position (use pcall to avoid errors if position is invalid)
   pcall(vim.api.nvim_win_set_cursor, 0, pos)
 
-  print("✓ Formatted with php-cs-fixer + phpcbf")
+  vim.notify("✓ Formatted with php-cs-fixer", vim.log.levels.INFO)
 end
 
--- Formata o buffer atual baseado no filetype
+-- ============================================================================
+-- GENERAL FORMATTING
+-- ============================================================================
+--- Formats current buffer based on filetype.
+--- PHP: uses php-cs-fixer
+--- Others: uses LSP formatting
 function M.format_buffer()
   local buf = vim.api.nvim_get_current_buf()
   local ft = vim.bo[buf].filetype
@@ -49,7 +62,7 @@ function M.format_buffer()
   if ft == "php" then
     M.format_php()
   else
-    -- Para outras linguagens, usar o default do LazyVim (LSP)
+    -- Use LSP formatting for other languages
     vim.lsp.buf.format({ timeout_ms = 10000, async = false })
   end
 end

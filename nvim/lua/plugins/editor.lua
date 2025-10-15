@@ -1,4 +1,13 @@
+-- ============================================================================
+-- EDITOR PLUGINS CONFIGURATION
+-- ============================================================================
+-- Navigation, file management, and editor enhancement plugins.
+-- ============================================================================
+
 return {
+  -- ==========================================================================
+  -- HARPOON - Quick file navigation
+  -- ==========================================================================
   {
     "ThePrimeagen/harpoon",
     keys = {
@@ -7,35 +16,52 @@ return {
         function()
           require("harpoon.mark").add_file()
         end,
-        desc = "Add Harpoon",
+        desc = "Harpoon: Add file",
       },
       {
         "<leader>Hl",
         function()
           require("harpoon.ui").toggle_quick_menu()
         end,
-        desc = "Harpoon Menu",
+        desc = "Harpoon: Menu",
       },
     },
   },
+
+  -- ==========================================================================
+  -- LUASNIP - Snippet engine
+  -- ==========================================================================
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
       "rafamadriz/friendly-snippets",
       config = function()
+        -- Load VSCode-style snippets
         require("luasnip.loaders.from_vscode").lazy_load()
+        -- Load custom snippets from config directory
         require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
       end,
     },
   },
-  { "wakatime/vim-wakatime", lazy = false },
+
+  -- ==========================================================================
+  -- WAKATIME - Time tracking
+  -- ==========================================================================
+  {
+    "wakatime/vim-wakatime",
+    lazy = false, -- Load immediately for accurate time tracking
+  },
+
+  -- ==========================================================================
+  -- AERIAL - Code outline navigator
+  -- ==========================================================================
   {
     "stevearc/aerial.nvim",
     opts = {
       backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
       layout = {
-        max_width = { 50, 0.3 },
-        width = nil,
+        max_width = { 50, 0.3 }, -- Max width: 50 columns or 30% of window
+        width = nil, -- Auto-calculate width
         min_width = 30,
         win_opts = {},
         default_direction = "prefer_right",
@@ -49,6 +75,10 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+
+  -- ==========================================================================
+  -- TMUX NAVIGATOR - Seamless navigation between tmux and vim
+  -- ==========================================================================
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -59,39 +89,45 @@ return {
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", desc = "Tmux: Navigate left" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>", desc = "Tmux: Navigate down" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>", desc = "Tmux: Navigate up" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>", desc = "Tmux: Navigate right" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>", desc = "Tmux: Navigate previous" },
     },
   },
+
+  -- ==========================================================================
+  -- OIL - File explorer as a buffer
+  -- ==========================================================================
   {
     "stevearc/oil.nvim",
-    ---@module 'oil'
-    ---@type oil.SetupOpts
     opts = {},
-    -- Optional dependencies
-    -- dependencies = { { "mini-nvim/mini.icons", opts = {} } },
-    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+
+  -- ==========================================================================
+  -- TOGGLETERM - Better terminal integration
+  -- ==========================================================================
   {
     "akinsho/toggleterm.nvim",
     version = "*",
     lazy = false,
-    config = function()
-      require("toggleterm").setup({
-        size = 15,
-        direction = "float",
-        open_mapping = [[<c-t>]],
-        float_opts = {
-          border = "curved",
-          width = 120,
-          height = 30,
-        },
-      })
-    end,
+    opts = {
+      size = 15,
+      direction = "float",
+      open_mapping = [[<c-t>]],
+      float_opts = {
+        border = "curved",
+        width = 120,
+        height = 30,
+      },
+    },
   },
+
+  -- ==========================================================================
+  -- LAZYGIT - Git UI
+  -- ==========================================================================
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
@@ -102,7 +138,6 @@ return {
       "LazyGitFilter",
       "LazyGitFilterCurrentFile",
     },
-    -- optional for floating window border decoration
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",

@@ -1,5 +1,13 @@
+-- ============================================================================
+-- PHP DEVELOPMENT CONFIGURATION
+-- ============================================================================
+-- Complete PHP development setup including LSP, Laravel tools, testing, and debugging.
+-- ============================================================================
+
 return {
-  -- PHP Language Server - Intelephense only
+  -- ==========================================================================
+  -- INTELEPHENSE - PHP Language Server
+  -- ==========================================================================
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -7,7 +15,9 @@ return {
         intelephense = {
           settings = {
             intelephense = {
+              -- PHP extension stubs for better autocomplete
               stubs = {
+                -- Core PHP
                 "apache",
                 "bcmath",
                 "Core",
@@ -41,17 +51,17 @@ return {
                 "xmlwriter",
                 "zip",
                 "zlib",
-                -- Laravel
+                -- Frameworks
                 "laravel",
               },
               files = {
-                maxSize = 5000000,
+                maxSize = 5000000, -- 5MB max file size for indexing
               },
               format = {
-                enable = false, -- Usar conform.nvim para formatação
+                enable = false, -- Disable LSP formatting (using custom formatter)
               },
               environment = {
-                phpVersion = "8.2.0",
+                phpVersion = "8.2.0", -- Target PHP version
               },
             },
           },
@@ -60,36 +70,43 @@ return {
     },
   },
 
-  -- Desabilitar conform.nvim para PHP (usando none-ls)
+  -- ==========================================================================
+  -- DISABLE DEFAULT FORMATTERS
+  -- ==========================================================================
+  -- We use custom PHP formatting (config.formatting module)
   {
     "stevearc/conform.nvim",
     optional = true,
     opts = function(_, opts)
-      -- Remover PHP do conform (usando none-ls para formatação)
       opts.formatters_by_ft = opts.formatters_by_ft or {}
-      opts.formatters_by_ft.php = nil
+      opts.formatters_by_ft.php = nil -- Disable conform for PHP
     end,
   },
 
-  -- Desabilitar nvim-lint para PHP (usando none-ls)
-  -- LazyVim extras.lang.php ativa phpcs no nvim-lint, precisamos desabilitar
+  -- ==========================================================================
+  -- DISABLE DEFAULT LINTERS
+  -- ==========================================================================
+  -- LazyVim extras.lang.php enables phpcs by default, we disable it
   {
     "mfussenegger/nvim-lint",
     optional = true,
     opts = function(_, opts)
-      -- Remover PHP do nvim-lint (usando none-ls para linting)
       opts.linters_by_ft = opts.linters_by_ft or {}
-      opts.linters_by_ft.php = {}  -- Array vazio ao invés de nil
+      opts.linters_by_ft.php = {} -- Empty array disables linters for PHP
     end,
   },
 
-  -- Better PHP syntax
+  -- ==========================================================================
+  -- IMPROVED PHP SYNTAX HIGHLIGHTING
+  -- ==========================================================================
   {
     "StanAngeloff/php.vim",
-    ft = "php",
+    ft = "php", -- Only load for PHP files
   },
 
-  -- Laravel specific tools
+  -- ==========================================================================
+  -- LARAVEL.NVIM - Laravel development tools
+  -- ==========================================================================
   {
     "adalessa/laravel.nvim",
     dependencies = {
@@ -99,9 +116,9 @@ return {
     },
     cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
     keys = {
-      { "<leader>la", ":Laravel artisan<cr>", desc = "Laravel Artisan" },
-      { "<leader>lr", ":Laravel routes<cr>", desc = "Laravel Routes" },
-      { "<leader>lm", ":Laravel related<cr>", desc = "Laravel Related" },
+      { "<leader>la", ":Laravel artisan<cr>", desc = "Laravel: Artisan commands" },
+      { "<leader>lr", ":Laravel routes<cr>", desc = "Laravel: Routes" },
+      { "<leader>lm", ":Laravel related<cr>", desc = "Laravel: Related files" },
     },
     event = { "VeryLazy" },
     config = function()
@@ -109,14 +126,16 @@ return {
         lsp_server = "intelephense",
         features = {
           null_ls = {
-            enable = false, -- Usando conform e nvim-lint
+            enable = false, -- Using custom formatting setup
           },
         },
       })
     end,
   },
 
-  -- Testing com Pest
+  -- ==========================================================================
+  -- NEOTEST-PEST - Testing with Pest
+  -- ==========================================================================
   {
     "nvim-neotest/neotest",
     optional = true,
@@ -131,13 +150,15 @@ return {
           pest_cmd = function()
             return vim.fn.getcwd() .. "/vendor/bin/pest"
           end,
-          parallel = 16, -- Para suportar --parallel
+          parallel = 16, -- Enable parallel test execution
         })
       )
     end,
   },
 
-  -- DAP para debugging com XDebug
+  -- ==========================================================================
+  -- XDEBUG - PHP Debugging with DAP
+  -- ==========================================================================
   {
     "mfussenegger/nvim-dap",
     optional = true,
@@ -149,20 +170,23 @@ return {
     },
     opts = function()
       local dap = require("dap")
+
+      -- Configure PHP debug adapter
       dap.adapters.php = {
         type = "executable",
         command = "node",
         args = { vim.fn.stdpath("data") .. "/mason/packages/php-debug-adapter/extension/out/phpDebug.js" },
       }
 
+      -- Configure debug configurations
       dap.configurations.php = {
         {
           type = "php",
           request = "launch",
           name = "Listen for Xdebug",
-          port = 9003,
+          port = 9003, -- Xdebug 3 default port
           pathMappings = {
-            ["/var/www/html"] = "${workspaceFolder}",
+            ["/var/www/html"] = "${workspaceFolder}", -- Docker path mapping
           },
         },
       }

@@ -1,61 +1,98 @@
+-- ============================================================================
+-- KEYMAPS CONFIGURATION
+-- ============================================================================
+-- All custom keybindings organized by category.
+-- Leader key is <Space> (configured in options.lua)
+-- ============================================================================
+
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- ============================================================================
+-- GENERAL
+-- ============================================================================
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
--- Diagnostic keymaps
+-- ============================================================================
+-- DIAGNOSTICS
+-- ============================================================================
 vim.keymap.set("n", "<leader>xd", vim.diagnostic.setloclist, { desc = "Open diagnostic quickfix list" })
 
+-- ============================================================================
+-- TERMINAL
+-- ============================================================================
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
 vim.keymap.set("n", "<C-t>", ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Toggle Terminal from terminal mode" })
 
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- ============================================================================
+-- WINDOW NAVIGATION
+-- ============================================================================
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to upper window" })
 
--- Buffer Navigation
+-- ============================================================================
+-- BUFFER NAVIGATION
+-- ============================================================================
 vim.keymap.set("n", "<TAB>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", opts)
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "Close all buffers except current" })
 
--- File Operations
-vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
+-- ============================================================================
+-- FILE OPERATIONS
+-- ============================================================================
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 
--- Selection
-vim.keymap.set("n", "<C-a>", "gg<S-v>G", opts)
+-- ============================================================================
+-- SELECTION
+-- ============================================================================
+vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
--- Search
-vim.keymap.set("n", "<c-f>", "<cmd>HopPattern<CR>", { noremap = false })
+-- ============================================================================
+-- SEARCH
+-- ============================================================================
+vim.keymap.set("n", "<c-f>", "<cmd>HopPattern<CR>", { noremap = false, desc = "Hop to pattern" })
 
--- Search and Replace
+-- ============================================================================
+-- SEARCH AND REPLACE
+-- ============================================================================
 vim.keymap.set("n", "<leader>rl", ":s//g<LEFT><LEFT>", { desc = "Replace in line" })
 vim.keymap.set("n", "<leader>rf", ":%s//g<LEFT><LEFT>", { desc = "Replace in file" })
 
--- Lazygit
+-- ============================================================================
+-- GIT
+-- ============================================================================
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
 
--- Aerial
-vim.keymap.set("n", "<leader>ta", ":AerialToggle<CR>", { desc = "Toggle Aerial" })
+-- ============================================================================
+-- CODE NAVIGATION
+-- ============================================================================
+vim.keymap.set("n", "<leader>ta", ":AerialToggle<CR>", { desc = "Toggle Aerial (code outline)" })
 
--- Visual Mode Enhancements
--- Stay in indent mode
+-- ============================================================================
+-- VISUAL MODE ENHANCEMENTS
+-- ============================================================================
+-- Stay in indent mode after indenting
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
 -- Paste without overwriting register
-vim.keymap.set("v", "p", '"_dP', opts)
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
 
--- Move selected text
+-- Move selected text up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
--- Text Editing
+-- ============================================================================
+-- TEXT EDITING
+-- ============================================================================
 vim.keymap.set("n", "dw", 'vb"_d', { desc = "Delete word backwards" })
 
--- Code Formatting
+-- ============================================================================
+-- CODE FORMATTING
+-- ============================================================================
 vim.keymap.set("n", "<leader>cf", function()
   require("config.formatting").format_buffer()
 end, { desc = "Format current buffer" })
