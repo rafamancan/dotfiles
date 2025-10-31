@@ -6,15 +6,37 @@
 
 return {
   -- ==========================================================================
-  -- INTELEPHENSE - PHP Language Server
+  -- DUAL LSP SETUP: Intelephense + Phpactor
   -- ==========================================================================
+  -- Intelephense: Primary LSP for completion, hover, diagnostics (with premium license)
+  -- Phpactor: Refactoring tools (extract method, generate code, etc)
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- Enable phpactor for refactoring (extract method, generate code, etc)
+        phpactor = {
+          enabled = true, -- Explicitly enable phpactor
+          -- Disable diagnostics/linting (let Intelephense handle that)
+          init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+          },
+          handlers = {
+            -- Disable phpactor hover (let Intelephense handle it)
+            ["textDocument/hover"] = function() end,
+          },
+        },
+        -- Enable and configure Intelephense (primary LSP for completion/diagnostics)
         intelephense = {
+          enabled = true, -- Explicitly enable intelephense
+          -- Force re-indexing on startup
+          init_options = {
+            clearCache = false, -- Set to true temporarily if you need to force re-index
+          },
           settings = {
             intelephense = {
+              -- Premium license: Intelephense automatically reads from ~/.config/intelephense/licence.txt
               -- PHP extension stubs for better autocomplete
               stubs = {
                 -- Core PHP
@@ -53,15 +75,44 @@ return {
                 "zlib",
                 -- Frameworks
                 "laravel",
+                -- Custom stubs path
+                ".stubs/laravel-helpers.php",
               },
               files = {
                 maxSize = 5000000, -- 5MB max file size for indexing
+                associations = { "*.php", "*.phtml" },
+                exclude = {
+                  "**/.git/**",
+                  "**/.svn/**",
+                  "**/.hg/**",
+                  "**/CVS/**",
+                  "**/.DS_Store/**",
+                  "**/node_modules/**",
+                  "**/bower_components/**",
+                  "**/vendor/**/Tests/**",
+                  "**/vendor/**/tests/**",
+                  "**/.history/**",
+                },
+              },
+              diagnostics = {
+                enable = true,
+                run = "onSave", -- Only run diagnostics on save
+                embeddedLanguages = true,
               },
               format = {
                 enable = false, -- Disable LSP formatting (using custom formatter)
               },
               environment = {
                 phpVersion = "8.2.0", -- Target PHP version
+                includePaths = { "vendor" }, -- Include vendor for better resolution
+              },
+              telemetry = {
+                enabled = false,
+              },
+              completion = {
+                triggerParameterHints = true,
+                insertUseDeclaration = true,
+                fullyQualifyGlobalConstantsAndFunctions = false,
               },
             },
           },

@@ -10,7 +10,7 @@ local M = {}
 -- ============================================================================
 -- PHP FORMATTING
 -- ============================================================================
---- Formats PHP file using php-cs-fixer (matches `composer fix` command)
+--- Formats PHP file using phpcbf (for indentation) + php-cs-fixer (for style rules)
 --- This runs synchronously and preserves cursor position.
 function M.format_php()
   local buf = vim.api.nvim_get_current_buf()
@@ -26,16 +26,24 @@ function M.format_php()
     root = vim.fn.getcwd()
   end
 
-  -- Run php-cs-fixer
+  -- Step 1: Run phpcbf (PHP Code Beautifier) to fix indentation/spacing
+  local phpcbf_cmd = string.format(
+    "phpcbf --standard=PSR12 %s 2>&1",
+    vim.fn.shellescape(filepath)
+  )
+  vim.fn.system(phpcbf_cmd)
+  -- Note: phpcbf exit code 1 means it fixed issues, which is OK
+
+  -- Step 2: Run php-cs-fixer for project-specific style rules
   local cmd = string.format(
-    "cd %s && vendor/bin/php-cs-fixer fix --using-cache=no %s 2>&1",
+    "cd %s && vendor/bin/php-cs-fixer fix %s 2>&1",
     vim.fn.shellescape(root),
     vim.fn.shellescape(filepath)
   )
   local output = vim.fn.system(cmd)
 
-  -- Check for errors
-  if vim.v.shell_error ~= 0 then
+  -- Check for errors (exit code 8 means fixes were applied, which is OK)
+  if vim.v.shell_error ~= 0 and vim.v.shell_error ~= 8 then
     vim.notify("php-cs-fixer error:\n" .. output, vim.log.levels.ERROR)
     return
   end
@@ -46,7 +54,7 @@ function M.format_php()
   -- Restore cursor position (use pcall to avoid errors if position is invalid)
   pcall(vim.api.nvim_win_set_cursor, 0, pos)
 
-  vim.notify("✓ Formatted with php-cs-fixer", vim.log.levels.INFO)
+  vim.notify("✓ Formatted with phpcbf + php-cs-fixer", vim.log.levels.INFO)
 end
 
 -- ============================================================================

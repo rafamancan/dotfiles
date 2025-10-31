@@ -6,6 +6,10 @@
 
 return {
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  event = { "BufReadPre", "BufNewFile" },
   opts = function(_, opts)
     local null_ls = require("null-ls")
     local h = require("null-ls.helpers")
@@ -48,7 +52,25 @@ return {
     -- ========================================================================
     -- PHPSTAN - Static analysis
     -- ========================================================================
-    table.insert(opts.sources, null_ls.builtins.diagnostics.phpstan)
+    -- Re-enabled with proper project root detection and configuration
+    table.insert(
+      opts.sources,
+      null_ls.builtins.diagnostics.phpstan.with({
+        cwd = function(params)
+          -- Find project root (directory containing .git)
+          return vim.fn.finddir(".git/..", vim.fn.fnamemodify(params.bufname, ":h") .. ";")
+        end,
+        extra_args = function(params)
+          -- Only add --configuration if phpstan.neon exists in project root
+          local root = vim.fn.finddir(".git/..", vim.fn.fnamemodify(params.bufname, ":h") .. ";")
+          local config_file = root ~= "" and (root .. "/phpstan.neon") or nil
+          if config_file and vim.fn.filereadable(config_file) == 1 then
+            return { "--configuration", "phpstan.neon" }
+          end
+          return {}
+        end,
+      })
+    )
 
     return opts
   end,
