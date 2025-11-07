@@ -14,6 +14,16 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- Apply performance settings to all servers
+        ["*"] = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = false, -- Disable file watching for better performance
+              },
+            },
+          },
+        },
         -- Enable phpactor for refactoring (extract method, generate code, etc)
         phpactor = {
           enabled = true, -- Explicitly enable phpactor
@@ -23,16 +33,22 @@ return {
             ["language_server_psalm.enabled"] = false,
           },
           handlers = {
-            -- Disable phpactor hover (let Intelephense handle it)
+            -- Disable phpactor hover and references (let Intelephense handle it)
             ["textDocument/hover"] = function() end,
+            ["textDocument/references"] = function() end,
           },
         },
         -- Enable and configure Intelephense (primary LSP for completion/diagnostics)
         intelephense = {
           enabled = true, -- Explicitly enable intelephense
+          -- Optimize LSP performance
+          flags = {
+            debounce_text_changes = 150, -- Debounce text changes (ms)
+          },
           -- Force re-indexing on startup
           init_options = {
             clearCache = false, -- Set to true temporarily if you need to force re-index
+            licenceKey = vim.fn.expand("~/.config/intelephense/licence.txt"), -- Premium license
           },
           settings = {
             intelephense = {
@@ -79,7 +95,7 @@ return {
                 ".stubs/laravel-helpers.php",
               },
               files = {
-                maxSize = 5000000, -- 5MB max file size for indexing
+                maxSize = 1000000, -- 1MB max file size for indexing (faster)
                 associations = { "*.php", "*.phtml" },
                 exclude = {
                   "**/.git/**",
@@ -91,7 +107,15 @@ return {
                   "**/bower_components/**",
                   "**/vendor/**/Tests/**",
                   "**/vendor/**/tests/**",
+                  "**/vendor/**/test/**",
+                  "**/vendor/**/*Test.php",
+                  "**/vendor/**/docs/**",
+                  "**/vendor/**/doc/**",
+                  "**/vendor/**/examples/**",
+                  "**/vendor/**/example/**",
                   "**/.history/**",
+                  "**/storage/**",
+                  "**/cache/**",
                 },
               },
               diagnostics = {
