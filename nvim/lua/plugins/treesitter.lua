@@ -35,6 +35,7 @@ return {
         "php",
         "php_only",
         "phpdoc",
+        "blade",
 
         -- Data formats
         "json",
@@ -64,6 +65,7 @@ return {
           "html",
           "css",
           "php",
+          "blade",
           "json",
           "yaml",
           "markdown",

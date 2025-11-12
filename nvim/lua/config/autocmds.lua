@@ -60,6 +60,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- ============================================================================
+-- BLADE FILETYPE DETECTION
+-- ============================================================================
+-- Detect .blade.php files as blade filetype
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = vim.api.nvim_create_augroup("blade_filetype", { clear = true }),
+  pattern = "*.blade.php",
+  callback = function()
+    vim.bo.filetype = "blade"
+  end,
+  desc = "Set filetype for Blade templates",
+})
+
+-- ============================================================================
 -- PHP SPECIFIC SETTINGS
 -- ============================================================================
 -- Set indentation to 4 spaces for PHP files
@@ -72,4 +85,16 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.softtabstop = 4
   end,
   desc = "PHP-specific settings",
+})
+
+-- Set indentation to 4 spaces for Blade files
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("blade_settings", { clear = true }),
+  pattern = "blade",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+  desc = "Blade-specific settings",
 })
