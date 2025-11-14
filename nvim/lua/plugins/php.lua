@@ -43,7 +43,7 @@ return {
           enabled = true, -- Explicitly enable intelephense
           -- Optimize LSP performance
           flags = {
-            debounce_text_changes = 150, -- Debounce text changes (ms)
+            debounce_text_changes = 200, -- Debounce text changes (ms)
           },
           -- Force re-indexing on startup
           init_options = {

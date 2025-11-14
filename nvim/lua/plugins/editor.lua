@@ -49,7 +49,7 @@ return {
   -- ==========================================================================
   {
     "wakatime/vim-wakatime",
-    lazy = false, -- Load immediately for accurate time tracking
+    event = "VeryLazy", -- Lazy load to improve startup
   },
 
   -- ==========================================================================
@@ -112,7 +112,8 @@ return {
   {
     "akinsho/toggleterm.nvim",
     version = "*",
-    lazy = false,
+    cmd = { "ToggleTerm" },
+    keys = { "<c-t>" },
     opts = {
       size = 15,
       direction = "float",
@@ -130,7 +131,6 @@ return {
   -- ==========================================================================
   {
     "kdheepak/lazygit.nvim",
-    lazy = false,
     cmd = {
       "LazyGit",
       "LazyGitConfig",

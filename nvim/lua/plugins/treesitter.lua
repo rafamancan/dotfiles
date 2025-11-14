@@ -12,7 +12,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     build = ":TSUpdate",
-    lazy = false, -- Load immediately for better UX
+    event = { "BufReadPost", "BufNewFile" }, -- Lazy load on file open
     config = function()
       -- Setup treesitter with new API
       require("nvim-treesitter").setup({})

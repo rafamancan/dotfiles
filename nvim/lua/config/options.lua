@@ -102,10 +102,11 @@ vim.opt.pumheight = 10 -- Maximum popup menu height
 -- ============================================================================
 -- TIMING & PERFORMANCE
 -- ============================================================================
-vim.opt.updatetime = 250 -- Faster completion (default 4000ms)
+vim.opt.updatetime = 100 -- Faster completion (default 4000ms)
 vim.opt.timeoutlen = 300 -- Time to wait for mapped sequence (ms)
 vim.opt.synmaxcol = 300 -- Max column for syntax highlighting (performance)
 vim.opt.ttyfast = true -- Faster redrawing
+vim.opt.redrawtime = 1500 -- Reduce time spent on redrawing
 
 -- ============================================================================
 -- UI
