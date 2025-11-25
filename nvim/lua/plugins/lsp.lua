@@ -97,6 +97,7 @@ return {
         vim.fn.setqflist({}, " ", { title = "LSP References", items = items })
         vim.cmd("copen")
       end
+
     end,
   },
 

@@ -118,13 +118,32 @@ vim.opt.showtabline = 2 -- Always show tabline
 vim.opt.cmdheight = 1 -- Command line height
 
 -- ============================================================================
--- TRANSPARENCY
+-- FLOATING WINDOWS - Rounded borders for all floating windows
+-- ============================================================================
+local border = "rounded"
+
+-- Default border for all floating windows
+vim.o.winborder = border
+
+-- LSP hover and signature help
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
+
+-- Diagnostic floating windows
+vim.diagnostic.config({
+  float = { border = border },
+})
+
+-- ============================================================================
+-- TRANSPARENCY & FLOATING WINDOW HIGHLIGHTS
 -- ============================================================================
 vim.cmd([[
   highlight Normal guibg=NONE ctermbg=NONE
   highlight NonText guibg=NONE ctermbg=NONE
   highlight SignColumn guibg=NONE ctermbg=NONE
   highlight EndOfBuffer guibg=NONE ctermbg=NONE
+  highlight NormalFloat guibg=#1a1a2e
+  highlight FloatBorder guifg=#7aa2f7 guibg=#1a1a2e
 ]])
 
 -- ============================================================================

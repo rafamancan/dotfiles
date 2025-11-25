@@ -12,14 +12,14 @@ return {
     "ThePrimeagen/harpoon",
     keys = {
       {
-        "<leader>Ha",
+        "<leader>ha",
         function()
           require("harpoon.mark").add_file()
         end,
         desc = "Harpoon: Add file",
       },
       {
-        "<leader>Hl",
+        "<leader>hl",
         function()
           require("harpoon.ui").toggle_quick_menu()
         end,
