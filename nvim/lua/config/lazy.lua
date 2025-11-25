@@ -82,7 +82,7 @@ require("lazy").setup({
   },
 
   install = {
-    colorscheme = { "tokyonight", "habamax" }, -- Fallback colorschemes during install
+    colorscheme = { "ayu-dark", "tokyonight", "habamax" }, -- Fallback colorschemes during install
   },
 
   checker = {

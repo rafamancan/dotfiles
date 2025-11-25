@@ -31,6 +31,7 @@
   "neotest-golang": { "branch": "main", "commit": "b982da5f39980797c1bdec875d688a302245f31f" },
   "neotest-pest": { "branch": "main", "commit": "1429445746f28a4ce887289ea6e442430629e306" },
   "neotest-phpunit": { "branch": "main", "commit": "2761ae9e9a385e491a9731f8c52824e1be64a68f" },
+  "neovim-ayu": { "branch": "master", "commit": "38caa8b5b969010b1dcae8ab1a569d7669a643d5" },
   "noice.nvim": { "branch": "main", "commit": "7bfd942445fb63089b59f97ca487d605e715f155" },
   "none-ls.nvim": { "branch": "main", "commit": "1917c86818b5e058f53c2ea0ad38fc57534d62fc" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
