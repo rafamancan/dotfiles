@@ -26,6 +26,7 @@ return {
           "vendor/*/examples/",
           "storage/",
           "cache/",
+          "dist",
         },
         -- Performance optimizations
         cache_picker = {

@@ -27,10 +27,7 @@ vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Toggle Term
 -- ============================================================================
 -- WINDOW NAVIGATION
 -- ============================================================================
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to upper window" })
+-- Using vim-tmux-navigator plugin for C-h/j/k/l (seamless tmux/nvim navigation)
 
 -- ============================================================================
 -- BUFFER NAVIGATION

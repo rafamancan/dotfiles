@@ -13,12 +13,8 @@ return {
     branch = "main",
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" }, -- Lazy load on file open
-    config = function()
-      -- Setup treesitter with new API
-      require("nvim-treesitter").setup({})
-
-      -- Parsers to install for supported languages
-      local parsers_to_install = {
+    opts = {
+      ensure_installed = {
         -- Scripting
         "lua",
         "bash",
@@ -50,32 +46,14 @@ return {
         "sql",
         "dockerfile",
         "gitignore",
-      }
-
-      -- Install parsers asynchronously
-      require("nvim-treesitter").install(parsers_to_install)
-
-      -- Auto-enable treesitter highlighting for supported filetypes
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "lua",
-          "javascript",
-          "typescript",
-          "typescriptreact",
-          "html",
-          "css",
-          "php",
-          "blade",
-          "json",
-          "yaml",
-          "markdown",
-          "bash",
-        },
-        callback = function()
-          vim.treesitter.start()
-        end,
-      })
-    end,
+      },
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+    },
     dependencies = {
       -- Context-aware commenting
       {

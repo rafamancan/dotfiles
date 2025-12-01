@@ -1,10 +1,8 @@
 #!/bin/bash
 cp ~/.zshrc ~/dotfiles/
 
-cp -r ~/.config/nvim/ ~/dotfiles/ 2>/dev/null
-cp -r ~/.config/nvim-kickstart/ ~/dotfiles/ 2>/dev/null
+cp -r ~/.config/nvim/ ~/dotfiles/nvim 2>/dev/null
 cp ~/.tmux.conf ~/dotfiles/.tmux.conf 2>/dev/null
-cp ~/.p10k.zsh ~/dotfiles/.p10k.zsh 2>/dev/null
 cp ~/.config/starship.toml ~/dotfiles/starship.toml 2>/dev/null
 
 cp ~/.gitconfig ~/dotfiles-pv/.gitconfig

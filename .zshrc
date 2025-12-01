@@ -1,21 +1,14 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/rmancan/.zsh/completions:"* ]]; then export FPATH="/home/rmancan/.zsh/completions:$FPATH"; fi
-# PATHS
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin:/usr/local/go/bin/bin
-export PATH=$PATH:/usr/local/julia/bin
-# source "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$PATH"
 
-# OH-MY-ZSH PLUGINS
-plugins=(
-    git
-    yarn
-    zsh-autosuggestions
-    zsh-wakatime
-    colorize
-    zsh-syntax-highlighting
-)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,7 +81,7 @@ function fwip () {
   if [ "$count" -gt 0 ]; then
     # Exibir o número de commits a serem resetados
     echo "Você tem $count commits 'wip'."
-    
+
     # Fazer o reset soft
     git reset --soft HEAD~$count
   else
@@ -183,37 +176,4 @@ vun() {
     nvim --version
 }
 
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
-
-# NVM
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-source  $HOME/dotfiles-pv/gcp
-
-# eval "$(op completion zsh)"; compdef _op op
-
-source $HOME/.agent-bridge.sh
-
 eval "$(starship init zsh)"
-eval $(thefuck --alias fuck)
-
-ev
-clear
-export PATH="/home/rmancan/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/rmancan/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
-# bun completions
-[ -s "/home/rmancan/.bun/_bun" ] && source "/home/rmancan/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-alias obs="cd /mnt/c/Users/rrcm0/Dropbox/Obsidian"
-alias claude="~/.claude/local/claude"
-alias spec="uvx --from git+https://github.com/github/spec-kit.git specify"
-
-. "$HOME/.cargo/env"
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"

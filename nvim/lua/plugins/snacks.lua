@@ -95,8 +95,8 @@ return {
               "vendor/*",
 
               -- Build outputs
-              "dist/.*",
-              "build/.*",
+              "**/dist/**",
+              "**/build/**",
 
               -- Storage and cache
               "storage/*",
