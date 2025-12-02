@@ -24,9 +24,9 @@ return {
             },
           },
         },
-        -- Enable phpactor for refactoring (extract method, generate code, etc)
+        -- Disable phpactor (using only Intelephense)
         phpactor = {
-          enabled = true, -- Explicitly enable phpactor
+          enabled = false, -- Disabled: causes false positives with Laravel
           -- Disable diagnostics/linting (let Intelephense handle that)
           init_options = {
             ["language_server_phpstan.enabled"] = false,

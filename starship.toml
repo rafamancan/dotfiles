@@ -1,9 +1,9 @@
 # AYU DARK
 format = """
 [ 🐷 ](bg:#0b0e14 fg:#bfbdb6)\
-[](bg:#e6b450 fg:#0b0e14)\
+[](bg:#AEF55C fg:#0b0e14)\
 $directory\
-[](fg:#e6b450 bg:#1c212b)\
+[](fg:#AEF55C bg:#1c212b)\
 $git_branch\
 $git_status\
 [](fg:#1c212b bg:#131721)\
@@ -11,6 +11,12 @@ $nodejs\
 $rust\
 $golang\
 $php\
+$lua\
+$python\
+$ruby\
+$java\
+$kotlin\
+$swift\
 [](fg:#131721 bg:#0b0e14)\
 $time\
 [ ](fg:#0b0e14)\
@@ -20,7 +26,7 @@ $time\
 success_symbol = '[  ❯](bold #7fd962)'
 
 [directory]
-style = "fg:#0b0e14 bg:#e6b450"
+style = "fg:#0b0e14 bg:#AEF55C"
 format = "[ $path ]($style)"
 truncation_length = 2
 truncation_symbol = "…/"
@@ -35,31 +41,61 @@ truncate_to_repo = false
 [git_branch]
 symbol = ""
 style = "bg:#1c212b"
-format = '[[ $symbol $branch ](fg:#e6b450 bg:#1c212b)]($style)'
+format = '[[ $symbol $branch ](fg:#AEF55C bg:#1c212b)]($style)'
 
 [git_status]
 style = "bg:#1c212b"
-format = '[[($all_status$ahead_behind )](fg:#e6b450 bg:#1c212b)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#AEF55C bg:#1c212b)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = "⬢ "
 style = "bg:#131721"
-format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
 
 [rust]
-symbol = ""
+symbol = "🦀 "
 style = "bg:#131721"
-format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
 
 [golang]
-symbol = ""
+symbol = "🐹 "
 style = "bg:#131721"
-format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
 
 [php]
-symbol = ""
+symbol = "🐘 "
 style = "bg:#131721"
-format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[lua]
+symbol = "🌙 "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[python]
+symbol = "🐍 "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[ruby]
+symbol = "💎 "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[java]
+symbol = "☕ "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[kotlin]
+symbol = "🅺 "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
+
+[swift]
+symbol = "🐦 "
+style = "bg:#131721"
+format = '[[ $symbol($version) ](fg:#AEF55C bg:#131721)]($style)'
 
 [time]
 disabled = false

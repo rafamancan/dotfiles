@@ -59,7 +59,74 @@ alias sail='bash vendor/bin/sail'
 alias gc='npx czg'
 alias lg='lazygit'
 # changing php version
-alias phpc='sudo update-alternatives --config php'
+phpc() {
+  local versions=()
+  local current_version=""
+
+  # Get current PHP version
+  current_version=$(php -v 2>/dev/null | head -n1 | grep -oE '[0-9]+\.[0-9]+' | head -1)
+
+  # Find installed PHP versions via Homebrew
+  for formula in $(brew list 2>/dev/null | grep -E '^php(@[0-9.]+)?$'); do
+    if [[ "$formula" == "php" ]]; then
+      # Get version of main php formula
+      local ver=$(brew info php --json 2>/dev/null | grep -oE '"version": "[0-9]+\.[0-9]+' | head -1 | grep -oE '[0-9]+\.[0-9]+')
+      versions+=("$ver")
+    else
+      # Extract version from php@X.Y
+      local ver=$(echo "$formula" | sed 's/php@//')
+      versions+=("$ver")
+    fi
+  done
+
+  if [[ ${#versions[@]} -eq 0 ]]; then
+    echo "Nenhuma versão do PHP encontrada via Homebrew."
+    return 1
+  fi
+
+  echo "Versões de PHP disponíveis:"
+  echo "----------------------------"
+
+  local i=1
+  for ver in "${versions[@]}"; do
+    if [[ "$ver" == "$current_version" ]]; then
+      echo "  $i) PHP $ver (atual)"
+    else
+      echo "  $i) PHP $ver"
+    fi
+    ((i++))
+  done
+
+  echo ""
+  echo -n "Selecione uma versão (1-${#versions[@]}): "
+  read choice
+
+  if [[ ! "$choice" =~ ^[0-9]+$ ]] || [[ "$choice" -lt 1 ]] || [[ "$choice" -gt ${#versions[@]} ]]; then
+    echo "Opção inválida."
+    return 1
+  fi
+
+  local selected_version="${versions[$choice]}"
+
+  echo ""
+  echo "Trocando para PHP $selected_version..."
+
+  # Unlink all PHP versions first
+  for formula in $(brew list 2>/dev/null | grep -E '^php(@[0-9.]+)?$'); do
+    brew unlink "$formula" 2>/dev/null
+  done
+
+  # Link selected version
+  if [[ "$selected_version" == "$(brew info php --json 2>/dev/null | grep -oE '"version": "[0-9]+\.[0-9]+' | head -1 | grep -oE '[0-9]+\.[0-9]+')" ]]; then
+    brew link php --force --overwrite
+  else
+    brew link "php@$selected_version" --force --overwrite
+  fi
+
+  echo ""
+  echo "PHP alterado com sucesso!"
+  php -v
+}
 
 
 # neovim alternatives
@@ -177,3 +244,12 @@ vun() {
 }
 
 eval "$(starship init zsh)"
+
+# PHP Composer vendor binaries
+export PATH="./vendor/bin:$PATH"
+
+# PHPBrew
+export PATH="$HOME/bin:$PATH"
+export PHPBREW_SET_PROMPT=1
+export PHPBREW_RC_ENABLE=1
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
