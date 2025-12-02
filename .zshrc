@@ -2,6 +2,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
+# PHP Composer vendor binaries
+export PATH="./vendor/bin:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -244,12 +247,3 @@ vun() {
 }
 
 eval "$(starship init zsh)"
-
-# PHP Composer vendor binaries
-export PATH="./vendor/bin:$PATH"
-
-# PHPBrew
-export PATH="$HOME/bin:$PATH"
-export PHPBREW_SET_PROMPT=1
-export PHPBREW_RC_ENABLE=1
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
