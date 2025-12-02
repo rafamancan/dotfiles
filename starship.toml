@@ -1,26 +1,26 @@
-# TOKYO NIGHT
+# AYU DARK
 format = """
-[ 🐷 ](bg:#1a1b26 fg:#c0caf5)\
-[](bg:#7aa2f7 fg:#1a1b26)\
+[ 🐷 ](bg:#0b0e14 fg:#bfbdb6)\
+[](bg:#e6b450 fg:#0b0e14)\
 $directory\
-[](fg:#7aa2f7 bg:#414868)\
+[](fg:#e6b450 bg:#1c212b)\
 $git_branch\
 $git_status\
-[](fg:#414868 bg:#24283b)\
+[](fg:#1c212b bg:#131721)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#24283b bg:#1a1b26)\
+[](fg:#131721 bg:#0b0e14)\
 $time\
-[ ](fg:#1a1b26)\
+[ ](fg:#0b0e14)\
 \n$character"""
 
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[  ❯](bold green)'
+success_symbol = '[  ❯](bold #7fd962)'
 
 [directory]
-style = "fg:#c0caf5 bg:#7aa2f7"
+style = "fg:#0b0e14 bg:#e6b450"
 format = "[ $path ]($style)"
 truncation_length = 2
 truncation_symbol = "…/"
@@ -28,41 +28,41 @@ truncate_to_repo = false
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
 [git_branch]
-symbol = ""
-style = "bg:#414868"
-format = '[[ $symbol $branch ](fg:#7aa2f7 bg:#414868)]($style)'
+symbol = ""
+style = "bg:#1c212b"
+format = '[[ $symbol $branch ](fg:#e6b450 bg:#1c212b)]($style)'
 
 [git_status]
-style = "bg:#414868"
-format = '[[($all_status$ahead_behind )](fg:#7aa2f7 bg:#414868)]($style)'
+style = "bg:#1c212b"
+format = '[[($all_status$ahead_behind )](fg:#e6b450 bg:#1c212b)]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:#24283b"
-format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
+symbol = ""
+style = "bg:#131721"
+format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
 
 [rust]
-symbol = ""
-style = "bg:#24283b"
-format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
+symbol = ""
+style = "bg:#131721"
+format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
 
 [golang]
-symbol = ""
-style = "bg:#24283b"
-format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
+symbol = ""
+style = "bg:#131721"
+format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
 
 [php]
-symbol = ""
-style = "bg:#24283b"
-format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#24283b)]($style)'
+symbol = ""
+style = "bg:#131721"
+format = '[[ $symbol ($version) ](fg:#e6b450 bg:#131721)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"                                      # Hour:Minute Format
-style = "bg:#1a1b26"
-format = '[[  $time ](fg:#c0caf5 bg:#1a1b26)]($style)'
+style = "bg:#0b0e14"
+format = '[[  $time ](fg:#bfbdb6 bg:#0b0e14)]($style)'
