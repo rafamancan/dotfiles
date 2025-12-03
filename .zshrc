@@ -26,6 +26,27 @@ alias dps="docker ps"
 alias dup="docker-compose up -d"
 alias ddown="docker-compose down"
 
+# docker up file
+dupf() {
+  docker-compose -f "$1" up -d
+}
+
+# docker bash
+dex() {
+  docker exec -it "$1" /bin/bash
+}
+
+# docker sh
+dex2() {
+  docker exec -it "$1" /bin/sh
+}
+
+# docker get ip
+dip(){
+    docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$1"
+}
+
+
 # SYSTEM UTILS
 alias vim="nvim"
 alias v='nvim'
@@ -61,8 +82,9 @@ alias zon='find . -name "*:Zone.Identifier" -type f -delete'
 alias sail='bash vendor/bin/sail'
 alias gc='npx czg'
 alias lg='lazygit'
+
 # changing php version
-phpc() {
+function phpc() {
   local versions=()
   local current_version=""
 
@@ -199,20 +221,6 @@ function tn {
   tmux new -s "$1"
 }
 
-# docker bash
-dex() {
-  docker exec -it "$1" /bin/bash
-}
-
-# docker sh
-dex2() {
-  docker exec -it "$1" /bin/sh
-}
-
-# docker get ip
-dip(){
-    docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$1"
-}
 
 # Update Neovim to stable version
 vus() {
