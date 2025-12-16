@@ -17,6 +17,8 @@ return {
           NonText = { fg = "#6C7380" },
           SnacksDashboardDir = { fg = "#6C7380" },
           SnacksDashboardFile = { fg = colors.fg },
+          ColorColumn = { bg = "NONE" },
+          VirtColumn = { fg = "#5c0000" },
         },
       })
     end,

@@ -144,6 +144,7 @@ vim.cmd([[
   highlight EndOfBuffer guibg=NONE ctermbg=NONE
   highlight NormalFloat guibg=#1a1a2e
   highlight FloatBorder guifg=#7aa2f7 guibg=#1a1a2e
+  highlight ColorColumn guibg=#5c0000
 ]])
 
 -- ============================================================================
