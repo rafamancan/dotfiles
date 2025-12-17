@@ -60,6 +60,27 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- ============================================================================
+-- DIM ON FOCUS LOST (for tmux pane switching)
+-- ============================================================================
+-- Darken Neovim when it loses focus to match tmux inactive pane style
+vim.api.nvim_create_autocmd("FocusLost", {
+  group = vim.api.nvim_create_augroup("dim_on_focus", { clear = true }),
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#050608" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "#050608" })
+  end,
+  desc = "Dim background when focus is lost",
+})
+
+vim.api.nvim_create_autocmd("FocusGained", {
+  group = vim.api.nvim_create_augroup("restore_on_focus", { clear = true }),
+  callback = function()
+    vim.cmd("colorscheme ayu-dark")
+  end,
+  desc = "Restore colorscheme when focus is gained",
+})
+
+-- ============================================================================
 -- BLADE FILETYPE DETECTION
 -- ============================================================================
 -- Detect .blade.php files as blade filetype
