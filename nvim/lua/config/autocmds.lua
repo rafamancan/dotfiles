@@ -66,10 +66,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd("FocusLost", {
   group = vim.api.nvim_create_augroup("dim_on_focus", { clear = true }),
   callback = function()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "#050608" })
-    vim.api.nvim_set_hl(0, "NormalNC", { bg = "#050608" })
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#252B38" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "#252B38" })
   end,
-  desc = "Dim background when focus is lost",
+  desc = "Lighten background when focus is lost",
 })
 
 vim.api.nvim_create_autocmd("FocusGained", {

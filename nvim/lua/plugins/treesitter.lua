@@ -10,7 +10,6 @@ return {
   -- ==========================================================================
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" }, -- Lazy load on file open
     opts = {
