@@ -19,7 +19,6 @@ $kotlin\
 $swift\
 [](fg:#131721 bg:#0b0e14)\
 $time\
-[ ](fg:#0b0e14)\
 \n$character"""
 
 [character] # The name of the module we are configuring is 'character'
