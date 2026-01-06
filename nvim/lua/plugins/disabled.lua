@@ -13,5 +13,8 @@ return {
 
   -- Nvim-notify - Notification manager (disabled to reduce noise)
   { "rcarriga/nvim-notify", enabled = false },
+
+  -- Noice.nvim - Command line replacement (disabled to fix : crash)
+  { "folke/noice.nvim", enabled = false },
 }
 
