@@ -8,6 +8,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
+      -- Disable inlay hints globally for all LSP servers
+      opts.inlay_hints = { enabled = false }
       -- Disable the annoying "Finding references is taking a while" confirmation
       -- by increasing the threshold or removing the limit entirely
       opts.diagnostics = opts.diagnostics or {}
