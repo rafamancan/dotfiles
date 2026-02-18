@@ -211,6 +211,30 @@ function cb () {
 alias t="tmux"
 alias tls="tmux ls"
 
+# IDE layout: 4 panes (left-top large, left-bottom small, right-top large, right-bottom small)
+ide() {
+  local session="ide"
+  local dir="$(pwd)"
+  local cmd="$1"
+
+  tmux kill-session -t "$session" 2>/dev/null
+
+  tmux new-session -d -s "$session" -c "$dir"
+  tmux split-window -h -p 50 -t "$session:0.0" -c "$dir"
+  tmux split-window -v -p 50 -t "$session:0.1" -c "$dir"
+  tmux split-window -v -p 20 -t "$session:0.0" -c "$dir"
+  # pane 0: left-top  → nvim
+  # pane 1: left-bottom → terminal (empty)
+  # pane 2: right-top  → ai
+  # pane 3: right-bottom → codex
+  tmux send-keys -t "$session:0.0" "nvim" Enter
+  tmux send-keys -t "$session:0.2" "ai" Enter
+  tmux send-keys -t "$session:0.3" "codex" Enter
+
+  tmux select-pane -t "$session:0.0"
+  tmux attach-session -t "$session"
+}
+
 # tmux attach
 function ta {
   tmux a -t "$1"
@@ -220,7 +244,6 @@ function ta {
 function tn {
   tmux new -s "$1"
 }
-
 
 # Update Neovim to stable version
 vus() {
