@@ -213,7 +213,7 @@ alias tls="tmux ls"
 
 # IDE layout: 4 panes (left-top large, left-bottom small, right-top large, right-bottom small)
 ide() {
-  local session="ide"
+  local session="${1:-ide}"
   local dir="$(pwd)"
   local cmd="$1"
 
