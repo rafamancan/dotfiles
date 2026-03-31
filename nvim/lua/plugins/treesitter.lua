@@ -57,7 +57,9 @@ return {
       -- Context-aware commenting
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        opts = {},
+        opts = {
+          enable_autocmd = false,
+        },
       },
       -- Enhanced text objects
       "nvim-treesitter/nvim-treesitter-textobjects",
