@@ -125,9 +125,7 @@ local border = "rounded"
 -- Default border for all floating windows
 vim.o.winborder = border
 
--- LSP hover and signature help
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
+-- LSP hover and signature help borders are handled by vim.o.winborder above
 
 -- Diagnostic floating windows
 vim.diagnostic.config({
