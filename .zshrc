@@ -284,3 +284,13 @@ fpath=(/Users/rmancan/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Auto-switch Node version via .nvmrc
+autoload -U add-zsh-hook
+load-nvmrc() {
+    if [[ -f .nvmrc ]]; then
+        nvm use
+    fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
