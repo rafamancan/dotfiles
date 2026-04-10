@@ -195,7 +195,9 @@ return {
       { "<leader>lr", ":Laravel routes<cr>", desc = "Laravel: Routes" },
       { "<leader>lm", ":Laravel related<cr>", desc = "Laravel: Related files" },
     },
-    event = { "VeryLazy" },
+    cond = function()
+      return vim.fn.filereadable("artisan") == 1
+    end,
     config = function()
       require("laravel").setup({
         lsp_server = "intelephense",
