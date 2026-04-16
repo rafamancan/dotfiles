@@ -8,9 +8,7 @@ cp -r ~/.config/karabiner/ ~/dotfiles/karabiner 2>/dev/null
 
 cp ~/.gitconfig ~/dotfiles-pv/.gitconfig
 cp ~/.ssh/config ~/dotfiles-pv/config
-cp -r ~/.claude/agents/ ~/dotfiles-pv/claude/agents
-cp -r ~/.claude/commands/ ~/dotfiles-pv/claude/commands
-cp ~/.claude/settings.json ~/dotfiles-pv/claude/
+cp -r ~/.claude ~/dotfiles-pv/claude
 
 cp ~/wterm-keys.json ~/dotfiles/wterm-keys.json 2>/dev/null
 
