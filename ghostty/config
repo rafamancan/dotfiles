@@ -1,0 +1,32 @@
+# Espelha as preferências do perfil "Default" do iTerm2.
+# Karabiner já passou a deixar Ctrl+C/V/X/A/T/W/Home/End passarem direto
+# para Ghostty (com.mitchellh.ghostty adicionado às exclusões).
+
+# ---- Font ----
+font-family = MesloLGMDZ Nerd Font Mono
+font-size = 12
+
+# ---- Terminal ----
+term = xterm-256color
+scrollback-limit = 100000000
+bold-is-bright = true
+
+# ---- Cursor ----
+cursor-style = block
+cursor-style-blink = true
+
+# ---- Theme ----
+# Acompanha o system appearance (= iTerm com variantes Light/Dark).
+# Dark = Ayu, Light = Ayu Light (espelha seu perfil iTerm).
+theme = light:Ayu Light,dark:Ayu
+
+# ---- macOS ----
+# Option deve enviar sequência normal (= iTerm "Option Key Sends: Normal").
+macos-option-as-alt = false
+# Barra de tabs integrada no titlebar — tab ativa fica bem mais destacada
+# que o estilo "transparent" default.
+macos-titlebar-style = tabs
+
+# ---- Keybinds ----
+# Cmd+Shift+R abre prompt para renomear a tab atual.
+keybind = super+shift+r=prompt_tab_title

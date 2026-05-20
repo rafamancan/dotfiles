@@ -16,6 +16,7 @@ cp -r ~/.config/nvim/ ~/dotfiles/nvim 2>/dev/null
 cp ~/.tmux.conf ~/dotfiles/.tmux.conf 2>/dev/null
 cp ~/.config/starship.toml ~/dotfiles/starship.toml 2>/dev/null
 cp -r ~/.config/karabiner/ ~/dotfiles/karabiner 2>/dev/null
+mkdir -p ~/dotfiles/ghostty && cp ~/.config/ghostty/config ~/dotfiles/ghostty/config 2>/dev/null
 
 cp ~/wterm-keys.json ~/dotfiles/wterm-keys.json 2>/dev/null
 

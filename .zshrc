@@ -294,3 +294,7 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/rmancan/.local/bin:$PATH"
