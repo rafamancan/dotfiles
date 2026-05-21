@@ -27,6 +27,9 @@ macos-option-as-alt = false
 # que o estilo "transparent" default.
 macos-titlebar-style = tabs
 
+bell-audio-path = /Users/rmancan/workspace/personal/sounds/cyberpunk-message.mp3
+bell-audio-volume = 0.3
+
 # ---- Keybinds ----
 # Cmd+Shift+R abre prompt para renomear a tab atual.
 keybind = super+shift+r=prompt_tab_title
