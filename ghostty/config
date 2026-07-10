@@ -27,6 +27,12 @@ macos-option-as-alt = false
 # que o estilo "transparent" default.
 macos-titlebar-style = tabs
 
+# Indicador visual da aba quando o BEL chega numa aba em background.
+# 'attention' = sinalizador por aba; 'title' = 🔔 no título até você focar.
+# Sem 'audio' de propósito: o som já vem dos hooks do Claude (afplay).
+bell-features = attention,title
+
+# Mantidos para referência; só tocam se 'audio' entrar em bell-features acima.
 bell-audio-path = /Users/rmancan/workspace/personal/sounds/cyberpunk-message.mp3
 bell-audio-volume = 0.3
 
