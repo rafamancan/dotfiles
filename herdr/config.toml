@@ -1,0 +1,73 @@
+# herdr configuration — ported from ~/.tmux.conf
+
+[theme]
+# Base is only a fallback; the tokens below reproduce Ayu Dark.
+name = "catppuccin"
+
+[theme.custom]
+accent = "#AEF55C"       # ayu_accent, customized to green (was #FF8F40)
+panel_bg = "#0D1017"     # ayu_bg
+surface0 = "#252B38"     # tmux window-style (inactive pane bg)
+surface1 = "#273747"     # ayu_selection
+surface_dim = "#0A0D12"
+text = "#BFBDB6"         # ayu_fg
+subtext0 = "#626A73"     # ayu_gray
+green = "#AAD94C"
+yellow = "#FFB454"
+red = "#F07178"
+blue = "#59C2FF"
+teal = "#39BAE6"         # ayu_cyan
+mauve = "#D2A6FF"        # ayu_purple
+peach = "#FF8F40"
+
+[keys]
+prefix = "ctrl+b"
+
+# splits: tmux `o` = split-window -v (below), `e` = split-window -h (right)
+split_horizontal = "prefix+o"
+split_vertical = "prefix+e"
+edit_scrollback = "prefix+shift+e"   # moved off prefix+e
+
+# vim-style pane focus (same as tmux binds h/j/k/l)
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# tabs ~ tmux windows: `n` = new-window, `Tab` = next-window
+new_tab = "prefix+n"
+next_tab = "prefix+tab"
+previous_tab = "prefix+p"
+cycle_pane_next = ""
+cycle_pane_previous = ""
+
+rename_pane = "prefix+r"     # tmux `r` = select-pane -T
+resize_mode = "prefix+ctrl+r"  # tmux used prefix+ctrl+hjkl; herdr uses a resize mode
+
+detach = "prefix+q"          # tmux `q` = kill-session
+zoom = "prefix+z"            # tmux-power-zoom trigger
+toggle_sidebar = "prefix+b"
+
+[keys.indexed]
+tabs = "ctrl"                # ctrl+1..9, like the C-1..C-5 binds
+
+[ui]
+mouse_capture = true         # set -g mouse on
+copy_on_select = true
+pane_borders = true
+
+[ui.toast]
+delivery = "terminal"        # tmux monitor-bell/bell-action any -> Ghostty tab indicator
+delay_seconds = 1
+
+[ui.sound]
+enabled = true               # replaces the afplay bell hooks
+
+[session]
+resume_agents_on_restore = true   # tmux-resurrect equivalent
+
+[experimental]
+pane_history = true               # ~ @resurrect-capture-pane-contents
+
+[advanced]
+scrollback_limit_bytes = 10000000

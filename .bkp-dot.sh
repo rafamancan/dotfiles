@@ -18,6 +18,9 @@ cp ~/.config/starship.toml ~/dotfiles/starship.toml 2>/dev/null
 cp -r ~/.config/karabiner/ ~/dotfiles/karabiner 2>/dev/null
 mkdir -p ~/dotfiles/ghostty && cp ~/.config/ghostty/config ~/dotfiles/ghostty/config 2>/dev/null
 
+# herdr — só o config.toml; sockets, logs e session.json são runtime
+mkdir -p ~/dotfiles/herdr && cp ~/.config/herdr/config.toml ~/dotfiles/herdr/config.toml 2>/dev/null
+
 cp ~/wterm-keys.json ~/dotfiles/wterm-keys.json 2>/dev/null
 
 cp ~/.bkp-dot.sh ~/dotfiles/
