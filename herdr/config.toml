@@ -1,9 +1,11 @@
+onboarding = false
 # herdr configuration — ported from ~/.tmux.conf
 
 [theme]
 # Base is only a fallback; the tokens below reproduce Ayu Dark.
 name = "catppuccin"
 
+auto_switch = false
 [theme.custom]
 accent = "#AEF55C"       # ayu_accent, customized to green (was #FF8F40)
 panel_bg = "#0D1017"     # ayu_bg
@@ -56,8 +58,9 @@ mouse_capture = true         # set -g mouse on
 copy_on_select = true
 pane_borders = true
 
+show_agent_labels_on_pane_borders = false
 [ui.toast]
-delivery = "terminal"        # tmux monitor-bell/bell-action any -> Ghostty tab indicator
+delivery = "terminal"
 delay_seconds = 1
 
 [ui.sound]
