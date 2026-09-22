@@ -23,9 +23,10 @@ theme = light:Ayu Light,dark:Ayu
 # ---- macOS ----
 # Option deve enviar sequência normal (= iTerm "Option Key Sends: Normal").
 macos-option-as-alt = false
-# Barra de tabs integrada no titlebar — tab ativa fica bem mais destacada
-# que o estilo "transparent" default.
-macos-titlebar-style = tabs
+# 'tabs' (titlebar custom do Ghostty) quebra no macOS 27: as abas viram um
+# pill compacto no canto direito em vez de ficarem lado a lado. Usando o
+# titlebar nativo com transparencia ate o Ghostty suportar o titlebar novo.
+macos-titlebar-style = transparent
 
 # Indicador visual da aba quando o BEL chega numa aba em background.
 # 'attention' = sinalizador por aba; 'title' = 🔔 no título até você focar.
