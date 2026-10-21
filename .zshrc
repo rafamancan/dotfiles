@@ -199,9 +199,9 @@ function fet () {
 
 # deleting all branchs with prefixes feat/ and fix/
 function cb () {
-    if read -q "choice?Tem certeza que deseja deletar todas branchs com prefixo feat/, feature/ fix/ e dependabot/ ? (N/y): "; then
+    if read -q "choice?Tem certeza que deseja deletar todas branchs com prefixo feat/, feature/ fix/, dependabot/ e kb-ingest/ ? (N/y): "; then
         echo
-        git branch | grep -e "feat/" -e "fix/" -e "dependabot/" -e "/feature" | xargs git branch -D
+        git branch | grep -e "feat/" -e "fix/" -e "dependabot/" -e "/feature" -e "kb-ingest/" | xargs git branch -D
     else
         echo
         echo "Cancelando.."
