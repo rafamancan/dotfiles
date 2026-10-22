@@ -65,7 +65,8 @@ show_agent_labels_on_pane_borders = false
 # $idx comes from bin/herdr-tab-index.py: the tab's 1..9 position, i.e. the
 # number prefix+N jumps to. Herdr has no built-in token for it.
 [ui.sidebar.agents]
-rows = [["$idx", "state_icon", "workspace", "tab"], ["agent"]]
+# Second row shows the agent's terminal title, so Claude's /rename shows up here.
+rows = [["$idx", "state_icon", "workspace", "tab"], ["terminal_title_stripped"]]
 
 [ui.toast]
 delivery = "terminal"
