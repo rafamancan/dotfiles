@@ -10,6 +10,9 @@ font-size = 12
 term = xterm-256color
 scrollback-limit = 100000000
 bold-is-bright = true
+# 1.4.0 mudou o padrão do macOS para 'none' (selecionar deixa de copiar);
+# 'primary' devolve o comportamento da 1.3.
+copy-on-select = primary
 
 # ---- Cursor ----
 cursor-style = block

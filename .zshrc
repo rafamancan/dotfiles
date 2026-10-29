@@ -298,3 +298,6 @@ load-nvmrc
 
 # Added by Antigravity CLI installer
 export PATH="/Users/rmancan/.local/bin:$PATH"
+
+# kimi-code
+export PATH="/Users/rmancan/.kimi-code/bin:$PATH"
