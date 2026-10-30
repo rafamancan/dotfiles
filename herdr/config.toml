@@ -44,7 +44,7 @@ switch_tab = "prefix+1..9"   # prefix+1..prefix+9 vai direto para a tab N
 cycle_pane_next = ""
 cycle_pane_previous = ""
 
-rename_pane = "prefix+r"     # tmux `r` = select-pane -T
+rename_pane = "prefix+shift+p"  # padrão do herdr; prefix+r agora iguala as panes (abaixo)
 resize_mode = "prefix+ctrl+r"  # tmux used prefix+ctrl+hjkl; herdr uses a resize mode
 
 detach = "prefix+q"          # tmux `q` = kill-session
@@ -54,6 +54,12 @@ toggle_sidebar = "prefix+b"
 # legado; switch_tab acima e a forma preferida. mantido para ctrl+1..9 direto.
 [keys.indexed]
 tabs = "ctrl"                # ctrl+1..9, like the C-1..C-5 binds
+
+# prefix+r: distribui igualmente as panes da tab em foco (o herdr não tem esse comando)
+[[keys.command]]
+key = "prefix+r"
+type = "shell"
+command = "/opt/homebrew/bin/python3 -I /Users/rmancan/.claude/skills/work/scripts/equalizar_panes.py"
 
 [ui]
 mouse_capture = true         # set -g mouse on
