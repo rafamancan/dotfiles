@@ -2,25 +2,29 @@ onboarding = false
 # herdr configuration — ported from ~/.tmux.conf
 
 [theme]
-# Base is only a fallback; the tokens below reproduce Ayu Dark.
+# Ayu Dark structure with the NoPing palette (noping.com src/styles/global.css,
+# --np-*): near-black backgrounds and the brand green. Base is only a fallback.
+# The previous pure Ayu overrides are in config.toml.bak-ayu-20261030.
 name = "catppuccin"
-
 auto_switch = false
+
 [theme.custom]
-accent = "#AEF55C"       # ayu_accent, customized to green (was #FF8F40)
-panel_bg = "#0D1017"     # ayu_bg
-surface0 = "#252B38"     # tmux window-style (inactive pane bg)
-surface1 = "#273747"     # ayu_selection
-surface_dim = "#0A0D12"
-text = "#BFBDB6"         # ayu_fg
-subtext0 = "#626A73"     # ayu_gray
-green = "#AAD94C"
-yellow = "#FFB454"
-red = "#F07178"
-blue = "#59C2FF"
-teal = "#39BAE6"         # ayu_cyan
-mauve = "#D2A6FF"        # ayu_purple
-peach = "#FF8F40"
+accent = "#9CFF2E"         # np-green
+panel_bg = "#0A0C0E"       # np-bg-1
+sidebar_bg = "#050607"     # np-bg-0: darker than panes, separates the sidebar
+surface_dim = "#050607"    # np-bg-0
+surface0 = "#171B1F"       # np-bg-3 (inactive pane bg)
+surface1 = "#1F252A"       # np-bg-4 (selection)
+active_row_bg = "#192411"  # np-green-soft (10% green) over np-bg-1
+text = "#B3B5B6"           # np-fg-dim over np-bg-1
+subtext0 = "#848687"       # np-fg-mute over np-bg-1
+green = "#9CFF2E"          # np-green
+teal = "#1AE5A0"           # np-good
+blue = "#2EE6FF"           # np-cyan
+mauve = "#8A5BFF"          # np-purple
+peach = "#FF7A1A"          # np-bad
+yellow = "#FFB454"         # ayu
+red = "#F07178"            # ayu
 
 [keys]
 prefix = "ctrl+b"
@@ -67,12 +71,24 @@ copy_on_select = true
 pane_borders = true
 
 show_agent_labels_on_pane_borders = false
+status_indicators = "symbols"   # distinct glyphs per state instead of colored dots
 
-# $idx comes from bin/herdr-tab-index.py: the tab's 1..9 position, i.e. the
-# number prefix+N jumps to. Herdr has no built-in token for it.
+sidebar_width = 46       # ultrawide screen: room for the tab name after agent + ctx
+sidebar_max_width = 50
+
+# $idx, $name and $ctx come from bin/herdr-tab-index.py: tab position (the
+# number prefix+N jumps to), herdr agent name, and context percentage.
+# One line per agent: tab number · state · agent · context · tab name.
+# Workspace is left out: everything lives in "noping", so it only repeated.
 [ui.sidebar.agents]
-# Second row shows the agent's terminal title, so Claude's /rename shows up here.
-rows = [["$idx", "state_icon", "workspace", "tab"], ["terminal_title_stripped"]]
+row_gap = 0
+rows = [[
+  { token = "$idx", fg = "#6FCF1E" },   # np-green-lo
+  "state_icon",
+  { token = "$name", bold = true },
+  { token = "$ctx", fg = "#9CFF2E" },   # np-green
+  { token = "tab", fg = "#848687" },    # np-fg-mute
+]]
 
 [ui.toast]
 delivery = "terminal"
