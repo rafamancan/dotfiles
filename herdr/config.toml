@@ -55,6 +55,11 @@ detach = "prefix+q"          # tmux `q` = kill-session
 zoom = "prefix+z"            # tmux-power-zoom trigger
 toggle_sidebar = "prefix+b"
 
+# prefix+w jumps straight to the next workspace (Local -> wsl...); the picker
+# that used to live there moves to prefix+ctrl+w.
+next_workspace = "prefix+w"
+workspace_picker = "prefix+ctrl+w"
+
 # legado; switch_tab acima e a forma preferida. mantido para ctrl+1..9 direto.
 [keys.indexed]
 tabs = "ctrl"                # ctrl+1..9, like the C-1..C-5 binds
@@ -89,6 +94,18 @@ rows = [[
   { token = "$ctx", fg = "#9CFF2E" },   # np-green
   { token = "tab", fg = "#848687" },    # np-fg-mute
 ]]
+
+# $claude, $codex and $others also come from bin/herdr-tab-index.py: provider
+# icon, connected agents and account windows used, one line each under the
+# space; $others lists any other agent kind (kimi...) with a robot icon.
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  ["state_icon", "workspace"],
+  [{ token = "$claude", fg = "#D97757" }],   # Claude brand orange
+  [{ token = "$codex", fg = "#B3B5B6" }],    # np-fg-dim
+  [{ token = "$others", fg = "#2EE6FF" }],   # np-cyan
+]
 
 [ui.toast]
 delivery = "terminal"

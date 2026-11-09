@@ -5,6 +5,9 @@
 # ---- Font ----
 font-family = MesloLGMDZ Nerd Font Mono
 font-size = 12
+# Claude (U+EC82) and OpenAI/Codex (U+EC81) icons come from Codicons in Nerd
+# Fonts 3.5; the installed Meslo predates them. Used by the herdr sidebar.
+font-codepoint-map = U+EC81-U+EC82=Symbols Nerd Font Mono
 
 # ---- Terminal ----
 term = xterm-256color
