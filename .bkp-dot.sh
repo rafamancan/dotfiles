@@ -13,7 +13,7 @@ SECRET_RE+="|AKIA[0-9A-Z]{16}|ASIA[0-9A-Z]{16}"
 SECRET_RE+="|xox[baprs]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{35}"
 SECRET_RE+="|-----BEGIN [A-Z ]*PRIVATE KEY-----"
 SECRET_RE+="|(api[_-]?key|secret|token|passwd|password|passphrase|authorization)"
-SECRET_RE+="${Q}?[[:space:]]*[:=][[:space:]]*${Q}[^\"']{8,}"
+SECRET_RE+="${Q}?[[:space:]]*[:=][[:space:]]*${Q}[^\"'$][^\"']{7,}"
 SECRET_RE+=")"
 
 scan_staged() {

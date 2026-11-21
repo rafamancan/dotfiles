@@ -57,7 +57,7 @@ alias vm='NVIM_APPNAME="nvim-minimax" nvim'
 alias c="code ."
 alias vf='cd ~/.config/nvim && v'
 alias vfk='cd ~/.config/nvim-kickstart && v'
-alias bkp='cd && chmod +x .bkp-dot.sh && ./.bkp-dot.sh'
+bkp() { chmod +x ~/.bkp-dot.sh && ~/.bkp-dot.sh; }
 alias cl='xclip -sel clip'
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias fix='(cd ~/dotfiles-pv && ./fix.sh)'

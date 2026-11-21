@@ -3,8 +3,12 @@
 # para Ghostty (com.mitchellh.ghostty adicionado às exclusões).
 
 # ---- Font ----
-font-family = MesloLGMDZ Nerd Font Mono
-font-size = 12
+# Como o terminal do herdr-app: JetBrains Mono, peso 500 e negrito 700 (tamanho 14,
+# sem o zoom de 120% do app). Antes: MesloLGMDZ Nerd Font Mono 12 (backup em config.bak-2026-11-18).
+font-family = JetBrains Mono
+font-size = 14
+font-variation = wght=500
+font-variation-bold = wght=700
 # Claude (U+EC82) and OpenAI/Codex (U+EC81) icons come from Codicons in Nerd
 # Fonts 3.5; the installed Meslo predates them. Used by the herdr sidebar.
 font-codepoint-map = U+EC81-U+EC82=Symbols Nerd Font Mono

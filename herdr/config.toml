@@ -55,6 +55,10 @@ detach = "prefix+q"          # tmux `q` = kill-session
 zoom = "prefix+z"            # tmux-power-zoom trigger
 toggle_sidebar = "prefix+b"
 
+# ctrl+g abre a lista de agentes (Goto picker), igual ao prefix+g; o ctrl+g do
+# Claude Code (editor externo) foi desligado em ~/.claude/keybindings.json.
+goto = ["prefix+g", "ctrl+g"]
+
 # prefix+w jumps straight to the next workspace (Local -> wsl...); the picker
 # that used to live there moves to prefix+ctrl+w.
 next_workspace = "prefix+w"
@@ -76,23 +80,25 @@ copy_on_select = true
 pane_borders = true
 
 show_agent_labels_on_pane_borders = false
-status_indicators = "symbols"   # distinct glyphs per state instead of colored dots
+status_indicators = "dots"   # colored dot per state (escolha de 18/11; antes "symbols")
 
 sidebar_width = 46       # ultrawide screen: room for the tab name after agent + ctx
 sidebar_max_width = 50
 
-# $idx, $name and $ctx come from bin/herdr-tab-index.py: tab position (the
-# number prefix+N jumps to), herdr agent name, and context percentage.
-# One line per agent: tab number · state · agent · context · tab name.
-# Workspace is left out: everything lives in "noping", so it only repeated.
+# Tokens from bin/herdr-tab-index.py: $idx = tab position (the number
+# prefix+N jumps to); $card / $passo = the tab label split at " · " (emoji +
+# card in bold, the step dimmed); $ctx_amarelo / $ctx_vermelho = context
+# percentage only at 60–84% / 85%+, empty below (choices of 18/11 in the
+# "Painel do herdr" page). Agent name and the always-on $ctx left the row.
 [ui.sidebar.agents]
 row_gap = 0
 rows = [[
-  { token = "$idx", fg = "#6FCF1E" },   # np-green-lo
+  { token = "$idx", fg = "#6FCF1E" },           # np-green-lo
   "state_icon",
-  { token = "$name", bold = true },
-  { token = "$ctx", fg = "#9CFF2E" },   # np-green
-  { token = "tab", fg = "#848687" },    # np-fg-mute
+  { token = "$card", bold = true },
+  { token = "$passo", fg = "#848687" },         # np-fg-mute
+  { token = "$ctx_amarelo", fg = "#FFB454" },   # ayu yellow
+  { token = "$ctx_vermelho", fg = "#F07178" },  # ayu red
 ]]
 
 # $claude, $codex and $others also come from bin/herdr-tab-index.py: provider
